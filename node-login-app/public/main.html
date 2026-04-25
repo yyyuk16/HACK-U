@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メイン画面</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+        }
+        .container {
+            width: min(560px, 92vw);
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .nickname {
+            margin: 0 0 24px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #223;
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        .actions button {
+            min-width: 120px;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .talk {
+            background: #4c6fff;
+            color: #fff;
+        }
+        .meet {
+            background: #20c997;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1 class="nickname" id="nickname">読み込み中...</h1>
+        <div class="actions">
+            <button class="talk" id="talkButton" type="button">話す</button>
+            <button class="meet" id="meetButton" type="button">会う</button>
+        </div>
+    </main>
+    <script>
+        async function loadUser() {
+            try {
+                const response = await fetch('/me');
+                if (!response.ok) {
+                    location.href = '/login.html';
+                    return;
+                }
+                const user = await response.json();
+                document.getElementById('nickname').textContent = `${user.nickname} さん`;
+            } catch (error) {
+                location.href = '/login.html';
+            }
+        }
+        document.getElementById('talkButton').addEventListener('click', () => {
+            location.href = '/selecttalk.html';
+        });
+        document.getElementById('meetButton').addEventListener('click', () => {
+            location.href = '/room.html?mode=meet&keyword=meet-lobby';
+        });
+        loadUser();
+    </script>
+</body>
+</html>

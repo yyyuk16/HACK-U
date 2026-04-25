@@ -5,9 +5,19 @@ export type PositionPayload = {
   y: number;
 };
 
+export type RemotePlayer = {
+  socketId: string;
+  nickname: string;
+  avatarKey?: string;
+  x: number;
+  y: number;
+};
+
 type MainSceneOptions = {
   width: number;
   height: number;
+  backgroundPath?: string;
+  playerAvatarKey?: string;
   onPositionChange?: (position: PositionPayload) => void;
 };
 
@@ -30,6 +40,14 @@ const ROW_FOR_FACING: Record<Facing, number> = {
 };
 
 const idleFrame = (facing: Facing) => ROW_FOR_FACING[facing] * COLS + 1;
+const DEFAULT_AVATAR_KEY = "avatar-01";
+const AVATAR_KEYS = [
+  "avatar-01",
+  "avatar-02",
+  "avatar-03",
+  "avatar-04",
+  "avatar-05",
+];
 
 export class MainScene extends Phaser.Scene {
   private readonly options: MainSceneOptions;
@@ -51,17 +69,24 @@ export class MainScene extends Phaser.Scene {
 
   private lastFacing: Facing = "down";
 
+  private remotePlayers = new Map<
+    string,
+    { sprite: Phaser.GameObjects.Sprite; label: Phaser.GameObjects.Text; avatarKey: string }
+  >();
+
   constructor(options: MainSceneOptions) {
     super("MainScene");
     this.options = options;
   }
 
   preload(): void {
-    this.load.image("roomBg", "/item/background.png");
-    this.load.spritesheet("princess", "/item/princess-spritesheet.png", {
-      frameWidth: FRAME_W,
-      frameHeight: FRAME_H,
-    });
+    this.load.image("roomBg", this.options.backgroundPath || "/item/background.png");
+    for (const avatarKey of AVATAR_KEYS) {
+      this.load.spritesheet(avatarKey, `/item/avatars/${avatarKey}.png`, {
+        frameWidth: FRAME_W,
+        frameHeight: FRAME_H,
+      });
+    }
   }
 
   create(): void {
@@ -72,21 +97,24 @@ export class MainScene extends Phaser.Scene {
     bg.setScale(scale).setScrollFactor(0);
     bg.setDepth(0);
 
-    const makeWalk = (key: string, row: number) => {
+    const makeWalk = (avatarKey: string, key: string, row: number) => {
       const start = row * COLS;
       this.anims.create({
         key,
-        frames: this.anims.generateFrameNumbers("princess", { start, end: start + 2 }),
+        frames: this.anims.generateFrameNumbers(avatarKey, { start, end: start + 2 }),
         frameRate: 10,
         repeat: -1,
       });
     };
-    makeWalk("walk-down", FRONT_ROW);
-    makeWalk("walk-left", LEFT_ROW);
-    makeWalk("walk-right", RIGHT_ROW);
-    makeWalk("walk-up", BACK_ROW);
+    for (const avatarKey of AVATAR_KEYS) {
+      makeWalk(avatarKey, `${avatarKey}-walk-down`, FRONT_ROW);
+      makeWalk(avatarKey, `${avatarKey}-walk-left`, LEFT_ROW);
+      makeWalk(avatarKey, `${avatarKey}-walk-right`, RIGHT_ROW);
+      makeWalk(avatarKey, `${avatarKey}-walk-up`, BACK_ROW);
+    }
 
-    this.player = this.add.sprite(w / 2, h / 2, "princess", idleFrame("down"));
+    const playerAvatarKey = this.options.playerAvatarKey || DEFAULT_AVATAR_KEY;
+    this.player = this.add.sprite(w / 2, h / 2, playerAvatarKey, idleFrame("down"));
     this.player.setOrigin(0.5, 0.5);
     this.player.setDepth(1);
 
@@ -133,9 +161,11 @@ export class MainScene extends Phaser.Scene {
       animKey = direction.y < 0 ? "walk-up" : "walk-down";
       this.lastFacing = direction.y < 0 ? "up" : "down";
     }
+    const playerAvatarKey = this.options.playerAvatarKey || DEFAULT_AVATAR_KEY;
+    const playerAnimKey = `${playerAvatarKey}-${animKey}`;
 
-    if (this.player.anims.currentAnim?.key !== animKey) {
-      this.player.play(animKey);
+    if (this.player.anims.currentAnim?.key !== playerAnimKey) {
+      this.player.play(playerAnimKey);
     }
 
     const distance = (this.speed * delta) / 1000;
@@ -158,5 +188,49 @@ export class MainScene extends Phaser.Scene {
     }
     this.lastSent = { x, y };
     this.options.onPositionChange?.({ x, y });
+  }
+
+  public syncRemotePlayers(players: RemotePlayer[], selfSocketId?: string): void {
+    const keepIds = new Set<string>();
+    for (const remote of players) {
+      if (remote.socketId === selfSocketId) {
+        continue;
+      }
+      keepIds.add(remote.socketId);
+      const existing = this.remotePlayers.get(remote.socketId);
+      const avatarKey = AVATAR_KEYS.includes(remote.avatarKey || "") ? (remote.avatarKey as string) : DEFAULT_AVATAR_KEY;
+      if (existing) {
+        if (existing.avatarKey !== avatarKey) {
+          existing.sprite.destroy();
+          existing.label.destroy();
+          this.remotePlayers.delete(remote.socketId);
+        } else {
+          existing.sprite.setPosition(remote.x, remote.y);
+          existing.label.setPosition(remote.x, remote.y - 34);
+          existing.label.setText(remote.nickname);
+          continue;
+        }
+      }
+
+      const sprite = this.add.sprite(remote.x, remote.y, avatarKey, idleFrame("down"));
+      sprite.setDepth(1);
+      const label = this.add.text(remote.x, remote.y - 34, remote.nickname, {
+        fontSize: "12px",
+        color: "#1f2937",
+        backgroundColor: "#ffffffcc",
+        padding: { x: 4, y: 2 },
+      });
+      label.setOrigin(0.5);
+      label.setDepth(2);
+      this.remotePlayers.set(remote.socketId, { sprite, label, avatarKey });
+    }
+
+    for (const [socketId, object] of this.remotePlayers.entries()) {
+      if (!keepIds.has(socketId)) {
+        object.sprite.destroy();
+        object.label.destroy();
+        this.remotePlayers.delete(socketId);
+      }
+    }
   }
 }

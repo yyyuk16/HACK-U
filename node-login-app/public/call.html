@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電話検索</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+        }
+        .container {
+            width: min(640px, 92vw);
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            color: #223;
+        }
+        .description {
+            text-align: center;
+            color: #566;
+            margin-bottom: 20px;
+        }
+        .search {
+            display: flex;
+            gap: 10px;
+        }
+        .search input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccd3e0;
+            font-size: 16px;
+        }
+        .search button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            background: #20c997;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 16px;
+            color: #4c6fff;
+            text-decoration: none;
+        }
+        .tools {
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .rooms {
+            margin-top: 14px;
+            display: grid;
+            gap: 10px;
+        }
+        .room-card {
+            border: 1px solid #dce3f0;
+            border-radius: 12px;
+            padding: 12px;
+        }
+        .room-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        .keyword {
+            font-weight: 700;
+            color: #223;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: #eef2ff;
+            color: #334;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+        .empty {
+            color: #667;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>電話で話す相手を探す</h1>
+        <p class="description">キーワードを入力して、同じ話題に興味がある人が集まるルームを検索します。</p>
+        <form id="callSearchForm" class="search">
+            <input id="callKeyword" type="text" placeholder="例: 暇人、相談、通話歓迎" required>
+            <button type="submit">検索</button>
+        </form>
+        <div class="tools">
+            <label><input type="checkbox" id="onlineOnly"> 現在オンラインのみ表示</label>
+            <label>
+                並び順
+                <select id="sortOrder">
+                    <option value="created">ルーム作成日時順</option>
+                    <option value="popular">人気順</option>
+                </select>
+            </label>
+        </div>
+        <div id="roomList" class="rooms">
+            <p class="empty">読み込み中...</p>
+        </div>
+        <a class="back" href="/selecttalk.html">← 戻る</a>
+    </main>
+
+    <script>
+        async function requireLogin() {
+            try {
+                const response = await fetch('/me');
+                if (!response.ok) {
+                    location.href = '/login.html';
+                }
+            } catch (error) {
+                location.href = '/login.html';
+            }
+        }
+
+        document.getElementById('callSearchForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const keyword = document.getElementById('callKeyword').value.trim();
+            if (!keyword) {
+                return;
+            }
+            location.href = `/room.html?mode=call&keyword=${encodeURIComponent(keyword)}`;
+        });
+
+        async function loadRooms() {
+            const onlineOnly = document.getElementById('onlineOnly').checked;
+            const sort = document.getElementById('sortOrder').value;
+            const response = await fetch(`/rooms?mode=call&onlineOnly=${onlineOnly}&sort=${sort}`);
+            const roomList = document.getElementById('roomList');
+            if (!response.ok) {
+                roomList.innerHTML = '<p class="empty">ルーム一覧を取得できませんでした。</p>';
+                return;
+            }
+            const data = await response.json();
+            const rooms = data.rooms || [];
+            if (rooms.length === 0) {
+                roomList.innerHTML = '<p class="empty">該当するルームはありません。</p>';
+                return;
+            }
+            roomList.innerHTML = rooms.map((room) => `
+                <article class="room-card">
+                    <div class="room-top">
+                        <span class="keyword">${room.keyword}</span>
+                        <span>
+                            <span class="badge">参加 ${room.participant_count}人</span>
+                            <span class="badge">オンライン ${room.online_count}人</span>
+                        </span>
+                    </div>
+                    <small>作成: ${new Date(room.created_at).toLocaleString('ja-JP')}</small><br>
+                    <a href="/room.html?mode=call&keyword=${encodeURIComponent(room.keyword)}">このルームへ入る</a>
+                </article>
+            `).join('');
+        }
+
+        async function boot() {
+            await requireLogin();
+            await loadRooms();
+            document.getElementById('onlineOnly').addEventListener('change', loadRooms);
+            document.getElementById('sortOrder').addEventListener('change', loadRooms);
+        }
+
+        boot();
+    </script>
+</body>
+</html>

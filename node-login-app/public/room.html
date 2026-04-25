@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ルーム</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+        }
+        .container {
+            width: min(680px, 92vw);
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            margin-top: 0;
+            color: #223;
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: #eef2ff;
+            color: #335;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .center {
+            text-align: center;
+        }
+        .keyword {
+            font-size: 28px;
+            font-weight: 800;
+            color: #4c6fff;
+            margin: 14px 0 8px;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .stats-badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #eef2ff;
+            color: #334;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .note {
+            color: #556;
+            line-height: 1.7;
+        }
+        .members {
+            margin-top: 18px;
+            padding: 14px;
+            border-radius: 10px;
+            background: #f7f9ff;
+        }
+        .members h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #223;
+        }
+        .members ul {
+            margin: 0;
+            padding-left: 22px;
+            color: #334;
+        }
+        .members li {
+            margin: 4px 0;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 18px;
+            color: #4c6fff;
+            text-decoration: none;
+        }
+        .go-metaverse {
+            margin-top: 16px;
+            padding: 10px 14px;
+            border: none;
+            border-radius: 10px;
+            background: #4c6fff;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="center">
+            <span class="badge" id="modeLabel">読み込み中...</span>
+            <h1>キーワードルーム</h1>
+            <p>選択中のキーワード</p>
+            <p class="keyword" id="keywordLabel">-</p>
+            <div class="stats">
+                <span class="stats-badge" id="participantBadge">参加 0人</span>
+                <span class="stats-badge" id="onlineBadge">オンライン 0人</span>
+            </div>
+        </div>
+        <p class="note">
+            このキーワードを使って、今後は同じ興味を持つユーザーが集まる
+            2Dメタバース空間（ルーム）に参加できるように拡張できます。
+        </p>
+        <section class="members">
+            <h2>このルームの参加ユーザー</h2>
+            <ul id="memberList">
+                <li>読み込み中...</li>
+            </ul>
+        </section>
+        <button type="button" class="go-metaverse" id="goMetaverseButton">2Dメタバース空間へ入る</button><br>
+        <a class="back" href="/selecttalk.html">← 話す方法の選択へ戻る</a>
+    </main>
+
+    <script>
+        async function requireLogin() {
+            try {
+                const response = await fetch('/me');
+                if (!response.ok) {
+                    location.href = '/login.html';
+                    return null;
+                }
+                const user = await response.json();
+                return user;
+            } catch (error) {
+                location.href = '/login.html';
+                return null;
+            }
+        }
+
+        async function setupRoom() {
+            const params = new URLSearchParams(window.location.search);
+            const keyword = params.get('keyword');
+            const mode = params.get('mode');
+
+            if (!keyword || !mode) {
+                location.href = '/selecttalk.html';
+                return;
+            }
+
+            const modeLabel = mode === 'chat' ? 'チャット' : mode === 'call' ? '電話' : '会う';
+            document.getElementById('modeLabel').textContent = `${modeLabel} ルーム`;
+            document.getElementById('keywordLabel').textContent = keyword;
+
+            try {
+                const response = await fetch('/rooms/join', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mode, keyword })
+                });
+                if (!response.ok) {
+                    document.getElementById('memberList').innerHTML = '<li>参加者を読み込めませんでした。</li>';
+                    return;
+                }
+                const data = await response.json();
+                const members = data.members || [];
+                const room = data.room || {};
+                document.getElementById('participantBadge').textContent = `参加 ${room.participantCount ?? 0}人`;
+                document.getElementById('onlineBadge').textContent = `オンライン ${room.onlineCount ?? 0}人`;
+                const memberList = document.getElementById('memberList');
+                if (members.length === 0) {
+                    memberList.innerHTML = '<li>まだ参加者がいません。</li>';
+                    return;
+                }
+                memberList.innerHTML = members
+                    .map((member) => `<li>${member.nickname}</li>`)
+                    .join('');
+            } catch (error) {
+                document.getElementById('memberList').innerHTML = '<li>参加者を読み込めませんでした。</li>';
+            }
+        }
+
+        async function boot() {
+            const me = await requireLogin();
+            if (!me) {
+                return;
+            }
+            await setupRoom();
+            const params = new URLSearchParams(window.location.search);
+            const keyword = params.get('keyword') || '';
+            const mode = params.get('mode') || '';
+            document.getElementById('goMetaverseButton').addEventListener('click', () => {
+                const metaverseUrl = new URL('http://localhost:3002');
+                metaverseUrl.searchParams.set('keyword', keyword);
+                metaverseUrl.searchParams.set('mode', mode);
+                metaverseUrl.searchParams.set('nickname', me.nickname || '');
+                metaverseUrl.searchParams.set('avatarKey', me.avatarKey || 'avatar-01');
+                window.location.href = metaverseUrl.toString();
+            });
+        }
+
+        boot();
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アバター選択</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: #f5f7ff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: min(960px, 94vw);
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+        .card {
+            border: 2px solid #d8def0;
+            border-radius: 12px;
+            background: #f8faff;
+            padding: 10px;
+            cursor: pointer;
+            transition: border-color .15s ease, transform .15s ease;
+        }
+        .card:hover {
+            border-color: #4c6fff;
+            transform: translateY(-1px);
+        }
+        .card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            image-rendering: pixelated;
+            background: repeating-conic-gradient(#f0f2f8 0% 25%, #ffffff 0% 50%) 50% / 20px 20px;
+            border-radius: 8px;
+        }
+        .name {
+            margin-top: 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #334;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>アバターを選択してください</h1>
+        <p style="text-align:center;color:#556;">この選択が今後の仮想空間での見た目になります。</p>
+        <form id="avatarForm" action="/avatar/select" method="POST">
+            <input type="hidden" name="avatarKey" id="avatarKey">
+            <div class="grid">
+                <button class="card" type="button" data-avatar="avatar-01">
+                    <img src="/avatars/avatar-01.png" alt="アバター1 正面">
+                    <div class="name">アバター1</div>
+                </button>
+                <button class="card" type="button" data-avatar="avatar-02">
+                    <img src="/avatars/avatar-02.png" alt="アバター2 正面">
+                    <div class="name">アバター2</div>
+                </button>
+                <button class="card" type="button" data-avatar="avatar-03">
+                    <img src="/avatars/avatar-03.png" alt="アバター3 正面">
+                    <div class="name">アバター3</div>
+                </button>
+                <button class="card" type="button" data-avatar="avatar-04">
+                    <img src="/avatars/avatar-04.png" alt="アバター4 正面">
+                    <div class="name">アバター4</div>
+                </button>
+                <button class="card" type="button" data-avatar="avatar-05">
+                    <img src="/avatars/avatar-05.png" alt="アバター5 正面">
+                    <div class="name">アバター5</div>
+                </button>
+            </div>
+        </form>
+    </main>
+    <script>
+        const form = document.getElementById('avatarForm');
+        const avatarInput = document.getElementById('avatarKey');
+        document.querySelectorAll('[data-avatar]').forEach((button) => {
+            button.addEventListener('click', () => {
+                avatarInput.value = button.dataset.avatar;
+                form.submit();
+            });
+        });
+    </script>
+</body>
+</html>

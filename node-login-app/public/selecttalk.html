@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>話す方法を選択</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+        }
+        .container {
+            width: min(560px, 92vw);
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .title {
+            margin: 0 0 24px;
+            font-size: 26px;
+            color: #223;
+        }
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        .actions button {
+            min-width: 140px;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+        }
+        .chat {
+            background: #4c6fff;
+        }
+        .phone {
+            background: #20c997;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1 class="title">話す方法を選んでください</h1>
+        <div class="actions">
+            <button class="chat" id="chatButton" type="button">チャット</button>
+            <button class="phone" id="phoneButton" type="button">電話</button>
+        </div>
+    </main>
+    <script>
+        async function requireLogin() {
+            try {
+                const response = await fetch('/me');
+                if (!response.ok) {
+                    location.href = '/login.html';
+                }
+            } catch (error) {
+                location.href = '/login.html';
+            }
+        }
+        document.getElementById('chatButton').addEventListener('click', () => {
+            location.href = '/chat.html';
+        });
+        document.getElementById('phoneButton').addEventListener('click', () => {
+            location.href = '/call.html';
+        });
+        requireLogin();
+    </script>
+</body>
+</html>

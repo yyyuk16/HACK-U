@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規登録</title>
+</head>
+<body>
+    <h2>新規ユーザー登録</h2>
+    <form action="/register" method="POST">
+        <div>
+            <label>ユーザー名:</label>
+            <input type="text" name="username" required>
+        </div>
+        <div>
+            <label>パスワード:</label>
+            <input type="password" name="password" required>
+        </div>
+        <button type="submit">登録</button>
+    </form>
+    <a href="/login.html">ログインはこちら</a>
+</body>
+</html>

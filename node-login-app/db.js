@@ -1,3 +1,4 @@
+cat << 'EOF' > db.js
 const { Pool } = require('pg');
 require('dotenv').config();
 
@@ -7,7 +8,8 @@ const pool = new Pool({
     database: process.env.DB_NAME,
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
-    ssl: false  // ★ここを追加（カンマ忘れに注意！）
+    ssl: false
 });
 
 module.exports = pool;
+EOF

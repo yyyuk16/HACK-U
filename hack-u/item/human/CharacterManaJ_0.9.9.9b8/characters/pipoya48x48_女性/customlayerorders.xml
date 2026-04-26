@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<custom-layer-orders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://charactermanaj.osdn.jp/schema/customlayerorder.xsd customlayerorder.xsd" xmlns="http://charactermanaj.osdn.jp/schema/customlayerorder.xsd">
+    <pattern id="84ab872b-2f99-43ae-9372-74a93605b1a7" name="目を髪の上にする">
+        <localized-name lang="ja" name="目を髪の上にする"/>
+        <mapping category="cat1b8bb225-9cd5-4404-8241-66b753baf01b" layer="lay6cde7e36-7464-4dbd-aa16-6a4da195390c" order="725.1"/>
+        <mapping category="cat1b8bb225-9cd5-4404-8241-66b753baf01b" layer="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5" order="725.2"/>
+        <mapping category="catfaece917-f9dc-483b-90f6-67467fea64ed" layer="lay0dbf9f6e-ff00-48e4-8f32-15f25410c931" order="726.1"/>
+        <mapping category="catfaece917-f9dc-483b-90f6-67467fea64ed" layer="lay70315e84-2369-42c8-aefd-dc1f506a218f" order="726.2"/>
+        <mapping category="cat319380cc-6657-479a-afbb-06d5b477fc14" layer="lay08707642-59c0-4c94-a425-f77e356014fb" order="727.1"/>
+        <mapping category="cat319380cc-6657-479a-afbb-06d5b477fc14" layer="lay94b54e36-c9d3-4405-961d-9f42a1ac6707" order="727.2"/>
+    </pattern>
+    <pattern id="45f88929-6734-4076-8414-c24be8e0ae1c" name="尻尾を翼の上にする">
+        <localized-name lang="ja" name="尻尾を翼の上にする"/>
+        <mapping category="cat63d7b06f-04d2-4aff-ab11-e46a9ff4bef1" layer="lay3a8cca29-d069-4237-987a-731fd45b49e9" order="139.5"/>
+        <mapping category="cat63d7b06f-04d2-4aff-ab11-e46a9ff4bef1" layer="lay8379a6ec-cafa-4eac-84db-383af3a71b06" order="745.5"/>
+    </pattern>
+    <pattern id="a92a34e1-8045-4fb9-800a-3547913a9093" name="目(右)の光を隠す">
+        <localized-name lang="ja" name="目(右)の光を隠す"/>
+        <mapping category="catfaece917-f9dc-483b-90f6-67467fea64ed" layer="lay6a9d8104-bc00-49f0-a6d6-5caf6d590a94" order="0.0"/>
+    </pattern>
+    <pattern id="9a8ee129-17f1-4b70-92df-d79baef6eb87" name="耳を髪の上にする">
+        <localized-name lang="ja" name="耳を髪の上にする"/>
+        <mapping category="catac03bd90-0173-4bec-8c7b-1dcabac568c5" layer="laye008c6d3-272b-4bd4-be73-e9fa0171fc07" order="175.0"/>
+        <mapping category="catac03bd90-0173-4bec-8c7b-1dcabac568c5" layer="lay5742536a-3a39-40ac-a7a6-28ee246b02f2" order="735.0"/>
+    </pattern>
+    <pattern id="47c6139e-dd91-46d0-b520-1242e75b5056" name="翼を髪の上にする">
+        <localized-name lang="ja" name="翼を髪の上にする"/>
+        <mapping category="cat6ad2957e-2be4-4dff-9891-d290b39e2893" layer="lay6d867aab-da8d-498e-a0cd-26adb5fd62de" order="125.0"/>
+        <mapping category="cat6ad2957e-2be4-4dff-9891-d290b39e2893" layer="layaeb0dc53-ddce-4d70-b145-9d6984ab2a2e" order="655.0"/>
+        <mapping category="cat6ad2957e-2be4-4dff-9891-d290b39e2893" layer="lay4352ad7f-ed03-4cc5-ad09-3aba4561d749" order="780.0"/>
+    </pattern>
+    <pattern id="854411de-6b39-4f73-9255-89fafac06ebc" name="目の光を隠す">
+        <localized-name lang="ja" name="目の光を隠す"/>
+        <mapping category="cat1b8bb225-9cd5-4404-8241-66b753baf01b" layer="lay5642c207-f049-4aba-92a9-65ab3763a94e" order="0.0"/>
+    </pattern>
+    <pattern id="a87cc24b-7967-470c-8427-8e9d1a0a3389" name="ツノを髪の上にする">
+        <localized-name lang="ja" name="ツノを髪の上にする"/>
+        <mapping category="cat3dcc558b-cc68-4e27-ac4f-6541b5116504" layer="laye6092c0a-897c-4d7c-9841-8d4f4e194674" order="165.0"/>
+        <mapping category="cat3dcc558b-cc68-4e27-ac4f-6541b5116504" layer="layf4205a22-a007-416f-b33b-65c00c924540" order="740.0"/>
+    </pattern>
+    <pattern id="bc670048-f779-410f-8f34-b09ff2cf9450" name="目(左)の光を隠す">
+        <localized-name lang="ja" name="目(左)の光を隠す"/>
+        <mapping category="cat319380cc-6657-479a-afbb-06d5b477fc14" layer="lay144850ca-453a-4c5c-880d-9a6a91b1ab05" order="0.0"/>
+    </pattern>
+</custom-layer-orders>

@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: hacku
+      POSTGRES_PASSWORD: hacku
+      POSTGRES_DB: hacku_db
+    # 5432 を別の PostgreSQL / サービスが掴みがちなため 5433 をホストに公開
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hacku -d hacku_db"]
+      interval: 3s
+      timeout: 5s
+      retries: 5

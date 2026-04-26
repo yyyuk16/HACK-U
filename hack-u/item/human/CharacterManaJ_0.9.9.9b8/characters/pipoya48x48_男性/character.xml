@@ -1,0 +1,3281 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="pipoya48x48charaset" rev="2019-10-02_060905" version="1.0" xsi:schemaLocation="http://charactermanaj.sourceforge.jp/schema/charactermanaj character.xsd" xmlns="http://charactermanaj.sourceforge.jp/schema/charactermanaj">
+    <name xml:lang="ja">ぴぽや48ｘ48　男性</name>
+    <information>
+        <author xml:lang="ja">ぴぽや</author>
+        <description xml:lang="ja">●はじめに
+このデータは『ぴぽや48×48サイズキャラチップ素材』です。
+『キャラクターなんとかJ』専用のデータとして作成されています。
+
+本データは『キャラクターなんとかJ』のライセンスに則り、商用利用
+及びアプリケーションの再配布をしております。
+
+『キャラクターなんとかJ』及び『キャラクターなんとか機』を開発
+してくださった皆様に感謝いたします！
+『キャラクターなんとかJ』については、『キャラクターなんとかJ』
+のドキュメントやWEBサイトをご確認ください。
+
+
+本データ(パーツ画像)を他のアプリケーションやWEBサービスなどで
+利用したい場合は事前にご相談ください。
+
+
+●使用上の注意
+・４方向で出力するときは「ファイル＞このプロファイルを編集する」
+　で「キャンバスの幅を144」に設定してください。
+
+・８方向で出力するときは「ファイル＞このプロファイルを編集する」
+　で「キャンバスの幅を288」に設定してください。
+
+
+●利用条件
+
+「試用目的以外での素材利用はできません」
+
+SNSやブログなどへの画像を掲載する場合は、素材としてそのまま利用できる状態での掲載はしないでください。
+キャラクター作成時の編集画面のスクリーンショットや、確認用にゲーム内に組み込んだ状態のゲームのスクリーンショットは問題ありません。
+画像掲載時の連絡などは不要です。
+
+画像掲載箇所へのクレジット表記が可能であれば「ぴぽや」、URLはぴぽやのWEBサイトのURL「https://pipoya.net」か素材ページのURL「https://pipoya.net/sozai/assets/pipoyafriends-charachip/pipoyafriends-charachip_release/」でお願いします。
+URLは長いので、ぴぽやの表記にリンク設定でも構いません。</description>
+    </information>
+    <image-size>
+        <width>288</width>
+        <height>192</height>
+    </image-size>
+    <settings>
+        <entry key="custom-layer-pattern">true</entry>
+        <entry key="watch-dir">true</entry>
+    </settings>
+    <categories>
+        <category id="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c" multipleSelectable="false" optional="false">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">■ スキン</display-name>
+            <layers>
+                <layer id="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                    <display-name xml:lang="ja">スキン$2</display-name>
+                    <order>145</order>
+                    <colorGroup init-sync="true" refid="color-skin"/>
+                    <dir>skin$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                    <display-name xml:lang="ja">スキン</display-name>
+                    <order>300</order>
+                    <colorGroup init-sync="true" refid="color-skin"/>
+                    <dir>skin</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                    <display-name xml:lang="ja">スキン$1</display-name>
+                    <order>675</order>
+                    <colorGroup init-sync="true" refid="color-skin"/>
+                    <dir>skin$1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat65fcd85c-1713-4bd0-83a3-b114ab6eda7f" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">　+ スキン</display-name>
+            <layers>
+                <layer id="layfe16870e-a68d-4adb-a5c8-9d6f7f6249a0">
+                    <display-name xml:lang="ja">スキンオプション$</display-name>
+                    <order>190</order>
+                    <colorGroup init-sync="true" refid="color-skin"/>
+                    <dir>skin_ex$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay9085e379-fa53-4f00-a619-af951d17c1a6">
+                    <display-name xml:lang="ja">スキンオプション</display-name>
+                    <order>555</order>
+                    <colorGroup init-sync="true" refid="color-skin"/>
+                    <dir>skin_ex</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat5663df12-c38f-441a-abe3-4136038ef7a0" multipleSelectable="false" optional="false">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">　下半身(半獣用)</display-name>
+            <layers>
+                <layer id="lay75cfad80-7fc8-4f1c-9189-0b860e9f2606">
+                    <display-name xml:lang="ja">下半身</display-name>
+                    <order>545</order>
+                    <colorGroup init-sync="true" refid="cgee0966ad-9bd2-47dd-b0c9-c3f1b7de008d"/>
+                    <dir>leg</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat52a2ef1f-5eb3-45bb-a8b1-ca465f868848" multipleSelectable="false" optional="false">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">■ 髪</display-name>
+            <layers>
+                <layer id="lay6d172cf9-dcb4-4951-a2ed-f7c555523065">
+                    <display-name xml:lang="ja">後髪$2</display-name>
+                    <order>135</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair3$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay11d55ee5-e926-4ec9-b8fd-41595cd95d9a">
+                    <display-name xml:lang="ja">前髪$</display-name>
+                    <order>200</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair1$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay88e9247f-01e8-4b73-ab3c-ee308b0ab0f9">
+                    <display-name xml:lang="ja">横髪$</display-name>
+                    <order>210</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair4$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layea796e93-c93a-4820-8aca-2443602f8ba4">
+                    <display-name xml:lang="ja">中髪</display-name>
+                    <order>625</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay728e4896-f13c-418a-9012-3bc2a9530516">
+                    <display-name xml:lang="ja">後髪</display-name>
+                    <order>665</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair3</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay9a7f3756-8400-43a2-bf23-fc9d0d1f7af4">
+                    <display-name xml:lang="ja">横髪</display-name>
+                    <order>715</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair4</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="laybbd30e14-a844-40af-aba4-ed66dcb08c23">
+                    <display-name xml:lang="ja">前髪</display-name>
+                    <order>725</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay22a5f792-3699-467a-bbd0-525fc245fa9b">
+                    <display-name xml:lang="ja">後髪$1</display-name>
+                    <order>755</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair3$1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catbced6a62-362d-4271-9078-ff4472154645" multipleSelectable="false" optional="false">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">　髪(フード用)</display-name>
+            <layers>
+                <layer id="laye197a166-3e7e-45d4-8922-9787e6d54b48">
+                    <display-name xml:lang="ja">フード前髪$</display-name>
+                    <order>195</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair1$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="laybfe4f685-c477-46c2-ad25-38763c85e575">
+                    <display-name xml:lang="ja">フード中髪</display-name>
+                    <order>620</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay07cb0966-ee35-48aa-95a2-e80da8def687">
+                    <display-name xml:lang="ja">フード前髪</display-name>
+                    <order>720</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat6da5ca7e-3e4c-416e-a25b-1ff6ff2b3d06" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">　+ 前髪</display-name>
+            <layers>
+                <layer id="laydc672de6-227b-4c20-9fbd-4602388f366f">
+                    <display-name xml:lang="ja">前髪追加$2</display-name>
+                    <order>215</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair_ex1$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layc9790c22-ad4c-438f-b265-8165e9436ddb">
+                    <display-name xml:lang="ja">前髪追加$1</display-name>
+                    <order>615</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair_ex1$1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layb5c419eb-1025-4c90-98a9-cfc5067a9ae9">
+                    <display-name xml:lang="ja">前髪追加</display-name>
+                    <order>705</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair_ex1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat4c55fd6f-340c-4b90-b7c5-b4fa057e31d6" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">　+ 後髪</display-name>
+            <layers>
+                <layer id="lay49966a3b-71f9-4ffe-af01-621182186a77">
+                    <display-name xml:lang="ja">後髪追加$</display-name>
+                    <order>120</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair_ex2$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay2ef09bc1-e675-42d6-9fe5-a8adcf4f3261">
+                    <display-name xml:lang="ja">後髪追加</display-name>
+                    <order>785</order>
+                    <colorGroup init-sync="true" refid="color-hair"/>
+                    <dir>hair_ex2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat1b8bb225-9cd5-4404-8241-66b753baf01b" multipleSelectable="false" optional="false">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">■ 目</display-name>
+            <layers>
+                <layer id="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                    <display-name xml:lang="ja">目$</display-name>
+                    <order>575</order>
+                    <dir>eye$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                    <display-name xml:lang="ja">虹彩</display-name>
+                    <order>590</order>
+                    <dir>eye</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                    <display-name xml:lang="ja">白目</display-name>
+                    <order>578</order>
+                    <dir>eye$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                    <display-name xml:lang="ja">光</display-name>
+                    <order>593</order>
+                    <dir>eye$3</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat1499dc01-4093-4954-a22a-01f10e99c1f6" multipleSelectable="false" optional="false">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">　右目</display-name>
+            <layers>
+                <layer id="laye11e5e04-f289-4232-abaf-4ef20f38f27d">
+                    <display-name xml:lang="ja">右目$</display-name>
+                    <order>570</order>
+                    <dir>eyeR$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay314bea43-24d2-4429-a544-cf326820724f">
+                    <display-name xml:lang="ja">右虹彩</display-name>
+                    <order>585</order>
+                    <dir>eyeR</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layfa9ae9f6-2397-431a-a206-e41b0812d216">
+                    <display-name xml:lang="ja">右白目</display-name>
+                    <order>577</order>
+                    <dir>eyeR$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay17974e6b-0627-426b-970b-43a8b20d8759">
+                    <display-name xml:lang="ja">右光</display-name>
+                    <order>592</order>
+                    <dir>eyeR$3</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat4ffd3a00-2b67-46b4-be4f-b487a8c80f79" multipleSelectable="false" optional="false">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">　左目</display-name>
+            <layers>
+                <layer id="layced5089f-6024-480b-b9c2-b4c5db31c98f">
+                    <display-name xml:lang="ja">左目$</display-name>
+                    <order>565</order>
+                    <dir>eyeL$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay7a07a1ca-3af9-4ef3-9dff-25c6bfba9517">
+                    <display-name xml:lang="ja">左虹彩</display-name>
+                    <order>580</order>
+                    <dir>eyeL</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay50e9f003-8ecb-4c1a-95cd-ce5105651d89">
+                    <display-name xml:lang="ja">左白目</display-name>
+                    <order>576</order>
+                    <dir>eyeL$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="laybed5502b-0052-4504-aca6-069dca9555ac">
+                    <display-name xml:lang="ja">左光</display-name>
+                    <order>591</order>
+                    <dir>eyeL$3</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat34a6ac6e-54e8-4969-9c43-51f3b36f30e3" multipleSelectable="true" optional="true">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">　メイク</display-name>
+            <layers>
+                <layer id="layb09aae94-d3e2-4d04-b43a-e6eaf81b00b2">
+                    <display-name xml:lang="ja">メイク</display-name>
+                    <order>560</order>
+                    <dir>facemake</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catc9446004-0246-4d03-a4f9-2f9b98b144c7" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">　ひげ眉毛</display-name>
+            <layers>
+                <layer id="lay3869c601-9867-4a69-ba9d-04aec2bbbf57">
+                    <display-name xml:lang="ja">髭眉毛$2</display-name>
+                    <order>230</order>
+                    <colorGroup init-sync="true" refid="cga117d12d-8327-4c4c-b12e-805e1cdac1ea"/>
+                    <dir>beard$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layde663806-e05e-466a-a2cd-655b58a52bf2">
+                    <display-name xml:lang="ja">髭眉毛</display-name>
+                    <order>640</order>
+                    <colorGroup init-sync="true" refid="cga117d12d-8327-4c4c-b12e-805e1cdac1ea"/>
+                    <dir>beard</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay0882d234-d65b-422b-aff1-8ca58acd3943">
+                    <display-name xml:lang="ja">髭眉毛$1</display-name>
+                    <order>700</order>
+                    <colorGroup init-sync="true" refid="cga117d12d-8327-4c4c-b12e-805e1cdac1ea"/>
+                    <dir>beard$1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catac03bd90-0173-4bec-8c7b-1dcabac568c5" multipleSelectable="false" optional="false">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">　耳</display-name>
+            <layers>
+                <layer id="laye008c6d3-272b-4bd4-be73-e9fa0171fc07">
+                    <display-name xml:lang="ja">耳$</display-name>
+                    <order>550</order>
+                    <colorGroup init-sync="true" refid="color-skin"/>
+                    <dir>ear$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay5742536a-3a39-40ac-a7a6-28ee246b02f2">
+                    <display-name xml:lang="ja">耳</display-name>
+                    <order>635</order>
+                    <colorGroup init-sync="true" refid="color-skin"/>
+                    <dir>ear</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat3dcc558b-cc68-4e27-ac4f-6541b5116504" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">　ツノ</display-name>
+            <layers>
+                <layer id="laye6092c0a-897c-4d7c-9841-8d4f4e194674">
+                    <display-name xml:lang="ja">角$</display-name>
+                    <order>225</order>
+                    <colorGroup init-sync="true" refid="cg9650db00-77df-423c-a8b5-5aadc313cb2c"/>
+                    <dir>horn$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layf4205a22-a007-416f-b33b-65c00c924540">
+                    <display-name xml:lang="ja">角</display-name>
+                    <order>645</order>
+                    <colorGroup init-sync="true" refid="cg9650db00-77df-423c-a8b5-5aadc313cb2c"/>
+                    <dir>horn</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat371d53bb-3040-40bb-80d0-e9fb26d7056a" multipleSelectable="true" optional="true">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">■ 衣装</display-name>
+            <layers>
+                <layer id="layd352340a-56db-4c7f-9b26-3a7985a52eea">
+                    <display-name xml:lang="ja">衣装$2</display-name>
+                    <order>160</order>
+                    <colorGroup init-sync="true" refid="cg84f2fde4-ed09-4f12-8c29-a122a598bb01"/>
+                    <dir>wear$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="laya52c0153-37d1-4c7c-a2e3-efaeba085b6e">
+                    <display-name xml:lang="ja">衣装$2別色パーツ1</display-name>
+                    <order>155</order>
+                    <colorGroup init-sync="true" refid="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb"/>
+                    <dir>wear$2#1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay6bf88aa9-d2ee-4dea-96e8-bcadb965ed4d">
+                    <display-name xml:lang="ja">衣装$2別色パーツ2</display-name>
+                    <order>150</order>
+                    <colorGroup init-sync="true" refid="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b"/>
+                    <dir>wear$2#2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layc5ce00bc-6e50-4bd3-b294-4798bf39a243">
+                    <display-name xml:lang="ja">衣装</display-name>
+                    <order>605</order>
+                    <colorGroup init-sync="true" refid="cg84f2fde4-ed09-4f12-8c29-a122a598bb01"/>
+                    <dir>wear</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layaca884aa-bd1c-4e5a-9e49-2959b6580b80">
+                    <display-name xml:lang="ja">衣装別色パーツ1</display-name>
+                    <order>600</order>
+                    <colorGroup init-sync="true" refid="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb"/>
+                    <dir>wear#1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layb1b93805-bd77-4e49-a11c-7a3156b47c16">
+                    <display-name xml:lang="ja">衣装別色パーツ2</display-name>
+                    <order>595</order>
+                    <colorGroup init-sync="true" refid="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b"/>
+                    <dir>wear#2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay0dd5b916-f245-4e54-ae2b-4b1df1bdfcfc">
+                    <display-name xml:lang="ja">衣装$1</display-name>
+                    <order>690</order>
+                    <colorGroup init-sync="true" refid="cg84f2fde4-ed09-4f12-8c29-a122a598bb01"/>
+                    <dir>wear$1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="laya9460c42-2c8c-417e-8d73-49f67254f764">
+                    <display-name xml:lang="ja">衣装$1別色パーツ1</display-name>
+                    <order>685</order>
+                    <colorGroup init-sync="true" refid="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb"/>
+                    <dir>wear$1#1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay91abd7ed-02c7-4cd1-a037-d537a504a671">
+                    <display-name xml:lang="ja">衣装$1別色パーツ2</display-name>
+                    <order>680</order>
+                    <colorGroup init-sync="true" refid="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b"/>
+                    <dir>wear$1#2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay6d52362f-917a-46a9-a38b-3ff77d167038">
+                    <display-name xml:lang="ja">衣装フード類</display-name>
+                    <order>770</order>
+                    <colorGroup init-sync="true" refid="cg84f2fde4-ed09-4f12-8c29-a122a598bb01"/>
+                    <dir>wearhood</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay3bd0a7b8-e55d-41b1-8f6a-bebd181bb474">
+                    <display-name xml:lang="ja">衣装フード類別色パーツ1</display-name>
+                    <order>765</order>
+                    <colorGroup init-sync="true" refid="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb"/>
+                    <dir>wearhood#1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay8e846d64-cd2a-4618-9d08-e9de8225d0c7">
+                    <display-name xml:lang="ja">衣装フード類別色パーツ2</display-name>
+                    <order>760</order>
+                    <colorGroup init-sync="true" refid="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b"/>
+                    <dir>wearhood#2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cata990a3c4-c14b-4af8-ae20-a75a2bb24bcd" multipleSelectable="true" optional="true">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">　帽子類</display-name>
+            <layers>
+                <layer id="lay5bad53d8-d6c6-4f01-a94c-b358c1d04523">
+                    <display-name xml:lang="ja">帽子類$2</display-name>
+                    <order>130</order>
+                    <colorGroup init-sync="true" refid="cge9e794b1-1311-45e5-8e45-89976a3da71a"/>
+                    <dir>head$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay41a0a4d3-0216-42fa-8dde-bc527287b4d9">
+                    <display-name xml:lang="ja">帽子類</display-name>
+                    <order>730</order>
+                    <colorGroup init-sync="true" refid="cge9e794b1-1311-45e5-8e45-89976a3da71a"/>
+                    <dir>head</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay5b60f8e4-6b4f-4cac-a310-9a3eb47d6dd0">
+                    <display-name xml:lang="ja">帽子類$1</display-name>
+                    <order>775</order>
+                    <colorGroup init-sync="true" refid="cge9e794b1-1311-45e5-8e45-89976a3da71a"/>
+                    <dir>head$1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catfb964d03-2bb6-4fb5-b126-defaaa74a619" multipleSelectable="true" optional="true">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">　めがね類</display-name>
+            <layers>
+                <layer id="layf0876451-f28d-4722-9a36-74db13b6f98e">
+                    <display-name xml:lang="ja">めがね類$</display-name>
+                    <order>220</order>
+                    <colorGroup init-sync="true" refid="cgb095efcb-c00f-4c7a-b771-e80b34f20f3d"/>
+                    <dir>faceacc$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay2356d334-f0a4-45ae-ae5f-9bc9de57bf06">
+                    <display-name xml:lang="ja">めがね類</display-name>
+                    <order>650</order>
+                    <colorGroup init-sync="true" refid="cgb095efcb-c00f-4c7a-b771-e80b34f20f3d"/>
+                    <dir>faceacc</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catb29355a9-beac-4723-a678-1ea71ab8b0bd" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">　マント類</display-name>
+            <layers>
+                <layer id="layb0c41ec9-f92a-4423-ac9a-23a949c0b986">
+                    <display-name xml:lang="ja">マント類$2</display-name>
+                    <order>170</order>
+                    <colorGroup init-sync="true" refid="cg60fcd1ac-14c0-4efe-b16e-7d7fd71345ad"/>
+                    <dir>cloak$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay00cacf0e-201f-425e-84b1-98aacfa09788">
+                    <display-name xml:lang="ja">マント類</display-name>
+                    <order>660</order>
+                    <colorGroup init-sync="true" refid="cg60fcd1ac-14c0-4efe-b16e-7d7fd71345ad"/>
+                    <dir>cloak</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay6baba610-4df7-4e57-8a8c-4614109857ce">
+                    <display-name xml:lang="ja">マント類$1</display-name>
+                    <order>695</order>
+                    <colorGroup init-sync="true" refid="cg60fcd1ac-14c0-4efe-b16e-7d7fd71345ad"/>
+                    <dir>cloak$1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat6ad2957e-2be4-4dff-9891-d290b39e2893" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">翼</display-name>
+            <layers>
+                <layer id="lay6d867aab-da8d-498e-a0cd-26adb5fd62de">
+                    <display-name xml:lang="ja">翼$2</display-name>
+                    <order>140</order>
+                    <colorGroup init-sync="true" refid="cge7da5f8e-97d4-4246-844a-b0772d249e67"/>
+                    <dir>wing$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layaeb0dc53-ddce-4d70-b145-9d6984ab2a2e">
+                    <display-name xml:lang="ja">翼$1</display-name>
+                    <order>630</order>
+                    <colorGroup init-sync="true" refid="cge7da5f8e-97d4-4246-844a-b0772d249e67"/>
+                    <dir>wing$1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay4352ad7f-ed03-4cc5-ad09-3aba4561d749">
+                    <display-name xml:lang="ja">翼</display-name>
+                    <order>745</order>
+                    <colorGroup init-sync="true" refid="cge7da5f8e-97d4-4246-844a-b0772d249e67"/>
+                    <dir>wing</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat63d7b06f-04d2-4aff-ab11-e46a9ff4bef1" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">尻尾</display-name>
+            <layers>
+                <layer id="lay3a8cca29-d069-4237-987a-731fd45b49e9">
+                    <display-name xml:lang="ja">尻尾$</display-name>
+                    <order>185</order>
+                    <colorGroup init-sync="true" refid="cge6820f85-06e1-4bdc-86d5-93b591087b1e"/>
+                    <dir>tail$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay8379a6ec-cafa-4eac-84db-383af3a71b06">
+                    <display-name xml:lang="ja">尻尾</display-name>
+                    <order>610</order>
+                    <colorGroup init-sync="true" refid="cge6820f85-06e1-4bdc-86d5-93b591087b1e"/>
+                    <dir>tail</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catcd75a175-1304-4d7b-b4a5-e819a398934c" multipleSelectable="true" optional="true">
+            <visible-rows>10</visible-rows>
+            <display-name xml:lang="ja">アイテム</display-name>
+            <layers>
+                <layer id="lay758949dc-ff65-4f97-9475-ae53f086ef37">
+                    <display-name xml:lang="ja">アイテム$3</display-name>
+                    <order>115</order>
+                    <colorGroup init-sync="true" refid="cge2038396-cd1a-4b37-85cb-b9b842bfc1fc"/>
+                    <dir>item$3</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay26785a0a-8263-44e5-ad9a-b7e541f3fe4a">
+                    <display-name xml:lang="ja">アイテム$2</display-name>
+                    <order>180</order>
+                    <colorGroup init-sync="true" refid="cge2038396-cd1a-4b37-85cb-b9b842bfc1fc"/>
+                    <dir>item$2</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layf96e2960-74e8-4200-8f7d-4410c6cbe586">
+                    <display-name xml:lang="ja">アイテム</display-name>
+                    <order>670</order>
+                    <colorGroup init-sync="true" refid="cge2038396-cd1a-4b37-85cb-b9b842bfc1fc"/>
+                    <dir>item</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay2d3d4a2c-f89c-429a-af2e-0096235a505f">
+                    <display-name xml:lang="ja">アイテム$1</display-name>
+                    <order>750</order>
+                    <colorGroup init-sync="true" refid="cge2038396-cd1a-4b37-85cb-b9b842bfc1fc"/>
+                    <dir>item$1</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat136e7498-0230-439f-90f7-ed631eacc0a1" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">エフェクト前面</display-name>
+            <layers>
+                <layer id="layc22bad19-d748-489d-9e24-0cdb39e7e8c8">
+                    <display-name xml:lang="ja">エフェクト前面$</display-name>
+                    <order>100</order>
+                    <colorGroup init-sync="true" refid="cg13f56dd5-2aae-48a7-8a49-c01160116c3b"/>
+                    <dir>effect$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layb0d914fa-0223-409c-8685-ae1e6dd7d12b">
+                    <display-name xml:lang="ja">エフェクト前面</display-name>
+                    <order>800</order>
+                    <colorGroup init-sync="true" refid="cg13f56dd5-2aae-48a7-8a49-c01160116c3b"/>
+                    <dir>effect</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat33245418-8f2c-468f-8eba-78c42985021c" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">エフェクト背面</display-name>
+            <layers>
+                <layer id="lay5dde70d9-c3bd-442f-a7da-9cff60d219a8">
+                    <display-name xml:lang="ja">エフェクト背面$</display-name>
+                    <order>105</order>
+                    <colorGroup init-sync="true" refid="cg467ebd87-adb2-44a3-887b-796fb6e45b54"/>
+                    <dir>effect</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="laydad3d65d-09d4-4537-a8ab-3e2f35725007">
+                    <display-name xml:lang="ja">エフェクト背面</display-name>
+                    <order>795</order>
+                    <colorGroup init-sync="true" refid="cg467ebd87-adb2-44a3-887b-796fb6e45b54"/>
+                    <dir>effect$</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catbd6a6b45-3d5a-49c7-8a52-e4817933c0bf" multipleSelectable="false" optional="false">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">影</display-name>
+            <layers>
+                <layer id="lay709db893-8fd4-4d33-97cf-d125625cf21f">
+                    <display-name xml:lang="ja">影</display-name>
+                    <order>10</order>
+                    <dir>shadow</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat4272ee7e-afd3-4eb5-ab60-faa9da783ad1" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">透かし表示</display-name>
+            <layers>
+                <layer id="laycc110d2b-3f63-403f-b7d6-e50cc74f836f">
+                    <display-name xml:lang="ja">透かし</display-name>
+                    <order>999</order>
+                    <dir>copyright</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="cat7aec0900-b06b-4e8e-8303-d1365dcbd3f1" multipleSelectable="true" optional="true">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">加工用画像</display-name>
+            <layers>
+                <layer id="laya00e1f5c-a0a1-4a86-b0b5-f8136907016d">
+                    <display-name xml:lang="ja">加工用画像_下</display-name>
+                    <order>110</order>
+                    <dir>加工用画像_下</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="lay6f9bb927-a361-462e-87fd-483567479b6d">
+                    <display-name xml:lang="ja">加工用画像</display-name>
+                    <order>300</order>
+                    <dir>加工用画像</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+                <layer id="layb00ce59e-a532-4919-aed0-f5fe893607d5">
+                    <display-name xml:lang="ja">加工用画像_上</display-name>
+                    <order>790</order>
+                    <dir>加工用画像_上</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+        <category id="catd5e5bf5b-ea13-4fd0-b1d8-20ede738f780" multipleSelectable="false" optional="false">
+            <visible-rows>5</visible-rows>
+            <display-name xml:lang="ja">背景画像</display-name>
+            <layers>
+                <layer id="lay6a23113b-1167-4061-9703-5b2669156d59">
+                    <display-name xml:lang="ja">背景画像</display-name>
+                    <order>0</order>
+                    <dir>背景画像</dir>
+                    <colorModel>HSY</colorModel>
+                </layer>
+            </layers>
+        </category>
+    </categories>
+    <colorGroups>
+        <colorGroup id="color-skin">
+            <display-name xml:lang="ja">スキン</display-name>
+        </colorGroup>
+        <colorGroup id="cg9d555ace-6af8-481b-9ea5-2e8881c79c3b">
+            <display-name xml:lang="ja">スキン_予備1</display-name>
+        </colorGroup>
+        <colorGroup id="cgf8332321-0f12-4cc2-bfc5-8df022a0f4ed">
+            <display-name xml:lang="ja">スキン_予備2</display-name>
+        </colorGroup>
+        <colorGroup id="color-hair">
+            <display-name xml:lang="ja">髪</display-name>
+        </colorGroup>
+        <colorGroup id="cgba388a93-c1c5-4e3b-b078-597676389fb5">
+            <display-name xml:lang="ja">髪_予備1</display-name>
+        </colorGroup>
+        <colorGroup id="cg5708b679-4310-4ea6-bca8-e4e865dc2740">
+            <display-name xml:lang="ja">髪_予備2</display-name>
+        </colorGroup>
+        <colorGroup id="cg84f2fde4-ed09-4f12-8c29-a122a598bb01">
+            <display-name xml:lang="ja">衣装</display-name>
+        </colorGroup>
+        <colorGroup id="cg821795fb-6794-47d7-bfe7-78afe96f40f5">
+            <display-name xml:lang="ja">衣装_予備1</display-name>
+        </colorGroup>
+        <colorGroup id="cgae42faec-4a39-4690-84fe-b9fbd398cded">
+            <display-name xml:lang="ja">衣装_予備2</display-name>
+        </colorGroup>
+        <colorGroup id="cg62755704-effd-4636-9e30-d2a550536f59">
+            <display-name xml:lang="ja">衣装_予備3</display-name>
+        </colorGroup>
+        <colorGroup id="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb">
+            <display-name xml:lang="ja">衣装別色パーツ1</display-name>
+        </colorGroup>
+        <colorGroup id="cg877a3ad7-2bb3-479a-afdf-18c5f8ac91fa">
+            <display-name xml:lang="ja">衣装別色パーツ1_予備1</display-name>
+        </colorGroup>
+        <colorGroup id="cg9a4277ca-aaa2-4946-ae60-6ce65e54e1ad">
+            <display-name xml:lang="ja">衣装別色パーツ1_予備2</display-name>
+        </colorGroup>
+        <colorGroup id="cga2cae9fe-5a47-47cb-8fee-a2dd2eea9b98">
+            <display-name xml:lang="ja">衣装別色パーツ1_予備3</display-name>
+        </colorGroup>
+        <colorGroup id="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b">
+            <display-name xml:lang="ja">衣装別色パーツ2</display-name>
+        </colorGroup>
+        <colorGroup id="cg1d1d6bae-95bd-4433-a644-d29e7d34fbf9">
+            <display-name xml:lang="ja">衣装別色パーツ2_予備1</display-name>
+        </colorGroup>
+        <colorGroup id="cg987bbe83-5504-425a-81fe-3f255eddfa6c">
+            <display-name xml:lang="ja">衣装別色パーツ2_予備2</display-name>
+        </colorGroup>
+        <colorGroup id="cg406de529-2a65-465f-b09f-3a200113c229">
+            <display-name xml:lang="ja">衣装別色パーツ2_予備3</display-name>
+        </colorGroup>
+        <colorGroup id="cge9e794b1-1311-45e5-8e45-89976a3da71a">
+            <display-name xml:lang="ja">帽子類</display-name>
+        </colorGroup>
+        <colorGroup id="cg8c77b5e4-4230-453a-9d59-e716b7b27551">
+            <display-name xml:lang="ja">帽子類_予備</display-name>
+        </colorGroup>
+        <colorGroup id="cg60fcd1ac-14c0-4efe-b16e-7d7fd71345ad">
+            <display-name xml:lang="ja">マント類</display-name>
+        </colorGroup>
+        <colorGroup id="cgbbfa0ec1-9262-4b28-b7a9-ad80081b111d">
+            <display-name xml:lang="ja">マント_予備</display-name>
+        </colorGroup>
+        <colorGroup id="cgb095efcb-c00f-4c7a-b771-e80b34f20f3d">
+            <display-name xml:lang="ja">めがね類</display-name>
+        </colorGroup>
+        <colorGroup id="cga7b0dc32-d889-4efd-93d7-e8c35d40c808">
+            <display-name xml:lang="ja">めがね類_予備</display-name>
+        </colorGroup>
+        <colorGroup id="cg9650db00-77df-423c-a8b5-5aadc313cb2c">
+            <display-name xml:lang="ja">角</display-name>
+        </colorGroup>
+        <colorGroup id="cg591fb6ff-237b-4931-8abb-1741e22d0422">
+            <display-name xml:lang="ja">角_予備</display-name>
+        </colorGroup>
+        <colorGroup id="cge7da5f8e-97d4-4246-844a-b0772d249e67">
+            <display-name xml:lang="ja">翼</display-name>
+        </colorGroup>
+        <colorGroup id="cg5999731f-d973-4f14-8e00-69350d077a92">
+            <display-name xml:lang="ja">翼_予備</display-name>
+        </colorGroup>
+        <colorGroup id="cge6820f85-06e1-4bdc-86d5-93b591087b1e">
+            <display-name xml:lang="ja">尻尾</display-name>
+        </colorGroup>
+        <colorGroup id="cg5d0f444e-af00-4a09-9aee-2c9eb0272736">
+            <display-name xml:lang="ja">尻尾_予備</display-name>
+        </colorGroup>
+        <colorGroup id="cge2038396-cd1a-4b37-85cb-b9b842bfc1fc">
+            <display-name xml:lang="ja">アイテム</display-name>
+        </colorGroup>
+        <colorGroup id="cgea6c6b72-bdde-415d-8a85-79fa77e696a0">
+            <display-name xml:lang="ja">アイテム_予備1</display-name>
+        </colorGroup>
+        <colorGroup id="cgbce89973-679d-4fb8-8619-849889d2ffd1">
+            <display-name xml:lang="ja">アイテム_予備2</display-name>
+        </colorGroup>
+        <colorGroup id="cg13f56dd5-2aae-48a7-8a49-c01160116c3b">
+            <display-name xml:lang="ja">エフェクト前面</display-name>
+        </colorGroup>
+        <colorGroup id="cg845679a8-fc8e-486f-b42f-218dbfec65a6">
+            <display-name xml:lang="ja">エフェクト前面_予備1</display-name>
+        </colorGroup>
+        <colorGroup id="cge8014f14-c72b-40e1-b46a-5ef90a1af31b">
+            <display-name xml:lang="ja">エフェクト前面_予備2</display-name>
+        </colorGroup>
+        <colorGroup id="cg467ebd87-adb2-44a3-887b-796fb6e45b54">
+            <display-name xml:lang="ja">エフェクト背面</display-name>
+        </colorGroup>
+        <colorGroup id="cg9dc814f4-ec41-4915-9a0a-76ae2c656a8c">
+            <display-name xml:lang="ja">エフェクト背面_予備1</display-name>
+        </colorGroup>
+        <colorGroup id="cga4bf3bc1-052e-42c6-8de5-cdf91fd87f10">
+            <display-name xml:lang="ja">エフェクト背面_予備2</display-name>
+        </colorGroup>
+        <colorGroup id="cga117d12d-8327-4c4c-b12e-805e1cdac1ea">
+            <display-name xml:lang="ja">ひげ眉毛</display-name>
+        </colorGroup>
+        <colorGroup id="cgf2ef1e88-9735-44b5-bacd-50d7d3cf4390">
+            <display-name xml:lang="ja">ひげ眉毛_予備</display-name>
+        </colorGroup>
+        <colorGroup id="cgee0966ad-9bd2-47dd-b0c9-c3f1b7de008d">
+            <display-name xml:lang="ja">下半身</display-name>
+        </colorGroup>
+    </colorGroups>
+    <recommendations>
+        <recommendation>
+            <description xml:lang="ja">ぴぽや</description>
+            <URL xml:lang="ja">https://pipoya.net/</URL>
+        </recommendation>
+        <recommendation>
+            <description xml:lang="ja">(キャラクターなんとか機本家) K.Hmix 1st Edition</description>
+            <URL xml:lang="ja">http://khmix.sakura.ne.jp/</URL>
+        </recommendation>
+    </recommendations>
+    <presets default-preset="psf80e38f6-6549-4976-ab5c-7b163736a064">
+        <preset id="ps5675343e-8d8a-4deb-ae39-fe098479d04e">
+            <display-name xml:lang="ja">モンスター(アンデッド)|おばけ1</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="x目001">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="xおばけ01">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="pse6c3cbbf-d568-46e6-a525-ccd2bafba7ee">
+            <display-name xml:lang="ja">街の人|一般人老人</display-name>
+            <background-color color="#999999"/>
+            <category refid="catc9446004-0246-4d03-a4f9-2f9b98b144c7">
+                <parts name="m一般人老人01c1">
+                    <color>
+                        <layer refid="lay3869c601-9867-4a69-ba9d-04aec2bbbf57">
+                            <color-group group="cga117d12d-8327-4c4c-b12e-805e1cdac1ea" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layde663806-e05e-466a-a2cd-655b58a52bf2">
+                            <color-group group="cga117d12d-8327-4c4c-b12e-805e1cdac1ea" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay0882d234-d65b-422b-aff1-8ca58acd3943">
+                            <color-group group="cga117d12d-8327-4c4c-b12e-805e1cdac1ea" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="m目001">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat34a6ac6e-54e8-4969-9c43-51f3b36f30e3">
+                <parts name="x老人のシワ01">
+                    <color>
+                        <layer refid="layb09aae94-d3e2-4d04-b43a-e6eaf81b00b2">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat371d53bb-3040-40bb-80d0-e9fb26d7056a">
+                <parts name="m一般人老人01">
+                    <color>
+                        <layer refid="lay91abd7ed-02c7-4cd1-a037-d537a504a671">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layb1b93805-bd77-4e49-a11c-7a3156b47c16">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya9460c42-2c8c-417e-8d73-49f67254f764">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d52362f-917a-46a9-a38b-3ff77d167038">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6bf88aa9-d2ee-4dea-96e8-bcadb965ed4d">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya52c0153-37d1-4c7c-a2e3-efaeba085b6e">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay3bd0a7b8-e55d-41b1-8f6a-bebd181bb474">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layc5ce00bc-6e50-4bd3-b294-4798bf39a243">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay0dd5b916-f245-4e54-ae2b-4b1df1bdfcfc">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8e846d64-cd2a-4618-9d08-e9de8225d0c7">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layd352340a-56db-4c7f-9b26-3a7985a52eea">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layaca884aa-bd1c-4e5a-9e49-2959b6580b80">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="mスキン01">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="catb29355a9-beac-4723-a678-1ea71ab8b0bd">
+                <parts name="mおろしフード01">
+                    <color>
+                        <layer refid="lay00cacf0e-201f-425e-84b1-98aacfa09788">
+                            <color-group group="cg60fcd1ac-14c0-4efe-b16e-7d7fd71345ad" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layb0c41ec9-f92a-4423-ac9a-23a949c0b986">
+                            <color-group group="cg60fcd1ac-14c0-4efe-b16e-7d7fd71345ad" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6baba610-4df7-4e57-8a8c-4614109857ce">
+                            <color-group group="cg60fcd1ac-14c0-4efe-b16e-7d7fd71345ad" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat52a2ef1f-5eb3-45bb-a8b1-ca465f868848">
+                <parts name="m一般人老人01c1">
+                    <color>
+                        <layer refid="lay728e4896-f13c-418a-9012-3bc2a9530516">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d172cf9-dcb4-4951-a2ed-f7c555523065">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay88e9247f-01e8-4b73-ab3c-ee308b0ab0f9">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laybbd30e14-a844-40af-aba4-ed66dcb08c23">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay22a5f792-3699-467a-bbd0-525fc245fa9b">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layea796e93-c93a-4820-8aca-2443602f8ba4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay11d55ee5-e926-4ec9-b8fd-41595cd95d9a">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay9a7f3756-8400-43a2-bf23-fc9d0d1f7af4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="psf80e38f6-6549-4976-ab5c-7b163736a064">
+            <display-name xml:lang="ja">_素体</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="m目001">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="mスキン01">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+        </preset>
+        <preset id="psc6a27caf-9cf2-4faa-a7fe-8722776f7ac2">
+            <display-name xml:lang="ja">パーツサンプル用|マネキングレイ</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="_なし">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="mスキン08">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="-1.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="-1.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="-1.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat52a2ef1f-5eb3-45bb-a8b1-ca465f868848">
+                <parts name="_なし">
+                    <color>
+                        <layer refid="lay728e4896-f13c-418a-9012-3bc2a9530516">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d172cf9-dcb4-4951-a2ed-f7c555523065">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay88e9247f-01e8-4b73-ab3c-ee308b0ab0f9">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laybbd30e14-a844-40af-aba4-ed66dcb08c23">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay22a5f792-3699-467a-bbd0-525fc245fa9b">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layea796e93-c93a-4820-8aca-2443602f8ba4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay11d55ee5-e926-4ec9-b8fd-41595cd95d9a">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay9a7f3756-8400-43a2-bf23-fc9d0d1f7af4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="ps10282dec-01a9-41cf-9984-d2bee61f4228">
+            <display-name xml:lang="ja">パーツサンプル用|マネキン白</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="_なし">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="mスキン04">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="-1.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="-1.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="-1.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat52a2ef1f-5eb3-45bb-a8b1-ca465f868848">
+                <parts name="_なし">
+                    <color>
+                        <layer refid="lay728e4896-f13c-418a-9012-3bc2a9530516">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d172cf9-dcb4-4951-a2ed-f7c555523065">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay88e9247f-01e8-4b73-ab3c-ee308b0ab0f9">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laybbd30e14-a844-40af-aba4-ed66dcb08c23">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay22a5f792-3699-467a-bbd0-525fc245fa9b">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layea796e93-c93a-4820-8aca-2443602f8ba4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay11d55ee5-e926-4ec9-b8fd-41595cd95d9a">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay9a7f3756-8400-43a2-bf23-fc9d0d1f7af4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="ps2d0a2224-842b-460d-8e15-3eab63547365">
+            <display-name xml:lang="ja">モンスター(アンデッド)|おばけ2</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="x目007">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.53" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.09" hue="-0.17" saturation="0.12"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat3dcc558b-cc68-4e27-ac4f-6541b5116504">
+                <parts name="x悪魔の角01">
+                    <color>
+                        <layer refid="layf4205a22-a007-416f-b33b-65c00c924540">
+                            <color-group group="cg9650db00-77df-423c-a8b5-5aadc313cb2c" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="-0.17" saturation="-0.61"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laye6092c0a-897c-4d7c-9841-8d4f4e194674">
+                            <color-group group="cg9650db00-77df-423c-a8b5-5aadc313cb2c" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="-0.17" saturation="-0.61"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="xおばけ02">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="psfcaa74e0-8648-461e-8419-7d03159d3ad0">
+            <display-name xml:lang="ja">街の人|一般人中年</display-name>
+            <background-color color="#999999"/>
+            <category refid="catc9446004-0246-4d03-a4f9-2f9b98b144c7">
+                <parts name="m一般人中年01c1">
+                    <color>
+                        <layer refid="lay3869c601-9867-4a69-ba9d-04aec2bbbf57">
+                            <color-group group="cga117d12d-8327-4c4c-b12e-805e1cdac1ea" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layde663806-e05e-466a-a2cd-655b58a52bf2">
+                            <color-group group="cga117d12d-8327-4c4c-b12e-805e1cdac1ea" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay0882d234-d65b-422b-aff1-8ca58acd3943">
+                            <color-group group="cga117d12d-8327-4c4c-b12e-805e1cdac1ea" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="m目001">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat371d53bb-3040-40bb-80d0-e9fb26d7056a">
+                <parts name="m一般人中年01">
+                    <color>
+                        <layer refid="lay91abd7ed-02c7-4cd1-a037-d537a504a671">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layb1b93805-bd77-4e49-a11c-7a3156b47c16">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya9460c42-2c8c-417e-8d73-49f67254f764">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d52362f-917a-46a9-a38b-3ff77d167038">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6bf88aa9-d2ee-4dea-96e8-bcadb965ed4d">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya52c0153-37d1-4c7c-a2e3-efaeba085b6e">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay3bd0a7b8-e55d-41b1-8f6a-bebd181bb474">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layc5ce00bc-6e50-4bd3-b294-4798bf39a243">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay0dd5b916-f245-4e54-ae2b-4b1df1bdfcfc">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8e846d64-cd2a-4618-9d08-e9de8225d0c7">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layd352340a-56db-4c7f-9b26-3a7985a52eea">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layaca884aa-bd1c-4e5a-9e49-2959b6580b80">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="mスキン01">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat52a2ef1f-5eb3-45bb-a8b1-ca465f868848">
+                <parts name="m一般人中年01c1">
+                    <color>
+                        <layer refid="lay728e4896-f13c-418a-9012-3bc2a9530516">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d172cf9-dcb4-4951-a2ed-f7c555523065">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay88e9247f-01e8-4b73-ab3c-ee308b0ab0f9">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laybbd30e14-a844-40af-aba4-ed66dcb08c23">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay22a5f792-3699-467a-bbd0-525fc245fa9b">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layea796e93-c93a-4820-8aca-2443602f8ba4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay11d55ee5-e926-4ec9-b8fd-41595cd95d9a">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay9a7f3756-8400-43a2-bf23-fc9d0d1f7af4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="ps98c819d1-ffac-43b2-bf15-8fee0ae53943">
+            <display-name xml:lang="ja">モンスター(アンデッド)|スケルトン</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="x目003">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="m骨01">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="ps02326f55-2b08-4105-aa34-0634b1072fb5">
+            <display-name xml:lang="ja">パーツサンプル用|マネキン黒</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="_なし">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="mスキン07">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="-1.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="-1.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="-1.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat52a2ef1f-5eb3-45bb-a8b1-ca465f868848">
+                <parts name="_なし">
+                    <color>
+                        <layer refid="lay728e4896-f13c-418a-9012-3bc2a9530516">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d172cf9-dcb4-4951-a2ed-f7c555523065">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay88e9247f-01e8-4b73-ab3c-ee308b0ab0f9">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laybbd30e14-a844-40af-aba4-ed66dcb08c23">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay22a5f792-3699-467a-bbd0-525fc245fa9b">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layea796e93-c93a-4820-8aca-2443602f8ba4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay11d55ee5-e926-4ec9-b8fd-41595cd95d9a">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay9a7f3756-8400-43a2-bf23-fc9d0d1f7af4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="ps1555aff8-9213-45a2-b380-484aca4b3bc5">
+            <display-name xml:lang="ja">モンスター(アンデッド)|おばけ3</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="x目029">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="xおばけ03">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="-0.14" hue="0.14" saturation="0.4"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="-0.14" hue="0.14" saturation="0.4"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="-0.14" hue="0.14" saturation="0.4"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="pse52d7318-648c-4ef0-abc2-4344f0803c81">
+            <display-name xml:lang="ja">人魚</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="m目002">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="-0.75" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="mスキン足なし01">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat52a2ef1f-5eb3-45bb-a8b1-ca465f868848">
+                <parts name="m一般人若者01c2">
+                    <color>
+                        <layer refid="lay728e4896-f13c-418a-9012-3bc2a9530516">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d172cf9-dcb4-4951-a2ed-f7c555523065">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay88e9247f-01e8-4b73-ab3c-ee308b0ab0f9">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laybbd30e14-a844-40af-aba4-ed66dcb08c23">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay22a5f792-3699-467a-bbd0-525fc245fa9b">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layea796e93-c93a-4820-8aca-2443602f8ba4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay11d55ee5-e926-4ec9-b8fd-41595cd95d9a">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay9a7f3756-8400-43a2-bf23-fc9d0d1f7af4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat5663df12-c38f-441a-abe3-4136038ef7a0">
+                <parts name="x魚01">
+                    <color>
+                        <layer refid="lay75cfad80-7fc8-4f1c-9189-0b860e9f2606">
+                            <color-group group="cgee0966ad-9bd2-47dd-b0c9-c3f1b7de008d" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="catcd75a175-1304-4d7b-b4a5-e819a398934c">
+                <parts name="xロングソード01R">
+                    <color>
+                        <layer refid="lay758949dc-ff65-4f97-9475-ae53f086ef37">
+                            <color-group group="cge2038396-cd1a-4b37-85cb-b9b842bfc1fc" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d3d4a2c-f89c-429a-af2e-0096235a505f">
+                            <color-group group="cge2038396-cd1a-4b37-85cb-b9b842bfc1fc" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layf96e2960-74e8-4200-8f7d-4410c6cbe586">
+                            <color-group group="cge2038396-cd1a-4b37-85cb-b9b842bfc1fc" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay26785a0a-8263-44e5-ad9a-b7e541f3fe4a">
+                            <color-group group="cge2038396-cd1a-4b37-85cb-b9b842bfc1fc" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+        <preset id="ps251b9c15-566b-49bd-8905-c5e0bc6116b6">
+            <display-name xml:lang="ja">街の人|一般人若者</display-name>
+            <background-color color="#999999"/>
+            <category refid="cat1b8bb225-9cd5-4404-8241-66b753baf01b">
+                <parts name="m目001">
+                    <color>
+                        <layer refid="lay6cde7e36-7464-4dbd-aa16-6a4da195390c">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay485698fc-ca4a-4b64-bde5-31db5e3ba3e5">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8b45eed7-5bc0-41e1-8bda-75b6bd7b7e9a">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya30ed8f8-7c83-4e36-be84-59c683212162">
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat371d53bb-3040-40bb-80d0-e9fb26d7056a">
+                <parts name="m一般人若者01">
+                    <color>
+                        <layer refid="lay91abd7ed-02c7-4cd1-a037-d537a504a671">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layb1b93805-bd77-4e49-a11c-7a3156b47c16">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya9460c42-2c8c-417e-8d73-49f67254f764">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d52362f-917a-46a9-a38b-3ff77d167038">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6bf88aa9-d2ee-4dea-96e8-bcadb965ed4d">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laya52c0153-37d1-4c7c-a2e3-efaeba085b6e">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay3bd0a7b8-e55d-41b1-8f6a-bebd181bb474">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layc5ce00bc-6e50-4bd3-b294-4798bf39a243">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay0dd5b916-f245-4e54-ae2b-4b1df1bdfcfc">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay8e846d64-cd2a-4618-9d08-e9de8225d0c7">
+                            <color-group group="cgfb62f46c-b546-4d0c-b2b6-1821cca2f53b" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layd352340a-56db-4c7f-9b26-3a7985a52eea">
+                            <color-group group="cg84f2fde4-ed09-4f12-8c29-a122a598bb01" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layaca884aa-bd1c-4e5a-9e49-2959b6580b80">
+                            <color-group group="cg2f4ed5bc-9dd0-4774-9411-d39fde3ab7bb" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat64903a9f-bb8e-4ec9-a6e7-bca2b640500c">
+                <parts name="mスキン01">
+                    <color>
+                        <layer refid="layfe44d81d-85df-4ff0-ab91-270a1dcbd299">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay2d2521f7-bc9a-47d1-876c-46aaac53df86">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay25c87acd-440c-45e0-8657-b5372d558ff8">
+                            <color-group group="color-skin" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <category refid="cat52a2ef1f-5eb3-45bb-a8b1-ca465f868848">
+                <parts name="m一般人若者01c1">
+                    <color>
+                        <layer refid="lay728e4896-f13c-418a-9012-3bc2a9530516">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay6d172cf9-dcb4-4951-a2ed-f7c555523065">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay88e9247f-01e8-4b73-ab3c-ee308b0ab0f9">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="laybbd30e14-a844-40af-aba4-ed66dcb08c23">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay22a5f792-3699-467a-bbd0-525fc245fa9b">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="layea796e93-c93a-4820-8aca-2443602f8ba4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay11d55ee5-e926-4ec9-b8fd-41595cd95d9a">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                        <layer refid="lay9a7f3756-8400-43a2-bf23-fc9d0d1f7af4">
+                            <color-group group="color-hair" synchronized="true"/>
+                            <rgb>
+                                <red factor="1.0" gamma="1.0" offset="0"/>
+                                <green factor="1.0" gamma="1.0" offset="0"/>
+                                <blue factor="1.0" gamma="1.0" offset="0"/>
+                                <alpha factor="1.0" gamma="1.0" offset="0"/>
+                            </rgb>
+                            <hsb brightness="0.0" hue="0.0" saturation="0.0"/>
+                            <rgb-replace gray="1.0" replace-type="NONE"/>
+                        </layer>
+                    </color>
+                </parts>
+            </category>
+            <active-custom-layer-patterns/>
+        </preset>
+    </presets>
+</character>

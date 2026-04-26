@@ -1,0 +1,11 @@
+{
+  "name": "hack-u-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix hack-u",
+    "dev:lan": "npm run dev:lan --prefix hack-u",
+    "build": "npm run build --prefix hack-u",
+    "start": "npm run start --prefix hack-u",
+    "lint": "npm run lint --prefix hack-u"
+  }
+}

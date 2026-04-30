@@ -7,12 +7,27 @@ require('dotenv').config();
 
 const app = express();
 const ALLOWED_TAGS = ['ゲーム', '音楽', '映画', 'アニメ', 'スポーツ', '旅行'];
-const ALLOWED_MODES = ['chat', 'call', 'meet'];
-const ALLOWED_AVATARS = ['avatar-01', 'avatar-02', 'avatar-03', 'avatar-04', 'avatar-05'];
+const ALLOWED_MODES = ['chat', 'talk', 'call', 'meet'];
+const ALLOWED_AVATARS = [
+    'avatar-01',
+    'avatar-02',
+    'avatar-03',
+    'avatar-04',
+    'avatar-05',
+    'avatar-06',
+    'avatar-07',
+    'avatar-08',
+    'avatar-09',
+    'avatar-10'
+];
 const ONLINE_WINDOW_SECONDS = 300;
 
 function normalizeKeyword(keyword) {
     return keyword.trim().replace(/\s+/g, ' ').toLowerCase();
+}
+
+function normalizeMode(mode) {
+    return mode === 'talk' ? 'chat' : mode;
 }
 
 async function touchUserPresence(userId) {
@@ -358,6 +373,7 @@ app.post('/rooms/join', async (req, res) => {
     if (!mode || !keyword || !ALLOWED_MODES.includes(mode)) {
         return res.status(400).json({ error: 'mode または keyword が不正です。' });
     }
+    const normalizedMode = normalizeMode(mode);
 
     const trimmedKeyword = keyword.trim();
     if (!trimmedKeyword) {
@@ -375,7 +391,7 @@ app.post('/rooms/join', async (req, res) => {
              ON CONFLICT (mode, keyword_normalized)
              DO UPDATE SET keyword_raw = EXCLUDED.keyword_raw
              RETURNING id, mode, keyword_raw, keyword_normalized`,
-            [mode, trimmedKeyword, normalizedKeyword]
+            [normalizedMode, trimmedKeyword, normalizedKeyword]
         );
         const room = roomResult.rows[0];
 
@@ -436,6 +452,7 @@ app.get('/rooms', async (req, res) => {
     if (!mode || !ALLOWED_MODES.includes(mode)) {
         return res.status(400).json({ error: 'mode が不正です。' });
     }
+    const normalizedMode = normalizeMode(mode);
 
     try {
         await touchUserPresence(req.session.userId);
@@ -462,7 +479,7 @@ app.get('/rooms', async (req, res) => {
                 : 'r.created_at DESC'}
             LIMIT 100
         `;
-        const roomsResult = await db.query(query, [mode]);
+        const roomsResult = await db.query(query, [normalizedMode]);
         return res.json({ rooms: roomsResult.rows });
     } catch (err) {
         console.error(err);

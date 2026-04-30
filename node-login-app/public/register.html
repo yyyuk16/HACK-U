@@ -2,108 +2,223 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新規登録</title>
+    <style>
+        :root {
+            --bg: #f3e9dc;
+            --surface: #ffffff;
+            --line: #2f3a4a;
+            --blue: #8ecdf0;
+            --pink: #f4a6a6;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: var(--bg);
+            font-family: "Zen Maru Gothic", Arial, sans-serif;
+            color: #1f2937;
+            padding: 24px;
+        }
+        .container {
+            width: min(860px, 96vw);
+            background: var(--surface);
+            border: 4px solid var(--line);
+            border-radius: 16px;
+            box-shadow: 6px 6px 0 0 var(--line);
+            padding: 20px;
+        }
+        .logo {
+            display: block;
+            width: min(360px, 92%);
+            margin: 0 auto 10px;
+            image-rendering: pixelated;
+        }
+        h2 {
+            margin: 0 0 12px;
+            font-size: 32px;
+            color: var(--line);
+            text-align: center;
+            font-family: "DotGothic16", monospace;
+            border-bottom: 4px solid var(--line);
+            padding-bottom: 8px;
+        }
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        label, legend {
+            font-weight: 700;
+            color: var(--line);
+            font-family: "DotGothic16", monospace;
+        }
+        .row {
+            display: grid;
+            gap: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            border: 3px solid var(--line);
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 14px;
+            box-shadow: inset 3px 3px 0 0 rgba(47, 58, 74, 0.12);
+            background: #fff;
+        }
+        textarea { resize: vertical; min-height: 92px; }
+        fieldset {
+            margin: 4px 0;
+            border: 3px solid var(--line);
+            border-radius: 10px;
+            padding: 10px;
+            background: #fffcf7;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .tags label {
+            font-family: "Zen Maru Gothic", Arial, sans-serif;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        button {
+            border: 3px solid var(--line);
+            border-radius: 10px;
+            background: var(--blue);
+            color: var(--line);
+            font-weight: 700;
+            padding: 11px 14px;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 0 var(--line);
+        }
+        button:active {
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0 0 var(--line);
+        }
+        .login-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--line);
+            text-decoration: none;
+            border-bottom: 2px solid var(--line);
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
-    <h2>新規ユーザー登録</h2>
-    <form action="/register" method="POST">
-        <div>
-            <label>名前:</label>
-            <input type="text" name="fullName" required>
-        </div>
-        <div>
-            <label>ニックネーム:</label>
-            <input type="text" name="nickname" required>
-        </div>
-        <div>
-            <label>生年月日:</label>
-            <input type="date" name="birthDate" id="birthDate" required>
-        </div>
-        <div>
-            <label>年齢:</label>
-            <input type="number" name="age" id="age" min="0" readonly required>
-        </div>
-        <div>
-            <label>職業:</label>
-            <input type="text" name="occupation" required>
-        </div>
-        <div>
-            <label>住んでいる都道府県:</label>
-            <select name="prefecture" required>
-                <option value="">選択してください</option>
-                <option value="北海道">北海道</option>
-                <option value="青森県">青森県</option>
-                <option value="岩手県">岩手県</option>
-                <option value="宮城県">宮城県</option>
-                <option value="秋田県">秋田県</option>
-                <option value="山形県">山形県</option>
-                <option value="福島県">福島県</option>
-                <option value="茨城県">茨城県</option>
-                <option value="栃木県">栃木県</option>
-                <option value="群馬県">群馬県</option>
-                <option value="埼玉県">埼玉県</option>
-                <option value="千葉県">千葉県</option>
-                <option value="東京都">東京都</option>
-                <option value="神奈川県">神奈川県</option>
-                <option value="新潟県">新潟県</option>
-                <option value="富山県">富山県</option>
-                <option value="石川県">石川県</option>
-                <option value="福井県">福井県</option>
-                <option value="山梨県">山梨県</option>
-                <option value="長野県">長野県</option>
-                <option value="岐阜県">岐阜県</option>
-                <option value="静岡県">静岡県</option>
-                <option value="愛知県">愛知県</option>
-                <option value="三重県">三重県</option>
-                <option value="滋賀県">滋賀県</option>
-                <option value="京都府">京都府</option>
-                <option value="大阪府">大阪府</option>
-                <option value="兵庫県">兵庫県</option>
-                <option value="奈良県">奈良県</option>
-                <option value="和歌山県">和歌山県</option>
-                <option value="鳥取県">鳥取県</option>
-                <option value="島根県">島根県</option>
-                <option value="岡山県">岡山県</option>
-                <option value="広島県">広島県</option>
-                <option value="山口県">山口県</option>
-                <option value="徳島県">徳島県</option>
-                <option value="香川県">香川県</option>
-                <option value="愛媛県">愛媛県</option>
-                <option value="高知県">高知県</option>
-                <option value="福岡県">福岡県</option>
-                <option value="佐賀県">佐賀県</option>
-                <option value="長崎県">長崎県</option>
-                <option value="熊本県">熊本県</option>
-                <option value="大分県">大分県</option>
-                <option value="宮崎県">宮崎県</option>
-                <option value="鹿児島県">鹿児島県</option>
-                <option value="沖縄県">沖縄県</option>
-            </select>
-        </div>
-        <div>
-            <label>自己紹介文:</label>
-            <textarea name="bio" rows="4" required></textarea>
-        </div>
-        <fieldset>
-            <legend>好きなモノタグ（複数選択可）</legend>
-            <label><input type="checkbox" name="favoriteTags" value="ゲーム">ゲーム</label>
-            <label><input type="checkbox" name="favoriteTags" value="音楽">音楽</label>
-            <label><input type="checkbox" name="favoriteTags" value="映画">映画</label>
-            <label><input type="checkbox" name="favoriteTags" value="アニメ">アニメ</label>
-            <label><input type="checkbox" name="favoriteTags" value="スポーツ">スポーツ</label>
-            <label><input type="checkbox" name="favoriteTags" value="旅行">旅行</label>
-        </fieldset>
-        <div>
-            <label>パスワード:</label>
-            <input type="password" name="password" required>
-        </div>
-        <div>
-            <label>確認用のパスワード:</label>
-            <input type="password" name="confirmPassword" required>
-        </div>
-        <button type="submit">登録</button>
-    </form>
-    <a href="/login.html">ログインはこちら</a>
+    <main class="container">
+        <img class="logo" src="/logo.png" alt="あつまち ロゴ">
+        <h2>新規ユーザー登録</h2>
+        <form action="/register" method="POST">
+            <div class="row">
+                <label>名前</label>
+                <input type="text" name="fullName" required>
+            </div>
+            <div class="row">
+                <label>ニックネーム</label>
+                <input type="text" name="nickname" required>
+            </div>
+            <div class="row">
+                <label>生年月日</label>
+                <input type="date" name="birthDate" id="birthDate" required>
+            </div>
+            <div class="row">
+                <label>年齢</label>
+                <input type="number" name="age" id="age" min="0" readonly required>
+            </div>
+            <div class="row">
+                <label>職業</label>
+                <input type="text" name="occupation" required>
+            </div>
+            <div class="row">
+                <label>住んでいる都道府県</label>
+                <select name="prefecture" required>
+                    <option value="">選択してください</option>
+                    <option value="北海道">北海道</option>
+                    <option value="青森県">青森県</option>
+                    <option value="岩手県">岩手県</option>
+                    <option value="宮城県">宮城県</option>
+                    <option value="秋田県">秋田県</option>
+                    <option value="山形県">山形県</option>
+                    <option value="福島県">福島県</option>
+                    <option value="茨城県">茨城県</option>
+                    <option value="栃木県">栃木県</option>
+                    <option value="群馬県">群馬県</option>
+                    <option value="埼玉県">埼玉県</option>
+                    <option value="千葉県">千葉県</option>
+                    <option value="東京都">東京都</option>
+                    <option value="神奈川県">神奈川県</option>
+                    <option value="新潟県">新潟県</option>
+                    <option value="富山県">富山県</option>
+                    <option value="石川県">石川県</option>
+                    <option value="福井県">福井県</option>
+                    <option value="山梨県">山梨県</option>
+                    <option value="長野県">長野県</option>
+                    <option value="岐阜県">岐阜県</option>
+                    <option value="静岡県">静岡県</option>
+                    <option value="愛知県">愛知県</option>
+                    <option value="三重県">三重県</option>
+                    <option value="滋賀県">滋賀県</option>
+                    <option value="京都府">京都府</option>
+                    <option value="大阪府">大阪府</option>
+                    <option value="兵庫県">兵庫県</option>
+                    <option value="奈良県">奈良県</option>
+                    <option value="和歌山県">和歌山県</option>
+                    <option value="鳥取県">鳥取県</option>
+                    <option value="島根県">島根県</option>
+                    <option value="岡山県">岡山県</option>
+                    <option value="広島県">広島県</option>
+                    <option value="山口県">山口県</option>
+                    <option value="徳島県">徳島県</option>
+                    <option value="香川県">香川県</option>
+                    <option value="愛媛県">愛媛県</option>
+                    <option value="高知県">高知県</option>
+                    <option value="福岡県">福岡県</option>
+                    <option value="佐賀県">佐賀県</option>
+                    <option value="長崎県">長崎県</option>
+                    <option value="熊本県">熊本県</option>
+                    <option value="大分県">大分県</option>
+                    <option value="宮崎県">宮崎県</option>
+                    <option value="鹿児島県">鹿児島県</option>
+                    <option value="沖縄県">沖縄県</option>
+                </select>
+            </div>
+            <div class="row">
+                <label>自己紹介文</label>
+                <textarea name="bio" rows="4" required></textarea>
+            </div>
+            <fieldset>
+                <legend>好きなモノタグ（複数選択可）</legend>
+                <div class="tags">
+                    <label><input type="checkbox" name="favoriteTags" value="ゲーム">ゲーム</label>
+                    <label><input type="checkbox" name="favoriteTags" value="音楽">音楽</label>
+                    <label><input type="checkbox" name="favoriteTags" value="映画">映画</label>
+                    <label><input type="checkbox" name="favoriteTags" value="アニメ">アニメ</label>
+                    <label><input type="checkbox" name="favoriteTags" value="スポーツ">スポーツ</label>
+                    <label><input type="checkbox" name="favoriteTags" value="旅行">旅行</label>
+                </div>
+            </fieldset>
+            <div class="row">
+                <label>パスワード</label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="row">
+                <label>確認用のパスワード</label>
+                <input type="password" name="confirmPassword" required>
+            </div>
+            <button type="submit">登録</button>
+        </form>
+        <div style="text-align: center;">
+        <a class="login-link" href="/login.html">ログインはこちら</a>
+    </main>
     <script>
         const birthDateInput = document.getElementById('birthDate');
         const ageInput = document.getElementById('age');

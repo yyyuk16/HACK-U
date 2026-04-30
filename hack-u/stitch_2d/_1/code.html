@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atsumachi - Meet Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed": "#1f1b13",
+                "on-surface-variant": "#40484d",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "surface-variant": "#d8e3f8",
+                "on-tertiary-container": "#575147",
+                "outline-variant": "#c0c7ce",
+                "primary-container": "#8ecdf0",
+                "surface-container-low": "#eff4ff",
+                "surface-container-highest": "#d8e3f8",
+                "secondary-fixed-dim": "#ffb3b3",
+                "on-tertiary-fixed-variant": "#4c463d",
+                "error": "#ba1a1a",
+                "background": "#F3E9DC",
+                "primary-fixed-dim": "#90cff2",
+                "on-primary-container": "#015876",
+                "secondary-container": "#feafaf",
+                "on-tertiary": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-secondary-container": "#7a3f41",
+                "on-error": "#ffffff",
+                "surface-container": "#E5D9C9",
+                "surface": "#F3E9DC",
+                "surface-container-high": "#dde9fe",
+                "on-secondary-fixed": "#380b0f",
+                "surface-dim": "#cfdbef",
+                "tertiary-fixed-dim": "#cec5b9",
+                "surface-tint": "#1d6584",
+                "inverse-on-surface": "#ebf1ff",
+                "on-primary-fixed-variant": "#004d68",
+                "on-primary-fixed": "#001e2c",
+                "secondary-fixed": "#ffdad9",
+                "outline": "#2F3A4A",
+                "on-primary": "#ffffff",
+                "on-error-container": "#93000a",
+                "tertiary-fixed": "#ebe1d4",
+                "on-surface": "#2F3A4A",
+                "inverse-primary": "#90cff2",
+                "primary-fixed": "#c2e8ff",
+                "secondary": "#8ECDF0",
+                "surface-bright": "#F3E9DC",
+                "on-background": "#2F3A4A",
+                "primary": "#2F3A4A",
+                "on-secondary-fixed-variant": "#6e3637",
+                "tertiary": "#F4A6A6",
+                "inverse-surface": "#263141",
+                "tertiary-container": "#cdc4b8"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "xs": "4px",
+                "unit": "4px",
+                "md": "16px",
+                "gutter": "16px",
+                "margin": "24px",
+                "lg": "24px",
+                "xl": "32px",
+                "sm": "8px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "DotGothic16"
+                ],
+                "label-sm": [
+                        "DotGothic16"
+                ],
+                "body-lg": [
+                        "Zen Maru Gothic"
+                ],
+                "display-lg": [
+                        "DotGothic16"
+                ],
+                "body-md": [
+                        "Zen Maru Gothic"
+                ],
+                "h2": ["DotGothic16"],
+                "label-pixel": ["DotGothic16"],
+                "h1": ["DotGothic16"]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "500"
+                        }
+                ],
+                "display-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "h2": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                "label-pixel": ["14px", { "lineHeight": "1.0", "fontWeight": "400" }],
+                "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            background-color: #F3E9DC;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#F3E9DC] border-b-4 border-[#2F3A4A] shadow-[0_4px_0_0_rgba(47,58,74,0.2)]">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<div class="text-2xl font-black italic tracking-tighter text-[#2F3A4A] drop-shadow-[2px_2px_0_rgba(142,205,240,1)]">Atsumachi</div>
+<div class="flex items-center space-x-md">
+<span class="material-symbols-outlined text-[#2F3A4A] hover:bg-[#8ECDF0] transition-colors p-sm rounded active:translate-y-1 cursor-pointer select-none" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-[#2F3A4A] hover:bg-[#8ECDF0] transition-colors p-sm rounded active:translate-y-1 cursor-pointer select-none" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<div class="flex flex-1 pt-16 h-screen">
+<!-- SideNavBar (Desktop Only) -->
+<nav class="hidden md:flex flex-col py-4 h-screen border-r-4 border-[#2F3A4A] w-64 bg-[#F3E9DC] shadow-[4px_0_0_0_rgba(47,58,74,1)] flex-shrink-0 z-40 fixed top-16 left-0">
+<div class="px-md pb-lg mb-md border-b-4 border-[#2F3A4A] border-opacity-10">
+<div class="font-h2 text-h2 text-on-surface">Traveler</div>
+<div class="font-label-pixel text-label-pixel text-on-surface-variant mt-sm">Lvl 15</div>
+</div>
+<a class="bg-[#8ECDF0] text-[#2F3A4A] border-2 border-[#2F3A4A] shadow-[4px_4px_0_0_rgba(47,58,74,1)] m-2 font-mono font-bold text-xs flex items-center p-sm active:translate-y-1 active:shadow-none transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-sm" data-icon="public">public</span> World
+            </a>
+<a class="text-[#2F3A4A] hover:bg-[#F4A6A6] m-2 font-mono font-bold text-xs flex items-center p-sm active:translate-y-1 active:shadow-none transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-sm" data-icon="forum">forum</span> Chat
+            </a>
+<a class="text-[#2F3A4A] hover:bg-[#F4A6A6] m-2 font-mono font-bold text-xs flex items-center p-sm active:translate-y-1 active:shadow-none transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-sm" data-icon="group">group</span> Friends
+            </a>
+<a class="text-[#2F3A4A] hover:bg-[#F4A6A6] m-2 font-mono font-bold text-xs flex items-center p-sm active:translate-y-1 active:shadow-none transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined mr-sm" data-icon="settings">settings</span> Settings
+            </a>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 w-full md:ml-64 p-lg flex flex-col lg:flex-row gap-xl items-start justify-center pb-32 relative z-10">
+<!-- Background Decorative Elements -->
+<div class="absolute top-10 right-20 w-32 h-16 bg-white/50 border-4 border-white border-dashed opacity-50 z-0 pointer-events-none" style="border-radius: 20px 20px 0 0;"></div>
+<div class="absolute top-40 left-10 w-24 h-12 bg-white/40 border-4 border-white border-dashed opacity-50 z-0 pointer-events-none" style="border-radius: 20px 20px 0 0;"></div>
+<!-- Left: Map Area -->
+<section class="w-full lg:w-1/2 flex justify-center items-center relative z-10">
+<div class="bg-[#E5D9C9] border-4 border-[#2F3A4A] shadow-[8px_8px_0_0_rgba(47,58,74,1)] p-sm max-w-lg w-full relative">
+<!-- Retro Window Header -->
+<div class="bg-[#8ECDF0] text-[#2F3A4A] p-sm border-b-4 border-[#2F3A4A] mb-md flex justify-between items-center">
+<span class="font-label-pixel text-label-pixel">Map_Viewer.exe</span>
+<div class="flex gap-xs">
+<div class="w-4 h-4 border-2 border-[#2F3A4A] bg-[#F3E9DC]"></div>
+<div class="w-4 h-4 border-2 border-[#2F3A4A] bg-[#2F3A4A]"></div>
+</div>
+</div>
+<div class="relative w-full aspect-square border-4 border-[#2F3A4A] shadow-[inset_4px_4px_0_0_rgba(47,58,74,0.2)] bg-[#DCE7F3] overflow-hidden group">
+<img alt="Map of Japan" class="object-cover w-full h-full opacity-80 mix-blend-multiply filter contrast-125" data-alt="A stylized, simplified 16-bit pixel art map of Japan, designed with bright, cheerful colors reminiscent of classic role-playing games. The map features distinct regions colored in vibrant greens and earthy browns, surrounded by a light blue pixelated ocean. Tiny iconographic pixel houses, mountains, and forests dot the landscape. The aesthetic perfectly matches a cozy-web, modern-retro UI style, looking like an overworld map screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiWboRLAZhmgUhBgh4pBblvBJEWHo_xFMiu4KdtIMUWdfnFNocA-0sJIaaOkYqYOjxs5DLbnkpbXusQJRAMnf3E_Yo5HeCQGyVgQe63FPz_PJRxvs-JSHwlrfZJIMhGqRYwc-n45XW82nvEVXdaOeNMMzvWzW8t8oQEEMbarsG-My8OxBuU8abqRFkOPbYIgCIQ_rTt9mEgyCgUcy3cAKaJhIjQSrbU0F-gFm4kvoANFy7zdNKfNsdTR0pQAM2m9qx9GSv281QqKbM"/>
+<!-- Map Pins -->
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center animate-bounce">
+<div class="bg-[#2F3A4A] text-[#F3E9DC] border-2 border-[#2F3A4A] p-xs font-label-pixel text-xs shadow-[2px_2px_0_0_rgba(29,27,32,1)] z-10">Tokyo</div>
+<div class="w-2 h-2 bg-[#2F3A4A] mt-xs shadow-[1px_1px_0_0_rgba(29,27,32,1)]"></div>
+</div>
+<div class="absolute top-2/3 left-1/4 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center opacity-70 hover:opacity-100 cursor-pointer">
+<div class="bg-[#F3E9DC] text-[#2F3A4A] border-2 border-[#2F3A4A] p-xs font-label-pixel text-[10px] shadow-[2px_2px_0_0_rgba(29,27,32,1)] z-10">Kyoto</div>
+<div class="w-2 h-2 bg-[#2F3A4A] mt-xs shadow-[1px_1px_0_0_rgba(29,27,32,1)]"></div>
+</div>
+<div class="absolute top-1/4 right-1/4 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center opacity-70 hover:opacity-100 cursor-pointer">
+<div class="bg-[#F3E9DC] text-[#2F3A4A] border-2 border-[#2F3A4A] p-xs font-label-pixel text-[10px] shadow-[2px_2px_0_0_rgba(29,27,32,1)] z-10">Hokkaido</div>
+<div class="w-2 h-2 bg-[#2F3A4A] mt-xs shadow-[1px_1px_0_0_rgba(29,27,32,1)]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right: Selection Forms -->
+<section class="w-full lg:w-1/2 flex flex-col gap-lg z-10 max-w-md">
+<div class="bg-[#F3E9DC] border-4 border-[#2F3A4A] shadow-[8px_8px_0_0_rgba(47,58,74,1)] p-lg">
+<h1 class="font-h1 text-h1 text-[#2F3A4A] mb-lg border-b-4 border-[#2F3A4A] pb-sm flex items-center">
+<span class="material-symbols-outlined mr-sm text-[#F4A6A6]" data-icon="explore" style="font-size: 32px;">explore</span>
+                        Destination
+                    </h1>
+<form class="flex flex-col gap-md">
+<!-- Region Select -->
+<div class="flex flex-col gap-sm">
+<label class="font-label-pixel text-label-pixel text-on-surface-variant flex items-center gap-xs">
+<span class="w-2 h-2 bg-[#2F3A4A] border border-[#2F3A4A] inline-block"></span>
+                                Select Region
+                            </label>
+<div class="relative">
+<select class="w-full appearance-none bg-[#F3E9DC] border-4 border-[#2F3A4A] shadow-[inset_4px_4px_0_0_rgba(47,58,74,0.1)] p-md font-body-lg text-body-lg text-[#2F3A4A] focus:outline-none focus:border-[#8ECDF0] focus:ring-0 cursor-pointer rounded-none">
+<option disabled="" selected="" value="">Choose an area...</option>
+<option value="kanto">Kanto (Tokyo, Yokohama)</option>
+<option value="kansai">Kansai (Kyoto, Osaka)</option>
+<option value="hokkaido">Hokkaido</option>
+<option value="kyushu">Kyushu</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-md text-[#2F3A4A]">
+<span class="material-symbols-outlined" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<!-- Keyword Input -->
+<div class="flex flex-col gap-sm mt-sm">
+<label class="font-label-pixel text-label-pixel text-on-surface-variant flex items-center gap-xs">
+<span class="w-2 h-2 bg-[#F4A6A6] border border-[#2F3A4A] inline-block"></span>
+                                Looking For (Keywords)
+                            </label>
+<div class="relative">
+<span class="material-symbols-outlined absolute inset-y-0 left-0 flex items-center pl-md text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-[#FFFFFF] border-4 border-[#2F3A4A] shadow-[inset_4px_4px_0_0_rgba(47,58,74,0.15)] p-md pl-12 font-body-lg text-body-lg text-[#2F3A4A] focus:outline-none focus:border-[#F4A6A6] placeholder:text-[#2F3A4A]/50 rounded-none" placeholder="e.g., Cafe, Arcade, Park" type="text"/>
+<!-- Blinking cursor simulation via border -->
+</div>
+</div>
+<!-- Activity Type Radios -->
+<div class="flex flex-col gap-sm mt-sm">
+<label class="font-label-pixel text-label-pixel text-on-surface-variant mb-xs">Vibe</label>
+<div class="flex flex-wrap gap-md">
+<label class="flex items-center gap-sm cursor-pointer group">
+<div class="relative w-6 h-6 border-4 border-[#2F3A4A] bg-[#E5D9C9] flex items-center justify-center group-hover:border-[#2F3A4A]">
+<input checked="" class="peer sr-only" name="vibe" type="radio"/>
+<div class="hidden peer-checked:block w-3 h-3 bg-[#F4A6A6]"></div>
+</div>
+<span class="font-body-md text-body-md text-[#2F3A4A]">Chill</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<div class="relative w-6 h-6 border-4 border-[#2F3A4A] bg-[#E5D9C9] flex items-center justify-center group-hover:border-[#2F3A4A]">
+<input class="peer sr-only" name="vibe" type="radio"/>
+<div class="hidden peer-checked:block w-3 h-3 bg-[#2F3A4A]"></div>
+</div>
+<span class="font-body-md text-body-md text-[#2F3A4A]">Active</span>
+</label>
+</div>
+</div>
+</form>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-[#2F3A4A] text-[#F3E9DC] border-4 border-[#2F3A4A] shadow-[8px_8px_0_0_rgba(142,205,240,1)] p-lg font-h2 text-h2 uppercase flex items-center justify-center gap-md hover:bg-[#3d4b5e] active:translate-y-2 active:translate-x-2 active:shadow-none transition-all mt-md group" type="button">
+<span class="material-symbols-outlined text-3xl group-hover:animate-spin" data-icon="flight_takeoff" data-weight="fill">flight_takeoff</span>
+                    Start Adventure
+                </button>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 bg-[#F3E9DC] border-t-4 border-[#2F3A4A] z-50 shadow-[0_-4px_0_0_rgba(47,58,74,0.1)]">
+<a class="flex flex-col items-center justify-center bg-[#8ECDF0] text-[#2F3A4A] border-2 border-[#2F3A4A] rounded-none p-2 shadow-[2px_2px_0_0_rgba(47,58,74,1)] active:scale-95 transition-transform w-24" href="#">
+<span class="material-symbols-outlined" data-icon="near_me">near_me</span>
+<span class="font-mono font-bold text-[10px] uppercase mt-1">Nearby</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2F3A4A] opacity-70 p-2 hover:bg-stone-200 active:scale-95 transition-transform w-24" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-mono font-bold text-[10px] uppercase mt-1">Talk</span>
+</a>
+</nav>
+</body></html>

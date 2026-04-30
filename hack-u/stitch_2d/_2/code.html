@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atsumachi 集町 - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-primary-fixed-variant": "#004d68",
+                "on-primary-container": "#015876",
+                "inverse-primary": "#90cff2",
+                "on-error": "#ffffff",
+                "tertiary-fixed-dim": "#cec5b9",
+                "on-secondary-fixed": "#380b0f",
+                "on-primary": "#ffffff",
+                "surface-container": "#e6eeff",
+                "on-secondary-fixed-variant": "#6e3637",
+                "primary-fixed": "#c2e8ff",
+                "tertiary-container": "#cdc4b8",
+                "error-container": "#ffdad6",
+                "on-tertiary-fixed-variant": "#4c463d",
+                "on-surface": "#111c2b",
+                "primary-container": "#8ecdf0",
+                "inverse-surface": "#263141",
+                "on-error-container": "#93000a",
+                "background": "#f8f9ff",
+                "on-secondary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-background": "#111c2b",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#ffb3b3",
+                "surface-tint": "#1d6584",
+                "on-primary-fixed": "#001e2c",
+                "on-tertiary-container": "#575147",
+                "tertiary": "#645d53",
+                "outline": "#70787e",
+                "inverse-on-surface": "#ebf1ff",
+                "outline-variant": "#c0c7ce",
+                "surface-container-highest": "#d8e3f8",
+                "secondary-container": "#feafaf",
+                "surface-bright": "#f8f9ff",
+                "surface-container-high": "#dde9fe",
+                "secondary-fixed": "#ffdad9",
+                "on-secondary-container": "#7a3f41",
+                "on-tertiary": "#ffffff",
+                "primary": "#1d6584",
+                "surface-container-low": "#eff4ff",
+                "surface-variant": "#d8e3f8",
+                "primary-fixed-dim": "#90cff2",
+                "surface": "#f8f9ff",
+                "surface-dim": "#cfdbef",
+                "on-surface-variant": "#40484d",
+                "on-tertiary-fixed": "#1f1b13",
+                "tertiary-fixed": "#ebe1d4",
+                "secondary": "#8a4d4e",
+                "brand-beige": "#F3E9DC",
+                "brand-navy": "#2F3A4A",
+                "brand-blue": "#8ECDF0",
+                "brand-pink": "#F4A6A6"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "xl": "32px",
+                "md": "16px",
+                "unit": "4px",
+                "sm": "8px",
+                "xs": "4px",
+                "margin": "24px",
+                "lg": "24px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Zen Maru Gothic"
+                ],
+                "headline-md": [
+                        "DotGothic16"
+                ],
+                "body-lg": [
+                        "Zen Maru Gothic"
+                ],
+                "label-sm": [
+                        "DotGothic16"
+                ],
+                "display-lg": [
+                        "DotGothic16"
+                ],
+                "label-pixel": [
+                        "DotGothic16"
+                ],
+                "h2": [
+                        "DotGothic16"
+                ],
+                "h1": [
+                        "DotGothic16"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-pixel": [
+                        "14px",
+                        {
+                                "lineHeight": "1.0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "h2": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "400"
+                        }
+                ],
+                "h1": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .pixel-shadow { box-shadow: 4px 4px 0 0 #2F3A4A; }
+        .pixel-shadow-sm { box-shadow: 2px 2px 0 0 #2F3A4A; }
+        .pixel-inset { box-shadow: inset 4px 4px 0 0 rgba(47,58,74,0.1); }
+        .bg-pattern { background-image: radial-gradient(circle at 2px 2px, rgba(47,58,74,0.1) 1px, transparent 0); background-size: 8px 8px; }
+        .japanese-vertical { writing-mode: vertical-rl; text-orientation: upright; }
+    </style>
+</head>
+<body class="bg-brand-beige text-brand-navy font-body-md h-screen overflow-hidden flex">
+<!-- Top Navigation (Mobile Only) -->
+<header class="md:hidden flex justify-between items-center px-6 py-4 w-full bg-brand-beige border-b-4 border-brand-navy shadow-[0_4px_0_0_#2F3A4A] z-50 fixed top-0">
+<div class="text-2xl font-black text-brand-blue border-b-4 border-brand-blue">ATSUMACHI 集町</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-brand-blue hover:bg-white transition-all p-2 rounded active:translate-y-1">account_circle</span>
+<span class="material-symbols-outlined text-brand-blue hover:bg-white transition-all p-2 rounded active:translate-y-1">notifications</span>
+</div>
+</header>
+<!-- Side Navigation (Desktop) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-64 flex-col z-40 bg-brand-beige border-r-4 border-brand-navy shadow-[4px_0_0_0_#2F3A4A] p-6">
+<div class="text-xl font-black text-brand-navy mb-8 font-h2 text-h2">Atsumachi</div>
+<div class="flex items-center gap-4 mb-8 p-4 bg-white border-4 border-brand-navy pixel-shadow">
+<img alt="Pixel Art Character Avatar" class="w-12 h-12 border-2 border-brand-navy object-cover bg-brand-blue" data-alt="A charming 16-bit pixel art style avatar of a young person in casual streetwear. The aesthetic is warm and nostalgic, using a limited color palette of deep greens and soft sakura pinks. The lighting suggests a cozy sunset glow. The artwork should be high quality, reminiscent of classic Japanese life simulation games." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm0myEcGueUJMNBaikuGvSidI23V3PKtsU3hT8zyhsBlsDXQdvEuhPnQMfb_zvH3PtRwKir3BLHC-1Y_TwoRpAt0T8RyL5Ipk9JcQ8vG4qHDXxH-lqBaZfSHzj8_Sn5oU3KiGQoiruBi0J39o9z-Pn2tqus5sCoWzNIb8hp3flfbjpoYBOpW184aONx5GnsKEB4bq4a46bgC573EYFGziVDfAglM-aBH_0GWl5j1UzVwZUq1DdXfpXweRBdXPTo9SH2CPYvJlzav4L"/>
+<div>
+<p class="font-bold text-sm uppercase tracking-widest text-brand-navy font-label-pixel text-label-pixel">Resident #1204</p>
+</div>
+</div>
+<ul class="flex-1 flex flex-col gap-2">
+<li>
+<a class="bg-brand-blue text-white border-2 border-brand-navy shadow-[4px_4px_0_0_#2F3A4A] m-2 flex items-center gap-3 p-3 font-bold text-sm uppercase tracking-widest font-label-pixel text-label-pixel active:translate-x-1 active:translate-y-1 active:shadow-none transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+                    Town Square
+                </a>
+</li>
+<li>
+<a class="text-brand-navy m-2 flex items-center gap-3 p-3 hover:bg-white hover:translate-x-1 transition-all font-bold text-sm uppercase tracking-widest font-label-pixel text-label-pixel" href="#">
+<span class="material-symbols-outlined">forum</span>
+                    Talk Rooms
+                </a>
+</li>
+<li>
+<a class="text-brand-navy m-2 flex items-center gap-3 p-3 hover:bg-white hover:translate-x-1 transition-all font-bold text-sm uppercase tracking-widest font-label-pixel text-label-pixel" href="#">
+<span class="material-symbols-outlined">map</span>
+                    Travel Japan
+                </a>
+</li>
+<li>
+<a class="text-brand-navy m-2 flex items-center gap-3 p-3 hover:bg-white hover:translate-x-1 transition-all font-bold text-sm uppercase tracking-widest font-label-pixel text-label-pixel" href="#">
+<span class="material-symbols-outlined">cottage</span>
+                    My Room
+                </a>
+</li>
+</ul>
+<button class="bg-brand-blue text-white border-4 border-brand-navy p-4 font-bold uppercase tracking-widest font-label-pixel text-label-pixel pixel-shadow active:translate-y-1 active:translate-x-1 active:shadow-none transition-all mt-auto flex justify-center items-center gap-2">
+            Enter Metaverse
+            <span class="material-symbols-outlined">login</span>
+</button>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 relative w-full h-full pt-[72px] md:pt-0 overflow-y-auto overflow-x-hidden bg-pattern">
+<!-- Hero Background -->
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none" data-alt="A breathtaking, highly detailed 16-bit pixel art illustration of a cozy Japanese street at sunset. Traditional wooden machiya houses line a narrow road illuminated by glowing paper lanterns. Cherry blossom trees scatter soft pink petals in the warm, golden-hour light. Deep green foliage contrasts with the vibrant sunset sky. The style is reminiscent of premium 90s JRPGs." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDAtDRsyyS01St8GAlVEjXzxUy5gaVtZUIVX9LiquJkQs1f8nnKVmmsZAv8s3XdFbM2wcA9zyvdiyMe5tO0_OUJbDVjuXv2AOJATgMHNDWR4wEKic6s-IZLJL8_1Pf7cbQmO-cD2nj8MWOw_hyJ3AdTQcBzBQ06xmKHalbKu9jUilQqN8WEW3YlVvqP-rJmTa4tPsOTOt4m0F1DSkc-AUJGYb7Li15WIVAvWu4WA9fFiH-uRiWmb5fs-PWZxsbFxkmROBfY2P4ZcKs'); background-size: cover; background-position: center;"></div>
+<div class="relative z-10 p-6 md:p-8 lg:p-12 max-w-7xl mx-auto h-full flex flex-col lg:flex-row gap-8">
+<!-- Dashboard Center -->
+<div class="flex-1 flex flex-col gap-8">
+<header class="bg-white border-4 border-brand-navy pixel-shadow p-6 flex justify-between items-end">
+<div>
+<h1 class="font-h1 text-h1 text-brand-blue">Konnichiwa, Traveler</h1>
+<p class="font-body-lg text-body-lg text-brand-navy mt-2">Welcome back to the Town Square. The evening festival is starting soon.</p>
+</div>
+<div class="hidden sm:flex gap-2">
+<span class="material-symbols-outlined text-3xl text-brand-pink">local_florist</span>
+<span class="material-symbols-outlined text-3xl text-brand-pink">local_florist</span>
+</div>
+</header>
+<!-- Bento Grid Menu -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Talk Card -->
+<button class="bg-brand-pink border-4 border-brand-navy pixel-shadow p-6 flex flex-col items-center justify-center gap-4 hover:-translate-y-2 hover:bg-opacity-80 transition-all group active:translate-y-1 active:shadow-none h-48">
+<span class="material-symbols-outlined text-5xl text-brand-navy group-hover:text-white transition-colors">forum</span>
+<h2 class="font-h2 text-h2 text-brand-navy group-hover:text-white transition-colors">Talk (話す)</h2>
+</button>
+<!-- Meet Card -->
+<button class="bg-brand-blue border-4 border-brand-navy pixel-shadow p-6 flex flex-col items-center justify-center gap-4 hover:-translate-y-2 hover:bg-opacity-80 transition-all group active:translate-y-1 active:shadow-none h-48">
+<span class="material-symbols-outlined text-5xl text-brand-navy group-hover:text-white transition-colors">groups</span>
+<h2 class="font-h2 text-h2 text-brand-navy group-hover:text-white transition-colors">Meet (会う)</h2>
+</button>
+<!-- Friends Card -->
+<button class="bg-brand-pink border-4 border-brand-navy pixel-shadow p-6 flex flex-col items-center justify-center gap-4 hover:-translate-y-2 hover:bg-opacity-80 transition-all group active:translate-y-1 active:shadow-none h-48">
+<span class="material-symbols-outlined text-5xl text-brand-navy group-hover:text-white transition-colors">diversity_1</span>
+<h2 class="font-h2 text-h2 text-brand-navy group-hover:text-white transition-colors">Friends (フレンド)</h2>
+</button>
+<!-- My Page Card -->
+<button class="bg-brand-blue border-4 border-brand-navy pixel-shadow p-6 flex flex-col items-center justify-center gap-4 hover:-translate-y-2 hover:bg-opacity-80 transition-all group active:translate-y-1 active:shadow-none h-48">
+<span class="material-symbols-outlined text-5xl text-brand-navy group-hover:text-white transition-colors">person</span>
+<h2 class="font-h2 text-h2 text-brand-navy group-hover:text-white transition-colors">My Page (マイページ)</h2>
+</button>
+</div>
+</div>
+<!-- Town News Console (Right Sidebar) -->
+<aside class="w-full lg:w-80 bg-white border-4 border-brand-navy pixel-shadow flex flex-col h-full max-h-[800px]">
+<div class="bg-brand-pink text-brand-navy border-b-4 border-brand-navy p-4 flex justify-between items-center">
+<h3 class="font-label-pixel text-label-pixel uppercase tracking-widest font-bold">Town News</h3>
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<div class="p-6 flex-1 overflow-y-auto flex gap-6 justify-center">
+<!-- Vertical Text Entries -->
+<div class="japanese-vertical border-l-4 border-brand-navy pl-4 py-2 font-label-pixel text-lg text-brand-navy leading-loose">
+<span class="text-brand-pink font-bold">【お知らせ】</span><br/>
+                        春の桜祭りが今週末から始まります。<br/>
+                        広場に集まってください。
+                    </div>
+<div class="japanese-vertical border-l-4 border-brand-navy pl-4 py-2 font-label-pixel text-lg text-brand-navy leading-loose">
+<span class="text-brand-blue font-bold">【アップデート】</span><br/>
+                        新しい家具セットが追加されました。<br/>
+                        マイページで確認できます。
+                    </div>
+</div>
+<div class="p-4 border-t-4 border-brand-navy bg-brand-beige text-center">
+<p class="font-label-pixel text-sm text-brand-navy">Last updated: 18:00 JST</p>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

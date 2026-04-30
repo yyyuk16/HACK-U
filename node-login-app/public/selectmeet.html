@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会うルーム検索</title>
+    <style>
+        :root {
+            --bg: #f3e9dc;
+            --surface: #fff;
+            --line: #2f3a4a;
+            --blue: #8ecdf0;
+            --green: #9ed8b5;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: "Zen Maru Gothic", Arial, sans-serif;
+            background: var(--bg);
+            color: #1f2937;
+            padding: 24px;
+        }
+        .container {
+            width: min(920px, 96vw);
+            background: var(--surface);
+            border: 4px solid var(--line);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 6px 6px 0 0 var(--line);
+        }
+        h1 {
+            margin: 0;
+            text-align: center;
+            color: var(--line);
+            font-family: "DotGothic16", monospace;
+            font-size: 36px;
+            border-bottom: 4px solid var(--line);
+            padding-bottom: 10px;
+        }
+        .description {
+            text-align: center;
+            color: #475569;
+            margin: 14px 0 20px;
+            line-height: 1.7;
+        }
+        .search {
+            display: grid;
+            grid-template-columns: 220px 1fr auto;
+            gap: 10px;
+        }
+        .search input,
+        .search select {
+            padding: 12px;
+            border-radius: 10px;
+            border: 3px solid var(--line);
+            box-shadow: inset 3px 3px 0 0 rgba(47, 58, 74, 0.12);
+            font-size: 16px;
+            background: #fff;
+        }
+        .search button {
+            padding: 12px 18px;
+            border: 3px solid var(--line);
+            border-radius: 10px;
+            background: var(--green);
+            color: var(--line);
+            font-weight: 700;
+            box-shadow: 4px 4px 0 0 var(--line);
+            cursor: pointer;
+        }
+        .search button:active {
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0 0 var(--line);
+        }
+        .note {
+            margin-top: 12px;
+            color: #475569;
+            font-size: 13px;
+            border-left: 4px solid var(--blue);
+            padding-left: 10px;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 16px;
+            color: var(--line);
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px solid var(--line);
+        }
+        @media (max-width: 760px) {
+            .search { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>会うルームを探す</h1>
+        <p class="description">
+            都道府県とキーワードを組み合わせて、同じ地域・話題の人がいる仮想空間へ入ります。
+        </p>
+        <form id="meetSearchForm" class="search">
+            <select id="prefecture" required>
+                <option value="">都道府県を選択</option>
+                <option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option><option>秋田県</option><option>山形県</option><option>福島県</option>
+                <option>茨城県</option><option>栃木県</option><option>群馬県</option><option>埼玉県</option><option>千葉県</option><option>東京都</option><option>神奈川県</option>
+                <option>新潟県</option><option>富山県</option><option>石川県</option><option>福井県</option><option>山梨県</option><option>長野県</option>
+                <option>岐阜県</option><option>静岡県</option><option>愛知県</option><option>三重県</option>
+                <option>滋賀県</option><option>京都府</option><option>大阪府</option><option>兵庫県</option><option>奈良県</option><option>和歌山県</option>
+                <option>鳥取県</option><option>島根県</option><option>岡山県</option><option>広島県</option><option>山口県</option>
+                <option>徳島県</option><option>香川県</option><option>愛媛県</option><option>高知県</option>
+                <option>福岡県</option><option>佐賀県</option><option>長崎県</option><option>熊本県</option><option>大分県</option><option>宮崎県</option><option>鹿児島県</option><option>沖縄県</option>
+            </select>
+            <input id="meetKeyword" type="text" placeholder="例: カフェ、散歩、映画" required>
+            <button type="submit">仮想空間へ入る</button>
+        </form>
+        <p class="note">同じ「都道府県×キーワード」を選んだ人どうしが同じ空間に入ります。</p>
+        <a class="back" href="/main.html">← 戻る</a>
+    </main>
+
+    <script>
+        async function requireLogin() {
+            try {
+                const response = await fetch('/me');
+                if (!response.ok) {
+                    location.href = '/login.html';
+                    return null;
+                }
+                return await response.json();
+            } catch (error) {
+                location.href = '/login.html';
+                return null;
+            }
+        }
+
+        async function enterMeetMetaverse(prefecture, keyword) {
+            const me = await requireLogin();
+            if (!me) {
+                return;
+            }
+            const mergedKeyword = `${prefecture}-${keyword}`.trim();
+            try {
+                const joinResponse = await fetch('/rooms/join', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mode: 'meet', keyword: mergedKeyword })
+                });
+                if (!joinResponse.ok) {
+                    alert('ルーム参加に失敗しました。');
+                    return;
+                }
+                const metaverseUrl = new URL('http://localhost:3002');
+                metaverseUrl.searchParams.set('keyword', mergedKeyword);
+                metaverseUrl.searchParams.set('mode', 'meet');
+                metaverseUrl.searchParams.set('userId', String(me.id || ''));
+                metaverseUrl.searchParams.set('nickname', me.nickname || '');
+                metaverseUrl.searchParams.set('avatarKey', me.avatarKey || 'avatar-01');
+                location.href = metaverseUrl.toString();
+            } catch (error) {
+                alert('メタバースへの遷移に失敗しました。');
+            }
+        }
+
+        document.getElementById('meetSearchForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const prefecture = document.getElementById('prefecture').value.trim();
+            const keyword = document.getElementById('meetKeyword').value.trim();
+            if (!prefecture || !keyword) {
+                return;
+            }
+            await enterMeetMetaverse(prefecture, keyword);
+        });
+    </script>
+</body>
+</html>

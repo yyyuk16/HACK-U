@@ -3,59 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>話す方法を選択</title>
+    <title>トークルーム検索</title>
     <style>
+        :root {
+            --bg: #f3e9dc;
+            --surface: #fff;
+            --line: #2f3a4a;
+            --blue: #8ecdf0;
+            --pink: #f4a6a6;
+        }
+        * { box-sizing: border-box; }
         body {
             margin: 0;
             min-height: 100vh;
             display: grid;
             place-items: center;
-            font-family: Arial, sans-serif;
-            background: #f5f7ff;
+            font-family: "Zen Maru Gothic", Arial, sans-serif;
+            background: var(--bg);
+            padding: 24px;
+            color: #1f2937;
         }
         .container {
-            width: min(560px, 92vw);
-            background: #ffffff;
+            width: min(920px, 96vw);
+            background: var(--surface);
+            border: 4px solid var(--line);
             border-radius: 16px;
-            padding: 28px;
+            padding: 24px;
+            box-shadow: 6px 6px 0 0 var(--line);
+        }
+        h1 {
+            margin: 0;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            color: var(--line);
+            font-family: "DotGothic16", monospace;
+            font-size: 36px;
+            border-bottom: 4px solid var(--line);
+            padding-bottom: 10px;
         }
-        .title {
-            margin: 0 0 24px;
-            font-size: 26px;
-            color: #223;
+        .description {
+            text-align: center;
+            color: #475569;
+            margin: 14px 0 18px;
         }
-        .actions {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
+        .search {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            margin-bottom: 10px;
         }
-        .actions button {
-            min-width: 140px;
-            padding: 12px 18px;
-            border: none;
+        .search input {
+            padding: 12px;
             border-radius: 10px;
+            border: 3px solid var(--line);
+            box-shadow: inset 3px 3px 0 0 rgba(47, 58, 74, 0.12);
             font-size: 16px;
+        }
+        .search button {
+            padding: 12px 18px;
+            border: 3px solid var(--line);
+            border-radius: 10px;
+            background: var(--blue);
+            color: var(--line);
             font-weight: 700;
-            color: #fff;
+            box-shadow: 4px 4px 0 0 var(--line);
             cursor: pointer;
         }
-        .chat {
-            background: #4c6fff;
+        .search button:active {
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0 0 var(--line);
         }
-        .phone {
-            background: #20c997;
+        .tools {
+            margin-top: 8px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .tools label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--line);
+            font-family: "DotGothic16", monospace;
+        }
+        .tools select {
+            border: 2px solid var(--line);
+            border-radius: 8px;
+            padding: 8px 10px;
+            background: #fff;
+        }
+        .rooms {
+            margin-top: 14px;
+            display: grid;
+            gap: 12px;
+        }
+        .room-card {
+            border: 3px solid var(--line);
+            border-radius: 12px;
+            padding: 12px;
+            background: #fffdf7;
+            box-shadow: 4px 4px 0 0 var(--line);
+        }
+        .room-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+        .keyword {
+            font-weight: 700;
+            color: #223;
+            font-size: 22px;
+        }
+        .mode {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--line);
+            border: 2px solid var(--line);
+            margin-right: 6px;
+            background: var(--blue);
+        }
+        .mode-call { background: var(--pink); }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: #fff;
+            border: 2px solid var(--line);
+            color: var(--line);
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+        .empty { color: #667; font-size: 14px; }
+        .back {
+            display: inline-block;
+            margin-top: 16px;
+            color: var(--line);
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px solid var(--line);
         }
     </style>
 </head>
 <body>
     <main class="container">
-        <h1 class="title">話す方法を選んでください</h1>
-        <div class="actions">
-            <button class="chat" id="chatButton" type="button">チャット</button>
-            <button class="phone" id="phoneButton" type="button">電話</button>
+        <h1>話すルーム</h1>
+        <p class="description">キーワードでルームを探して、そのまま仮想空間へ入れます。</p>
+        <form id="talkSearchForm" class="search">
+            <input id="talkKeyword" type="text" placeholder="例: 暇人、ゲーム、夜ふかし" required>
+            <button type="submit">ルーム作成/参加</button>
+        </form>
+        <div class="tools">
+            <label>
+                並び順
+                <select id="sortOrder">
+                    <option value="created">ルーム作成日時順</option>
+                    <option value="popular">人気順</option>
+                </select>
+            </label>
         </div>
+        <div id="roomList" class="rooms">
+            <p class="empty">読み込み中...</p>
+        </div>
+        <a class="back" href="/main.html">← 戻る</a>
     </main>
     <script>
         async function requireLogin() {
@@ -68,13 +182,123 @@
                 location.href = '/login.html';
             }
         }
-        document.getElementById('chatButton').addEventListener('click', () => {
-            location.href = '/chat.html';
+
+        function modeLabel(mode) {
+            return mode === 'call' ? '電話' : 'チャット';
+        }
+
+        async function fetchRoomsByMode(mode, onlineOnly, sort) {
+            const response = await fetch(`/rooms?mode=${mode}&onlineOnly=${onlineOnly}&sort=${sort}`);
+            if (!response.ok) {
+                return [];
+            }
+            const data = await response.json();
+            return (data.rooms || []).map((room) => ({ ...room, mode }));
+        }
+
+        function sortMergedRooms(rooms, sort) {
+            if (sort === 'popular') {
+                return [...rooms].sort((a, b) => (b.online_count - a.online_count) || (b.participant_count - a.participant_count));
+            }
+            return [...rooms].sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+        }
+
+        function renderRooms(rooms) {
+            const roomList = document.getElementById('roomList');
+            if (rooms.length === 0) {
+                roomList.innerHTML = '<p class="empty">該当するルームはありません。</p>';
+                return;
+            }
+            roomList.innerHTML = rooms.map((room) => `
+                <article class="room-card">
+                    <div class="room-top">
+                        <span>
+                            <span class="mode mode-${room.mode}">${modeLabel(room.mode)}</span>
+                            <span class="keyword">${room.keyword}</span>
+                        </span>
+                        <span>
+                            <span class="badge">参加 ${room.participant_count}人</span>
+                            <span class="badge">オンライン ${room.online_count}人</span>
+                        </span>
+                    </div>
+                    <small>作成: ${new Date(room.created_at).toLocaleString('ja-JP')}</small><br>
+                    <a href="#" data-enter-mode="${room.mode}" data-enter-keyword="${encodeURIComponent(room.keyword)}">このルームへ入る</a>
+                </article>
+            `).join('');
+            roomList.querySelectorAll('a[data-enter-mode]').forEach((anchor) => {
+                anchor.addEventListener('click', async (event) => {
+                    event.preventDefault();
+                    const mode = anchor.getAttribute('data-enter-mode');
+                    const keyword = decodeURIComponent(anchor.getAttribute('data-enter-keyword') || '');
+                    if (!mode || !keyword) {
+                        return;
+                    }
+                    await enterMetaverse(mode, keyword);
+                });
+            });
+        }
+
+        async function enterMetaverse(mode, keyword) {
+            try {
+                const meResponse = await fetch('/me');
+                if (!meResponse.ok) {
+                    location.href = '/login.html';
+                    return;
+                }
+                const me = await meResponse.json();
+                const joinResponse = await fetch('/rooms/join', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mode, keyword })
+                });
+                if (!joinResponse.ok) {
+                    alert('ルーム参加に失敗しました。');
+                    return;
+                }
+                const metaverseUrl = new URL('http://localhost:3002');
+                metaverseUrl.searchParams.set('keyword', keyword);
+                metaverseUrl.searchParams.set('mode', mode);
+                metaverseUrl.searchParams.set('userId', String(me.id || ''));
+                metaverseUrl.searchParams.set('nickname', me.nickname || '');
+                metaverseUrl.searchParams.set('avatarKey', me.avatarKey || 'avatar-01');
+                location.href = metaverseUrl.toString();
+            } catch (error) {
+                alert('メタバースへの遷移に失敗しました。');
+            }
+        }
+
+        async function loadRooms() {
+            const onlineOnly = true;
+            const sort = document.getElementById('sortOrder').value;
+            const roomList = document.getElementById('roomList');
+            roomList.innerHTML = '<p class="empty">読み込み中...</p>';
+
+            try {
+                const tasks = [fetchRoomsByMode('chat', onlineOnly, sort)];
+                const results = await Promise.all(tasks);
+                const merged = sortMergedRooms(results.flat(), sort);
+                renderRooms(merged);
+            } catch (error) {
+                roomList.innerHTML = '<p class="empty">ルーム一覧を取得できませんでした。</p>';
+            }
+        }
+
+        document.getElementById('talkSearchForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const keyword = document.getElementById('talkKeyword').value.trim();
+            if (!keyword) {
+                return;
+            }
+            await enterMetaverse('talk', keyword);
         });
-        document.getElementById('phoneButton').addEventListener('click', () => {
-            location.href = '/call.html';
-        });
-        requireLogin();
+
+        async function boot() {
+            await requireLogin();
+            await loadRooms();
+            document.getElementById('sortOrder').addEventListener('change', loadRooms);
+        }
+
+        boot();
     </script>
 </body>
 </html>

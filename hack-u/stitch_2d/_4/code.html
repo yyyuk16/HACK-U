@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talk Rooms - Atsumachi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-primary-fixed-variant": "#004d68",
+                "on-primary-container": "#015876",
+                "inverse-primary": "#90cff2",
+                "on-error": "#ffffff",
+                "tertiary-fixed-dim": "#cec5b9",
+                "on-secondary-fixed": "#380b0f",
+                "on-primary": "#ffffff",
+                "surface-container": "#e6eeff",
+                "on-secondary-fixed-variant": "#6e3637",
+                "primary-fixed": "#c2e8ff",
+                "tertiary-container": "#cdc4b8",
+                "error-container": "#ffdad6",
+                "on-tertiary-fixed-variant": "#4c463d",
+                "on-surface": "#111c2b",
+                "primary-container": "#8ecdf0",
+                "inverse-surface": "#263141",
+                "on-error-container": "#93000a",
+                "background": "#f8f9ff",
+                "on-secondary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-background": "#111c2b",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#ffb3b3",
+                "surface-tint": "#1d6584",
+                "on-primary-fixed": "#001e2c",
+                "on-tertiary-container": "#575147",
+                "tertiary": "#645d53",
+                "outline": "#70787e",
+                "inverse-on-surface": "#ebf1ff",
+                "outline-variant": "#c0c7ce",
+                "surface-container-highest": "#d8e3f8",
+                "secondary-container": "#feafaf",
+                "surface-bright": "#f8f9ff",
+                "surface-container-high": "#dde9fe",
+                "secondary-fixed": "#ffdad9",
+                "on-secondary-container": "#7a3f41",
+                "on-tertiary": "#ffffff",
+                "primary": "#1d6584",
+                "surface-container-low": "#eff4ff",
+                "surface-variant": "#d8e3f8",
+                "primary-fixed-dim": "#90cff2",
+                "surface": "#f8f9ff",
+                "surface-dim": "#cfdbef",
+                "on-surface-variant": "#40484d",
+                "on-tertiary-fixed": "#1f1b13",
+                "tertiary-fixed": "#ebe1d4",
+                "secondary": "#8a4d4e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "xl": "32px",
+                "md": "16px",
+                "unit": "4px",
+                "sm": "8px",
+                "xs": "4px",
+                "margin": "24px",
+                "lg": "24px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Zen Maru Gothic"
+                ],
+                "headline-md": [
+                        "DotGothic16"
+                ],
+                "body-lg": [
+                        "Zen Maru Gothic"
+                ],
+                "label-sm": [
+                        "DotGothic16"
+                ],
+                "display-lg": [
+                        "DotGothic16"
+                ],
+                "label-pixel": ["DotGothic16"],
+                "h2": ["DotGothic16"],
+                "h1": ["DotGothic16"]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-pixel": ["14px", { "lineHeight": "1.0", "fontWeight": "400" }],
+                "h2": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .retro-shadow {
+            box-shadow: 4px 4px 0 0 #111c2b;
+        }
+        .retro-border {
+            border: 4px solid #111c2b;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full w-64 z-40 bg-tertiary-fixed dark:bg-stone-950 border-r-4 border-on-surface shadow-[4px_0_0_0_#111c2b]">
+<div class="p-lg">
+<h1 class="font-h1 text-h1 text-xl font-black text-on-surface dark:text-stone-50 mb-8">Atsumachi</h1>
+<div class="flex items-center gap-sm mb-lg bg-surface-container p-sm rounded border-2 border-on-surface">
+<img alt="Pixel Art Character Avatar" class="w-12 h-12 rounded retro-border bg-tertiary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf1ToYBpe2a_qe8DUHIUZLsYt0ZaAVvBuz-YEbfq1fR1dvk2Ug2vSGF8eDB22_jc4KSmX11PFyH9aZ8DBQJgwx3UjCplxhntnJE01mqkx7G7DrGuSXoY47hM6rIF5ZlGIltdYuLHLGVuv7enD48-v9kXJdYPsTJuzwRAa0oBUr6i8r5aBVxwpMlPCxl6Hujc8rL84INsiII0qPWpiCiC8Cn_E366IKmnVUl3ShhG8mgL4NSWDhS7LHcB3D4-KCQREa7bVTK71bD-kJ"/>
+<div>
+<p class="font-label-pixel text-label-pixel font-bold text-sm uppercase tracking-widest text-on-surface">Resident #1204</p>
+</div>
+</div>
+<ul class="space-y-sm">
+<li>
+<a class="text-on-surface-variant dark:text-stone-400 m-2 flex items-center gap-3 p-3 hover:bg-surface-variant dark:hover:bg-stone-800 hover:translate-x-1 transition-transform font-label-pixel text-label-pixel font-bold text-sm uppercase tracking-widest rounded" href="#">
+<span class="material-symbols-outlined">home</span> Town Square
+                    </a>
+</li>
+<li>
+<a class="bg-primary-container text-on-primary-container border-2 border-on-surface shadow-[4px_4px_0_0_#111c2b] m-2 flex items-center gap-3 p-3 font-label-pixel text-label-pixel font-bold text-sm uppercase tracking-widest rounded" href="#">
+<span class="material-symbols-outlined">forum</span> Talk Rooms
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-stone-400 m-2 flex items-center gap-3 p-3 hover:bg-surface-variant dark:hover:bg-stone-800 hover:translate-x-1 transition-transform font-label-pixel text-label-pixel font-bold text-sm uppercase tracking-widest rounded" href="#">
+<span class="material-symbols-outlined">map</span> Travel Japan
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-stone-400 m-2 flex items-center gap-3 p-3 hover:bg-surface-variant dark:hover:bg-stone-800 hover:translate-x-1 transition-transform font-label-pixel text-label-pixel font-bold text-sm uppercase tracking-widest rounded" href="#">
+<span class="material-symbols-outlined">cottage</span> My Room
+                    </a>
+</li>
+</ul>
+</div>
+<div class="mt-auto p-lg">
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-pixel text-label-pixel retro-border retro-shadow p-sm rounded active:translate-x-1 active:translate-y-1 active:shadow-none hover:bg-secondary-fixed transition-all">Enter Metaverse</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 md:ml-64 flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest dark:bg-stone-900 border-b-4 border-on-surface shadow-[0_4px_0_0_#111c2b] flex justify-between items-center px-6 py-4 w-full z-30 shrink-0">
+<div class="flex items-center gap-md">
+<span class="md:hidden font-h2 text-h2 text-2xl font-black text-on-surface dark:text-green-200 border-b-4 border-on-surface">ATSUMACHI 集町</span>
+<div class="hidden md:block">
+<h2 class="font-h2 text-h2 text-on-surface dark:text-green-400">Talk Rooms (話す)</h2>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<!-- Search -->
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-lowest retro-border pl-10 pr-4 py-2 font-label-pixel text-label-pixel text-on-surface focus:outline-none focus:ring-0 w-64 rounded" placeholder="Search rooms..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-variant dark:hover:bg-stone-800 transition-all p-2 rounded-full active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface hover:bg-surface-variant dark:hover:bg-stone-800 transition-all p-2 rounded-full active:translate-y-1 active:shadow-none relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-secondary-container rounded-full retro-border border-2 border-on-surface"></span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<div class="flex-1 overflow-y-auto p-lg bg-surface-container-low pattern-bg">
+<div class="max-w-6xl mx-auto">
+<!-- Filters/Sort -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-lg gap-md bg-tertiary-fixed p-md retro-border rounded shadow-[4px_4px_0_0_#111c2b]">
+<div class="flex gap-sm">
+<button class="bg-primary-container text-on-primary-container retro-border px-4 py-2 font-label-pixel text-label-pixel rounded hover:bg-primary-fixed active:translate-y-1 border-b-4 border-on-surface">Newest</button>
+<button class="bg-surface-container-lowest text-on-surface retro-border px-4 py-2 font-label-pixel text-label-pixel rounded hover:bg-surface-variant active:translate-y-1 border-b-4 border-transparent text-on-surface-variant">Popular</button>
+<button class="bg-surface-container-lowest text-on-surface retro-border px-4 py-2 font-label-pixel text-label-pixel rounded hover:bg-surface-variant active:translate-y-1 border-b-4 border-transparent text-on-surface-variant hidden sm:block">My Favorites</button>
+</div>
+<div class="relative w-full sm:w-auto md:hidden">
+<input class="w-full bg-surface-container-lowest retro-border pl-10 pr-4 py-2 font-label-pixel text-label-pixel text-on-surface focus:outline-none rounded" placeholder="Search..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest retro-border rounded overflow-hidden shadow-[4px_4px_0_0_#111c2b] flex flex-col hover:-translate-y-1 transition-transform cursor-pointer group">
+<div class="h-40 bg-surface-variant relative border-b-4 border-on-surface overflow-hidden">
+<img alt="Ryokan Lounge preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A pixel-art style illustration of a traditional Japanese ryokan lounge. The room features tatami mats, a low wooden table with tea cups, and shoji screens partially open to reveal a zen garden. Warm, soft lighting creates a cozy, nostalgic 16-bit aesthetic typical of classic life simulation games. The color palette emphasizes warm woods, soft greens, and cream tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrO5EN6MINQtE-692g1Scx0JJfDUsoQ7_hpW9IscB6B-Ks-a5YvNIICePGTN2SaWI9CFXPW7KmC250Mup9HDC3VeLemewrDrGt0ACqNuW6xNivgEOnbOdToUgbAYFzxuWP-7FE3XwjcMzXfUKmPBdAg4knXDIWKrFn_l4myIr1_b1NB6L5Sd818vzfjQUWZf1FqOdYllesE5CH_LYk5Ay_wLTcMAalYlWdD_afV9xPpgpse7KCO1P-VfHA_xYd77W9SmXSl46gp2NX" style="image-rendering: pixelated;"/>
+<div class="absolute top-2 right-2 bg-primary-container text-on-primary-container font-label-pixel text-label-pixel px-2 py-1 rounded retro-border text-xs flex items-center gap-1 border-2 border-on-surface">
+<span class="material-symbols-outlined text-[14px]">group</span> 12/20
+                            </div>
+</div>
+<div class="p-md flex-1 flex flex-col bg-tertiary-fixed">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h2 text-h2 text-lg text-on-surface">Ryokan Lounge (旅館のロビー)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">A quiet place for deep conversations. Grab some green tea and relax on the tatami.</p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="bg-surface-container-lowest text-on-surface-variant font-label-pixel text-label-pixel px-2 py-1 rounded text-xs border border-on-surface">#chill</span>
+<span class="bg-surface-container-lowest text-on-surface-variant font-label-pixel text-label-pixel px-2 py-1 rounded text-xs border border-on-surface">#traditional</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest retro-border rounded overflow-hidden shadow-[4px_4px_0_0_#111c2b] flex flex-col hover:-translate-y-1 transition-transform cursor-pointer group">
+<div class="h-40 bg-surface-variant relative border-b-4 border-on-surface overflow-hidden">
+<img alt="Retro Coffee Shop preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A detailed pixel-art depiction of a retro Japanese 'kissaten' (coffee shop). Dark mahogany wood paneling, red velvet booths, and a vintage espresso machine on the counter. The atmosphere is slightly dim and moody, illuminated by warm, amber pendant lights. The aesthetic is heavily inspired by 90s isometric adventure games." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy6dP_V4pm987u5Mch-qe7IU4EpDYYR75re7mlJbPRy2gL8AmqRe5mMMkJxEk-iEM6eJ7xtEAzuoGsVPpP9s1ExEuI3s_Zepy4fkVPO7Evz_x2mSQWsllyPa2K3dN4n-Jr8jh_4YWatRmZV7v2IC651cuG1FG0wM9-GlC6uBcuUsD10RfPZhs2Rkgd0FxonYRHUGEp2ofgR3g6yaQF_vL61Gp0oK-mZrlLtnv6Q8XcjraDHAjcf2aDPAVkRq78-8cuk8DvbQrbVXfn" style="image-rendering: pixelated;"/>
+<div class="absolute top-2 right-2 bg-surface-container-lowest text-on-surface font-label-pixel text-label-pixel px-2 py-1 rounded retro-border text-xs flex items-center gap-1 border-2 border-on-surface">
+<span class="material-symbols-outlined text-[14px]">group</span> 5/10
+                            </div>
+</div>
+<div class="p-md flex-1 flex flex-col bg-tertiary-fixed">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h2 text-h2 text-lg text-on-surface">Retro Coffee Shop (レトロ喫茶)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">Jazz music playing in the background. Perfect for studying or casual chats.</p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="bg-surface-container-lowest text-on-surface-variant font-label-pixel text-label-pixel px-2 py-1 rounded text-xs border border-on-surface">#music</span>
+<span class="bg-surface-container-lowest text-on-surface-variant font-label-pixel text-label-pixel px-2 py-1 rounded text-xs border border-on-surface">#study</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest retro-border rounded overflow-hidden shadow-[4px_4px_0_0_#111c2b] flex flex-col hover:-translate-y-1 transition-transform cursor-pointer group">
+<div class="h-40 bg-surface-variant relative border-b-4 border-on-surface overflow-hidden">
+<img alt="Shinto Shrine preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An isometric pixel-art rendering of an outdoor Shinto shrine grounds at dusk. A bright vermilion torii gate stands at the entrance, with stone lanterns leading up to a small wooden offering hall. The scene is enveloped in a serene, magical atmosphere with soft purple and orange twilight skies, capturing a nostalgic, stylized Japanese landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCACNmuikXZ-YUTtPCTWrktMpLWBGSaN9QkbzXsDY50RZUmpD6XAUL-0ZL-nZ_Gaz5SxtqxfybKTOjK9xH0mOm7Py8-37eq8sXj2RT4bBnnrpp3Pb5pNzCtwON0S-jo8y79M9GaBskwqQnGn5sa_ICiu4Iks1Fs4u4IiNXBl1FkbzCT0GDhZyZaQN0cYRnzRxrSLmUn2tbXHYZ2n87fSpoST66T-y4AmJUNzYwr4L4ckuudhrV1Dr9CtWW1xsFPQmcsBvj7wNuwGarD" style="image-rendering: pixelated;"/>
+<div class="absolute top-2 right-2 bg-secondary-container text-on-secondary-container font-label-pixel text-label-pixel px-2 py-1 rounded retro-border text-xs flex items-center gap-1 border-2 border-on-surface">
+<span class="material-symbols-outlined text-[14px]">group</span> 30/30
+                            </div>
+</div>
+<div class="p-md flex-1 flex flex-col bg-tertiary-fixed">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h2 text-h2 text-lg text-on-surface">Shinto Shrine (神社の境内)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">Outdoor public space. Very active right now, come join the festival preparations!</p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="bg-surface-container-lowest text-on-surface-variant font-label-pixel text-label-pixel px-2 py-1 rounded text-xs border border-on-surface">#event</span>
+<span class="bg-surface-container-lowest text-on-surface-variant font-label-pixel text-label-pixel px-2 py-1 rounded text-xs border border-on-surface">#outdoor</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest retro-border rounded overflow-hidden shadow-[4px_4px_0_0_#111c2b] flex flex-col hover:-translate-y-1 transition-transform cursor-pointer group">
+<div class="h-40 bg-surface-variant relative border-b-4 border-on-surface overflow-hidden">
+<img alt="Izakaya Chat preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A lively 16-bit pixel-art scene of a Japanese izakaya interior. Crowded wooden counters, hanging red paper lanterns (chochin), and posters on the wall. The color palette is vibrant with warm reds, yellows, and deep browns, conveying a noisy, cheerful, and casual dining atmosphere typical of retro JRPG town taverns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLvIkqcDROcsisclwxe0Kuxj9N2-WRkr0LZrpwMrTapmIXDBdlAPIuLDDBmqSCdq-TAzGB2Tdz4AH4aRdiZXd1OHe7xGWYVJ2lUFWnI1hRYqWdzdyp5yXtWUmSAiAZ4O0pjH7vm4oriEL0xPeEu_97R3HrsdbDxbHegmC4NaTaXBMVwR9KBfij4wCf9uzkHrdFDmPJW2K--b__BzNEpSCJ7OobXXh4dtjHPpqbJzgKFYGTyFKHxnRj-v5iklIwkdrm1BTY5BjwZIPS" style="image-rendering: pixelated;"/>
+<div class="absolute top-2 right-2 bg-primary-container text-on-primary-container font-label-pixel text-label-pixel px-2 py-1 rounded retro-border text-xs flex items-center gap-1 border-2 border-on-surface">
+<span class="material-symbols-outlined text-[14px]">group</span> 8/15
+                            </div>
+</div>
+<div class="p-md flex-1 flex flex-col bg-tertiary-fixed">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h2 text-h2 text-lg text-on-surface">Izakaya Chat (居酒屋雑談)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 line-clamp-2">Casual talk over virtual drinks. Bring your own snacks!</p>
+<div class="mt-auto flex flex-wrap gap-2">
+<span class="bg-surface-container-lowest text-on-surface-variant font-label-pixel text-label-pixel px-2 py-1 rounded text-xs border border-on-surface">#casual</span>
+<span class="bg-surface-container-lowest text-on-surface-variant font-label-pixel text-label-pixel px-2 py-1 rounded text-xs border border-on-surface">#nightlife</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-lg flex justify-center">
+<button class="bg-surface-container-lowest text-on-surface retro-border px-6 py-3 font-label-pixel text-label-pixel rounded hover:bg-surface-variant active:translate-y-1 shadow-[4px_4px_0_0_#111c2b] active:shadow-none transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">refresh</span> Load More Rooms
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

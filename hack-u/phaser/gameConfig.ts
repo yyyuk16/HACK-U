@@ -7,6 +7,7 @@ type CreateGameConfigParams = {
   height?: number;
   backgroundPath?: string;
   playerAvatarKey?: string;
+  nickname?: string;
   onPositionChange?: (position: PositionPayload) => void;
 };
 
@@ -16,6 +17,7 @@ export const createGameConfig = ({
   height = 400,
   backgroundPath,
   playerAvatarKey,
+  nickname,
   onPositionChange,
 }: CreateGameConfigParams): Phaser.Types.Core.GameConfig => {
   return {
@@ -24,7 +26,7 @@ export const createGameConfig = ({
     width,
     height,
     backgroundColor: "#f8fafc",
-    scene: [new MainScene({ width, height, backgroundPath, playerAvatarKey, onPositionChange })],
+    scene: [new MainScene({ width, height, backgroundPath, playerAvatarKey, nickname, onPositionChange })],
     physics: {
       default: "arcade",
       arcade: {

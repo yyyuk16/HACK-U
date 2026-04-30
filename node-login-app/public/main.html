@@ -49,6 +49,70 @@
             background: #20c997;
             color: #fff;
         }
+        .mypage {
+            background: #f59e0b;
+            color: #fff;
+        }
+        .panels {
+            margin-top: 20px;
+            display: grid;
+            gap: 12px;
+            text-align: left;
+        }
+        .panel {
+            border: 1px solid #dfe5f2;
+            border-radius: 10px;
+            padding: 12px;
+            background: #fafcff;
+        }
+        .panel h2 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            color: #223;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 0;
+            border-top: 1px dashed #e7ecf7;
+        }
+        .item:first-of-type {
+            border-top: none;
+        }
+        .item-actions {
+            display: flex;
+            gap: 6px;
+        }
+        .item-actions button {
+            border: none;
+            border-radius: 8px;
+            padding: 6px 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .accept {
+            background: #20c997;
+            color: #fff;
+        }
+        .reject {
+            background: #f1f5f9;
+            color: #334;
+        }
+        .empty {
+            color: #667;
+            font-size: 13px;
+            margin: 0;
+        }
+        .status-online {
+            color: #059669;
+            font-weight: 700;
+        }
+        .status-offline {
+            color: #64748b;
+        }
     </style>
 </head>
 <body>
@@ -57,9 +121,122 @@
         <div class="actions">
             <button class="talk" id="talkButton" type="button">話す</button>
             <button class="meet" id="meetButton" type="button">会う</button>
+            <button class="mypage" id="mypageButton" type="button">マイページ</button>
         </div>
+        <section class="panels">
+            <article class="panel">
+                <h2>フレンド申請</h2>
+                <div id="incomingRequests">
+                    <p class="empty">読み込み中...</p>
+                </div>
+            </article>
+            <article class="panel">
+                <h2>フレンド一覧</h2>
+                <div id="friendList">
+                    <p class="empty">読み込み中...</p>
+                </div>
+            </article>
+        </section>
     </main>
     <script>
+        const ONLINE_WINDOW_SECONDS = 300;
+
+        function formatLastSeen(lastSeenAt) {
+            if (!lastSeenAt) {
+                return { label: 'オフライン（記録なし）', online: false };
+            }
+            const date = new Date(lastSeenAt);
+            if (Number.isNaN(date.getTime())) {
+                return { label: 'オフライン（時刻不明）', online: false };
+            }
+            const diffSeconds = Math.floor((Date.now() - date.getTime()) / 1000);
+            if (diffSeconds <= ONLINE_WINDOW_SECONDS) {
+                return { label: 'オンライン', online: true };
+            }
+            const minutes = Math.max(1, Math.floor(diffSeconds / 60));
+            if (minutes < 60) {
+                return { label: `${minutes}分前に接続`, online: false };
+            }
+            const hours = Math.floor(minutes / 60);
+            if (hours < 24) {
+                return { label: `${hours}時間前に接続`, online: false };
+            }
+            const days = Math.floor(hours / 24);
+            return { label: `${days}日前に接続`, online: false };
+        }
+
+        async function loadIncomingRequests() {
+            const root = document.getElementById('incomingRequests');
+            try {
+                const response = await fetch('/friend-requests/incoming');
+                if (!response.ok) {
+                    root.innerHTML = '<p class="empty">申請一覧を取得できませんでした。</p>';
+                    return;
+                }
+                const data = await response.json();
+                const requests = data.requests || [];
+                if (requests.length === 0) {
+                    root.innerHTML = '<p class="empty">新しい申請はありません。</p>';
+                    return;
+                }
+                root.innerHTML = requests.map((request) => `
+                    <div class="item">
+                        <span>${request.requester_nickname} さん</span>
+                        <div class="item-actions">
+                            <button class="accept" data-request-id="${request.id}" data-accept="true">承認</button>
+                            <button class="reject" data-request-id="${request.id}" data-accept="false">拒否</button>
+                        </div>
+                    </div>
+                `).join('');
+                root.querySelectorAll('button[data-request-id]').forEach((button) => {
+                    button.addEventListener('click', async () => {
+                        const requestId = button.getAttribute('data-request-id');
+                        const accept = button.getAttribute('data-accept') === 'true';
+                        await fetch(`/friend-requests/${requestId}/respond`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ accept })
+                        });
+                        await Promise.all([loadIncomingRequests(), loadFriends()]);
+                    });
+                });
+            } catch (error) {
+                root.innerHTML = '<p class="empty">申請一覧を取得できませんでした。</p>';
+            }
+        }
+
+        async function loadFriends() {
+            const root = document.getElementById('friendList');
+            try {
+                const response = await fetch('/friends');
+                if (!response.ok) {
+                    root.innerHTML = '<p class="empty">フレンド一覧を取得できませんでした。</p>';
+                    return;
+                }
+                const data = await response.json();
+                const friends = data.friends || [];
+                if (friends.length === 0) {
+                    root.innerHTML = '<p class="empty">フレンドはまだいません。</p>';
+                    return;
+                }
+                root.innerHTML = friends.map((friend) => {
+                    const status = formatLastSeen(friend.last_seen_at);
+                    const profile = `${friend.occupation || ''}${friend.prefecture ? ' / ' + friend.prefecture : ''}`;
+                    return `
+                        <div class="item">
+                            <div>
+                                <div>${friend.nickname}</div>
+                                <small class="${status.online ? 'status-online' : 'status-offline'}">${status.label}</small>
+                            </div>
+                            <small>${profile}</small>
+                        </div>
+                    `;
+                }).join('');
+            } catch (error) {
+                root.innerHTML = '<p class="empty">フレンド一覧を取得できませんでした。</p>';
+            }
+        }
+
         async function loadUser() {
             try {
                 const response = await fetch('/me');
@@ -79,7 +256,17 @@
         document.getElementById('meetButton').addEventListener('click', () => {
             location.href = '/room.html?mode=meet&keyword=meet-lobby';
         });
-        loadUser();
+        document.getElementById('mypageButton').addEventListener('click', () => {
+            location.href = '/mypage.html';
+        });
+        async function boot() {
+            await loadUser();
+            await Promise.all([loadIncomingRequests(), loadFriends()]);
+            setInterval(() => {
+                void loadIncomingRequests();
+            }, 10000);
+        }
+        boot();
     </script>
 </body>
 </html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイページ</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+        }
+        .container {
+            width: min(760px, 94vw);
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            margin-top: 0;
+            color: #223;
+        }
+        .row {
+            display: grid;
+            gap: 6px;
+            margin: 10px 0;
+        }
+        label {
+            font-weight: 700;
+            color: #334;
+        }
+        input, select, textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #cfd7e6;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        textarea {
+            min-height: 96px;
+            resize: vertical;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .tags label {
+            font-weight: 400;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .actions button {
+            border: none;
+            border-radius: 10px;
+            padding: 10px 14px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .save {
+            background: #4c6fff;
+            color: #fff;
+        }
+        .back {
+            background: #f1f5f9;
+            color: #334;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        .error {
+            color: #dc2626;
+        }
+        .success {
+            color: #059669;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>マイページ</h1>
+        <form id="profileForm">
+            <div class="row">
+                <label for="nickname">ニックネーム</label>
+                <input id="nickname" name="nickname" required>
+            </div>
+            <div class="row">
+                <label for="avatarKey">アバター</label>
+                <select id="avatarKey" name="avatarKey" required>
+                    <option value="avatar-01">avatar-01</option>
+                    <option value="avatar-02">avatar-02</option>
+                    <option value="avatar-03">avatar-03</option>
+                    <option value="avatar-04">avatar-04</option>
+                    <option value="avatar-05">avatar-05</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="occupation">職業</label>
+                <input id="occupation" name="occupation" required>
+            </div>
+            <div class="row">
+                <label for="prefecture">都道府県</label>
+                <select id="prefecture" name="prefecture" required>
+                    <option value="">選択してください</option>
+                    <option value="北海道">北海道</option>
+                    <option value="青森県">青森県</option>
+                    <option value="岩手県">岩手県</option>
+                    <option value="宮城県">宮城県</option>
+                    <option value="秋田県">秋田県</option>
+                    <option value="山形県">山形県</option>
+                    <option value="福島県">福島県</option>
+                    <option value="茨城県">茨城県</option>
+                    <option value="栃木県">栃木県</option>
+                    <option value="群馬県">群馬県</option>
+                    <option value="埼玉県">埼玉県</option>
+                    <option value="千葉県">千葉県</option>
+                    <option value="東京都">東京都</option>
+                    <option value="神奈川県">神奈川県</option>
+                    <option value="新潟県">新潟県</option>
+                    <option value="富山県">富山県</option>
+                    <option value="石川県">石川県</option>
+                    <option value="福井県">福井県</option>
+                    <option value="山梨県">山梨県</option>
+                    <option value="長野県">長野県</option>
+                    <option value="岐阜県">岐阜県</option>
+                    <option value="静岡県">静岡県</option>
+                    <option value="愛知県">愛知県</option>
+                    <option value="三重県">三重県</option>
+                    <option value="滋賀県">滋賀県</option>
+                    <option value="京都府">京都府</option>
+                    <option value="大阪府">大阪府</option>
+                    <option value="兵庫県">兵庫県</option>
+                    <option value="奈良県">奈良県</option>
+                    <option value="和歌山県">和歌山県</option>
+                    <option value="鳥取県">鳥取県</option>
+                    <option value="島根県">島根県</option>
+                    <option value="岡山県">岡山県</option>
+                    <option value="広島県">広島県</option>
+                    <option value="山口県">山口県</option>
+                    <option value="徳島県">徳島県</option>
+                    <option value="香川県">香川県</option>
+                    <option value="愛媛県">愛媛県</option>
+                    <option value="高知県">高知県</option>
+                    <option value="福岡県">福岡県</option>
+                    <option value="佐賀県">佐賀県</option>
+                    <option value="長崎県">長崎県</option>
+                    <option value="熊本県">熊本県</option>
+                    <option value="大分県">大分県</option>
+                    <option value="宮崎県">宮崎県</option>
+                    <option value="鹿児島県">鹿児島県</option>
+                    <option value="沖縄県">沖縄県</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="bio">自己紹介</label>
+                <textarea id="bio" name="bio" required></textarea>
+            </div>
+            <div class="row">
+                <label>好きなモノタグ</label>
+                <div class="tags">
+                    <label><input type="checkbox" name="favoriteTags" value="ゲーム"> ゲーム</label>
+                    <label><input type="checkbox" name="favoriteTags" value="音楽"> 音楽</label>
+                    <label><input type="checkbox" name="favoriteTags" value="映画"> 映画</label>
+                    <label><input type="checkbox" name="favoriteTags" value="アニメ"> アニメ</label>
+                    <label><input type="checkbox" name="favoriteTags" value="スポーツ"> スポーツ</label>
+                    <label><input type="checkbox" name="favoriteTags" value="旅行"> 旅行</label>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="save" type="submit">保存する</button>
+                <button class="back" type="button" id="backButton">戻る</button>
+            </div>
+            <p id="message" class="message"></p>
+        </form>
+    </main>
+    <script>
+        async function requireLogin() {
+            const response = await fetch('/me');
+            if (!response.ok) {
+                location.href = '/login.html';
+                return null;
+            }
+            return response.json();
+        }
+
+        function setMessage(text, type) {
+            const el = document.getElementById('message');
+            el.textContent = text || '';
+            el.className = `message ${type || ''}`;
+        }
+
+        function setFavoriteTags(values) {
+            const tags = Array.isArray(values) ? values : [];
+            document.querySelectorAll('input[name="favoriteTags"]').forEach((checkbox) => {
+                checkbox.checked = tags.includes(checkbox.value);
+            });
+        }
+
+        function getFavoriteTags() {
+            return Array.from(document.querySelectorAll('input[name="favoriteTags"]:checked'))
+                .map((checkbox) => checkbox.value);
+        }
+
+        async function loadProfile() {
+            const response = await fetch('/me/profile');
+            if (!response.ok) {
+                setMessage('プロフィールの取得に失敗しました。', 'error');
+                return;
+            }
+            const profile = await response.json();
+            document.getElementById('nickname').value = profile.nickname || '';
+            document.getElementById('avatarKey').value = profile.avatarKey || 'avatar-01';
+            document.getElementById('occupation').value = profile.occupation || '';
+            document.getElementById('prefecture').value = profile.prefecture || '';
+            document.getElementById('bio').value = profile.bio || '';
+            setFavoriteTags(profile.favoriteTags || []);
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            setMessage('', '');
+            const payload = {
+                nickname: document.getElementById('nickname').value.trim(),
+                avatarKey: document.getElementById('avatarKey').value,
+                occupation: document.getElementById('occupation').value.trim(),
+                prefecture: document.getElementById('prefecture').value,
+                bio: document.getElementById('bio').value.trim(),
+                favoriteTags: getFavoriteTags()
+            };
+            const response = await fetch('/me/profile', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (!response.ok) {
+                const data = await response.json().catch(() => ({ error: '更新に失敗しました。' }));
+                setMessage(data.error || '更新に失敗しました。', 'error');
+                return;
+            }
+            setMessage('プロフィールを更新しました。', 'success');
+        });
+
+        document.getElementById('backButton').addEventListener('click', () => {
+            location.href = '/main.html';
+        });
+
+        async function boot() {
+            await requireLogin();
+            await loadProfile();
+        }
+        boot();
+    </script>
+</body>
+</html>

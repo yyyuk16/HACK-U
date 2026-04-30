@@ -196,6 +196,7 @@
                 const metaverseUrl = new URL('http://localhost:3002');
                 metaverseUrl.searchParams.set('keyword', keyword);
                 metaverseUrl.searchParams.set('mode', mode);
+                metaverseUrl.searchParams.set('userId', String(me.id || ''));
                 metaverseUrl.searchParams.set('nickname', me.nickname || '');
                 metaverseUrl.searchParams.set('avatarKey', me.avatarKey || 'avatar-01');
                 window.location.href = metaverseUrl.toString();

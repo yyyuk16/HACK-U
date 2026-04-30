@@ -78,6 +78,18 @@ cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\node-login-app"
 npm start
 ```
 
+#### ローカルDBで詰まったとき（一時的にDocker DBを使う）
+
+```powershell
+cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\node-login-app"
+docker compose up -d db
+npm run start:dockerdb
+```
+
+- `start:dockerdb` は `.env` を変更せず、`hacku_db`（`localhost:5433`）へ一時接続
+- テーブル確認だけしたい場合は `npm run db:inspect:docker`
+- 停止は `docker compose down`
+
 ### 2) Socketサーバー（3001）
 
 ```powershell

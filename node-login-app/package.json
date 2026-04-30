@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "db:inspect": "node scripts/inspect.js"
+    "start:dockerdb": "node scripts/run-with-docker-db.js server.js",
+    "db:inspect": "node scripts/inspect.js",
+    "db:inspect:docker": "node scripts/run-with-docker-db.js scripts/inspect.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

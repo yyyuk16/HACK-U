@@ -34,3 +34,21 @@ CREATE TABLE IF NOT EXISTS user_presence (
   user_id INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
   last_seen_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
+
+CREATE TABLE IF NOT EXISTS friend_requests (
+  id SERIAL PRIMARY KEY,
+  requester_user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  receiver_user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  status VARCHAR(16) NOT NULL DEFAULT 'pending',
+  created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+  responded_at TIMESTAMP,
+  CHECK (status IN ('pending', 'accepted', 'rejected')),
+  CHECK (requester_user_id <> receiver_user_id)
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS friend_requests_pending_pair_key
+ON friend_requests (
+  LEAST(requester_user_id, receiver_user_id),
+  GREATEST(requester_user_id, receiver_user_id)
+)
+WHERE status = 'pending';

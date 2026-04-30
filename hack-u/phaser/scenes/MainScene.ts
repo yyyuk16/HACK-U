@@ -7,6 +7,7 @@ export type PositionPayload = {
 
 export type RemotePlayer = {
   socketId: string;
+  userId?: number;
   nickname: string;
   avatarKey?: string;
   x: number;

@@ -151,7 +151,7 @@
                 return;
             }
 
-            const modeLabel = mode === 'chat' ? 'チャット' : mode === 'call' ? '電話' : '会う';
+            const modeLabel = (mode === 'chat' || mode === 'talk') ? 'チャット' : mode === 'call' ? '電話' : '会う';
             document.getElementById('modeLabel').textContent = `${modeLabel} ルーム`;
             document.getElementById('keywordLabel').textContent = keyword;
 

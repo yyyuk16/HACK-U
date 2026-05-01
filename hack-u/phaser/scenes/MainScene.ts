@@ -19,12 +19,13 @@ type MainSceneOptions = {
   height: number;
   backgroundPath?: string;
   playerAvatarKey?: string;
+  nickname?: string;
   onPositionChange?: (position: PositionPayload) => void;
 };
 
-const FRAME_W = 48;
-const FRAME_H = 48;
-const COLS = 6;
+const FRAME_W = 32;
+const FRAME_H = 32;
+const COLS = 3;
 
 const FRONT_ROW = 0;
 const LEFT_ROW = 1;
@@ -48,12 +49,18 @@ const AVATAR_KEYS = [
   "avatar-03",
   "avatar-04",
   "avatar-05",
+  "avatar-06",
+  "avatar-07",
+  "avatar-08",
+  "avatar-09",
+  "avatar-10",
 ];
 
 export class MainScene extends Phaser.Scene {
   private readonly options: MainSceneOptions;
 
   private player!: Phaser.GameObjects.Sprite;
+  private playerLabel!: Phaser.GameObjects.Text;
 
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
 
@@ -118,6 +125,19 @@ export class MainScene extends Phaser.Scene {
     this.player = this.add.sprite(w / 2, h / 2, playerAvatarKey, idleFrame("down"));
     this.player.setOrigin(0.5, 0.5);
     this.player.setDepth(1);
+    this.playerLabel = this.add.text(
+      this.player.x,
+      this.player.y - 34,
+      this.options.nickname || "あなた",
+      {
+        fontSize: "12px",
+        color: "#1f2937",
+        backgroundColor: "#ffffffcc",
+        padding: { x: 4, y: 2 },
+      }
+    );
+    this.playerLabel.setOrigin(0.5);
+    this.playerLabel.setDepth(2);
 
     this.cursors = this.input.keyboard?.createCursorKeys() as Phaser.Types.Input.Keyboard.CursorKeys;
     this.wasd = this.input.keyboard?.addKeys({
@@ -177,6 +197,7 @@ export class MainScene extends Phaser.Scene {
     const halfH = this.player.displayHeight / 2;
     this.player.x = Phaser.Math.Clamp(this.player.x, halfW, this.options.width - halfW);
     this.player.y = Phaser.Math.Clamp(this.player.y, halfH, this.options.height - halfH);
+    this.playerLabel.setPosition(this.player.x, this.player.y - 34);
 
     this.notifyPosition();
   }

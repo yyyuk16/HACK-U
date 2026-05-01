@@ -76,6 +76,11 @@ const ALLOWED_AVATARS = [
   "avatar-03",
   "avatar-04",
   "avatar-05",
+  "avatar-06",
+  "avatar-07",
+  "avatar-08",
+  "avatar-09",
+  "avatar-10",
 ] as const;
 const PRIVATE_TALK_RANGE = 120;
 const CALL_CONNECT_TIMEOUT_MS = 12000;
@@ -479,7 +484,7 @@ export const MetaverseGame = () => {
     const nickname = params.get("nickname") ?? "";
     const avatarKey = normalizeAvatarKey(params.get("avatarKey"));
     setRoomInfo({ userId, mode, keyword, nickname, avatarKey });
-    callModeRef.current = mode === "call";
+    callModeRef.current = mode === "call" || mode === "talk" || mode === "chat";
     const meetSlot = mode === "meet" ? getMeetTimeSlot() : null;
     if (mode === "meet" && meetSlot) {
       setMeetTimeLabel(meetTimeSlotLabel(meetSlot));
@@ -769,6 +774,7 @@ export const MetaverseGame = () => {
             height: GAME_HEIGHT,
             backgroundPath,
             playerAvatarKey: avatarKey,
+            nickname,
             onPositionChange: ({ x, y }) => {
               setPosition({ x, y });
               console.log(`[player] x:${x}, y:${y}`);
@@ -1046,6 +1052,20 @@ export const MetaverseGame = () => {
 
   const nowMs = Date.now();
   const nearbyPlayers = remotePlayers
+    .filter((player) => {
+      if (player.socketId === socketIdRef.current) {
+        return false;
+      }
+      const myUserId = Number(roomInfo.userId || 0);
+      const playerUserId = Number(player.userId || 0);
+      if (myUserId > 0 && playerUserId > 0 && myUserId === playerUserId) {
+        return false;
+      }
+      if (roomInfo.nickname && player.nickname === roomInfo.nickname) {
+        return false;
+      }
+      return true;
+    })
     .map((player) => {
       const dx = position.x - player.x;
       const dy = position.y - player.y;
@@ -1148,34 +1168,34 @@ export const MetaverseGame = () => {
         </div>
       </div>
 
-      <aside className="flex w-full shrink-0 flex-col gap-3 rounded-md border border-slate-300 bg-white p-3 shadow-sm lg:w-[340px]">
-        <p className="text-sm text-slate-700">
+      <aside className="flex w-full shrink-0 flex-col gap-3 rounded-md border-4 border-[#2f3a4a] bg-[#fffdf7] p-3 shadow-[6px_6px_0_0_#2f3a4a] lg:w-[340px]">
+        <p className="text-sm font-semibold text-[#2f3a4a]">
           ルーム: {roomInfo.mode || "-"} / キーワード: {roomInfo.keyword || "-"}
           {meetTimeLabel ? ` / 背景: ${meetTimeLabel}` : null}
         </p>
-        <p className="text-sm text-slate-700">
-          ニックネーム: {roomInfo.nickname || "-"} / 座標: x={position.x}, y={position.y}
+        <p className="text-sm font-semibold text-[#2f3a4a]">
+          ニックネーム: {roomInfo.nickname || "-"}
         </p>
-        <p className="text-sm text-slate-700">同じルームの他プレイヤー: {remoteCount}人</p>
+        <p className="text-sm font-semibold text-[#2f3a4a]">同じルームの他プレイヤー: {remoteCount}人</p>
         {incomingFriendRequests.length > 0 ? (
-          <div className="rounded-md border border-amber-300 bg-amber-50 p-2 text-sm">
-            <p className="font-semibold text-amber-900">フレンド申請が届いています</p>
+          <div className="rounded-md border-2 border-[#2f3a4a] bg-[#fff1f4] p-2 text-sm shadow-[3px_3px_0_0_#2f3a4a]">
+            <p className="font-semibold text-[#2f3a4a]">フレンド申請が届いています</p>
             <div className="mt-2 space-y-2">
               {incomingFriendRequests.slice(0, 3).map((request) => (
-                <div key={request.id} className="rounded bg-white px-2 py-1">
-                  <p className="text-slate-700">{request.requester_nickname}さん</p>
+                <div key={request.id} className="rounded border border-[#2f3a4a] bg-white px-2 py-1">
+                  <p className="text-[#2f3a4a]">{request.requester_nickname}さん</p>
                   <div className="mt-1 flex gap-2">
                     <button
                       type="button"
                       onClick={() => void respondFriendRequest(request.id, true)}
-                      className="rounded bg-emerald-600 px-2 py-1 text-xs font-semibold text-white hover:bg-emerald-500"
+                      className="rounded border-2 border-[#2f3a4a] bg-[#9ed8b5] px-2 py-1 text-xs font-semibold text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95"
                     >
                       承認
                     </button>
                     <button
                       type="button"
                       onClick={() => void respondFriendRequest(request.id, false)}
-                      className="rounded border border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 hover:bg-slate-100"
+                      className="rounded border-2 border-[#2f3a4a] bg-[#f4a6a6] px-2 py-1 text-xs text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95"
                     >
                       拒否
                     </button>
@@ -1188,36 +1208,36 @@ export const MetaverseGame = () => {
         <button
           type="button"
           onClick={leaveRoom}
-          className="self-start rounded-md border border-slate-300 bg-white px-3 py-1 text-sm font-medium text-slate-700 hover:bg-slate-100"
+          className="self-start rounded-md border-2 border-[#2f3a4a] bg-[#8ecdf0] px-3 py-1 text-sm font-semibold text-[#2f3a4a] shadow-[3px_3px_0_0_#2f3a4a] hover:brightness-95"
         >
           ルームから抜ける
         </button>
-        <div className="rounded-md border border-slate-300 bg-white p-2">
+        <div className="rounded-md border-2 border-[#2f3a4a] bg-white p-2 shadow-[3px_3px_0_0_#2f3a4a]">
           <div className="mb-2 flex items-center justify-between gap-2">
-            <p className="text-sm font-semibold text-slate-700">近くの人（{PRIVATE_TALK_RANGE}px以内）</p>
+            <p className="text-sm font-semibold text-[#2f3a4a]">近くの人（{PRIVATE_TALK_RANGE}px以内）</p>
             <button
               type="button"
               onClick={() => setPrioritizeNearby((prev) => !prev)}
-              className="rounded border border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 hover:bg-slate-100"
+              className="rounded border-2 border-[#2f3a4a] bg-[#f8f1dc] px-2 py-1 text-xs text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95"
             >
               {prioritizeNearby ? "優先表示ON" : "優先表示OFF"}
             </button>
           </div>
           <div className="space-y-2 text-sm">
             {nearbyPlayers.length === 0 ? (
-              <p className="text-slate-500">近くに会話可能なユーザーはいません。</p>
+              <p className="text-[#64748b]">近くに会話可能なユーザーはいません。</p>
             ) : (
               nearbyPlayers.map((player) => (
-                <div key={player.socketId} className="flex items-center justify-between gap-2 rounded bg-slate-50 px-2 py-1">
+                <div key={player.socketId} className="flex items-center justify-between gap-2 rounded border border-[#2f3a4a] bg-[#fffdf7] px-2 py-1">
                   <div className="min-w-0">
-                    <p className="truncate text-slate-700">{player.nickname}</p>
-                    <p className="text-xs text-slate-500">
+                    <p className="truncate font-semibold text-[#2f3a4a]">{player.nickname}</p>
+                    <p className="text-xs text-[#64748b]">
                       {Math.round(player.distance)}px
                       {player.isFriend ? " / 友達" : ""}
                       {player.isRecent ? " / 最近会話" : ""}
                     </p>
                     {player.profile?.occupation || player.profile?.prefecture || player.profile?.bio ? (
-                      <p className="truncate text-xs text-slate-500">
+                      <p className="truncate text-xs text-[#64748b]">
                         {[player.profile?.occupation, player.profile?.prefecture, player.profile?.bio]
                           .filter(Boolean)
                           .join(" / ")}
@@ -1233,7 +1253,7 @@ export const MetaverseGame = () => {
                         blockedSocketIds.includes(player.socketId)
                       }
                       onClick={() => requestPrivateTalk(player.socketId)}
-                      className="rounded bg-emerald-600 px-2 py-1 text-xs font-medium text-white hover:bg-emerald-500 disabled:cursor-not-allowed disabled:bg-slate-300"
+                      className="rounded border-2 border-[#2f3a4a] bg-[#9ed8b5] px-2 py-1 text-xs font-medium text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none"
                     >
                       {blockedSocketIds.includes(player.socketId)
                         ? "ブロック中"
@@ -1244,7 +1264,7 @@ export const MetaverseGame = () => {
                     <button
                       type="button"
                       onClick={() => toggleFriendUser(player.nickname)}
-                      className="rounded border border-amber-300 bg-white px-2 py-1 text-xs text-amber-700 hover:bg-amber-50"
+                      className="rounded border-2 border-[#2f3a4a] bg-[#f8f1dc] px-2 py-1 text-xs text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95"
                     >
                       {player.isFriend ? "友達解除" : "友達追加"}
                     </button>
@@ -1259,7 +1279,7 @@ export const MetaverseGame = () => {
                       onClick={() =>
                         void sendFriendRequest(Number(player.userId || 0), player.nickname)
                       }
-                      className="rounded border border-indigo-300 bg-white px-2 py-1 text-xs text-indigo-700 hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-60"
+                      className="rounded border-2 border-[#2f3a4a] bg-[#8ecdf0] px-2 py-1 text-xs text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
                     >
                       {player.isFriend
                         ? "登録済み"
@@ -1272,7 +1292,7 @@ export const MetaverseGame = () => {
                       onClick={() =>
                         toggleBlockUser(player.socketId, !blockedSocketIds.includes(player.socketId))
                       }
-                      className="rounded border border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 hover:bg-slate-100"
+                      className="rounded border-2 border-[#2f3a4a] bg-[#f4a6a6] px-2 py-1 text-xs text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95"
                     >
                       {blockedSocketIds.includes(player.socketId) ? "解除" : "ブロック"}
                     </button>
@@ -1281,32 +1301,32 @@ export const MetaverseGame = () => {
               ))
             )}
           </div>
-          <p className="mt-2 text-xs text-slate-500">
+          <p className="mt-2 text-xs text-[#64748b]">
             近づくと相手のステータスが表示され、フレンド申請できます。
           </p>
         </div>
         {privateSession ? (
-          <div className="flex items-center justify-between rounded-md bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
+          <div className="flex items-center justify-between rounded-md border-2 border-[#2f3a4a] bg-[#e9fff0] px-3 py-2 text-sm text-[#2f3a4a] shadow-[3px_3px_0_0_#2f3a4a]">
             <span>{privateSession.partnerNickname}さんと個別会話中</span>
             <button
               type="button"
               onClick={endPrivateSession}
-              className="rounded bg-emerald-700 px-2 py-1 text-xs font-semibold text-white hover:bg-emerald-600"
+              className="rounded border-2 border-[#2f3a4a] bg-[#f4a6a6] px-2 py-1 text-xs font-semibold text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95"
             >
               終了
             </button>
           </div>
         ) : null}
-        {roomInfo.mode === "call" && privateSession ? (
-          <div className="rounded-md border border-emerald-200 bg-emerald-50 p-2 text-sm text-emerald-900">
+        {(roomInfo.mode === "call" || roomInfo.mode === "talk" || roomInfo.mode === "chat") && privateSession ? (
+          <div className="rounded-md border-2 border-[#2f3a4a] bg-[#eef7ff] p-2 text-sm text-[#2f3a4a] shadow-[3px_3px_0_0_#2f3a4a]">
             <p className="font-semibold">空間通話: {callStatusLabel[callStatus]}</p>
             {callError ? <p className="mt-1 text-xs text-red-700">{callError}</p> : null}
             <div className="mt-2 flex flex-wrap gap-2">
               <button
                 type="button"
-                onClick={startVoiceCall}
+                onClick={() => void startVoiceCall()}
                 disabled={callStatus !== "idle" && callStatus !== "ended"}
-                className="rounded bg-emerald-600 px-2 py-1 text-xs font-semibold text-white hover:bg-emerald-500 disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded border-2 border-[#2f3a4a] bg-[#9ed8b5] px-2 py-1 text-xs font-semibold text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
               >
                 通話開始
               </button>
@@ -1314,7 +1334,7 @@ export const MetaverseGame = () => {
                 type="button"
                 onClick={toggleMute}
                 disabled={!hasLocalAudio}
-                className="rounded border border-emerald-400 bg-white px-2 py-1 text-xs text-emerald-800 hover:bg-emerald-100 disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded border-2 border-[#2f3a4a] bg-[#f8f1dc] px-2 py-1 text-xs text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
               >
                 {isMicMuted ? "ミュート解除" : "ミュート"}
               </button>
@@ -1322,7 +1342,7 @@ export const MetaverseGame = () => {
                 type="button"
                 onClick={() => endVoiceCall("manual")}
                 disabled={callStatus === "idle"}
-                className="rounded border border-red-300 bg-white px-2 py-1 text-xs text-red-700 hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded border-2 border-[#2f3a4a] bg-[#f4a6a6] px-2 py-1 text-xs text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
               >
                 通話終了
               </button>
@@ -1330,7 +1350,7 @@ export const MetaverseGame = () => {
                 type="button"
                 onClick={() => void startVoiceCall(true)}
                 disabled={callStatus === "requesting-media" || callStatus === "calling" || callStatus === "connected"}
-                className="rounded border border-indigo-300 bg-white px-2 py-1 text-xs text-indigo-700 hover:bg-indigo-50 disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded border-2 border-[#2f3a4a] bg-[#8ecdf0] px-2 py-1 text-xs text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
               >
                 再試行
               </button>
@@ -1345,7 +1365,9 @@ export const MetaverseGame = () => {
           <button
             type="button"
             onClick={() => setChatTab("room")}
-            className={`rounded px-3 py-1 text-sm ${chatTab === "room" ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-700"}`}
+            className={`rounded border-2 border-[#2f3a4a] px-3 py-1 text-sm font-semibold shadow-[2px_2px_0_0_#2f3a4a] ${
+              chatTab === "room" ? "bg-[#8ecdf0] text-[#2f3a4a]" : "bg-[#fff1f4] text-[#2f3a4a]"
+            }`}
           >
             ルーム
           </button>
@@ -1354,8 +1376,8 @@ export const MetaverseGame = () => {
             disabled={!privateSession}
             onClick={() => setChatTab("private")}
             className={`rounded px-3 py-1 text-sm ${
-              chatTab === "private" ? "bg-emerald-600 text-white" : "bg-slate-100 text-slate-700"
-            } disabled:cursor-not-allowed disabled:opacity-60`}
+              chatTab === "private" ? "bg-[#9ed8b5] text-[#2f3a4a]" : "bg-[#fff1f4] text-[#2f3a4a]"
+            } border-2 border-[#2f3a4a] font-semibold shadow-[2px_2px_0_0_#2f3a4a] disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none`}
           >
             個別{privateUnreadCount > 0 ? ` (${privateUnreadCount})` : ""}
           </button>
@@ -1377,25 +1399,25 @@ export const MetaverseGame = () => {
               }
             }}
             placeholder={chatTab === "private" ? "個別チャットを入力..." : "チャットを入力..."}
-            className="flex-1 rounded-md border border-slate-300 px-3 py-2 text-sm"
+            className="flex-1 rounded-md border-2 border-[#2f3a4a] px-3 py-2 text-sm shadow-[inset_2px_2px_0_0_rgba(47,58,74,0.12)]"
           />
           <button
             type="button"
             onClick={chatTab === "private" ? sendPrivateChat : sendChat}
-            className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500"
+            className="rounded-md border-2 border-[#2f3a4a] bg-[#8ecdf0] px-4 py-2 text-sm font-semibold text-[#2f3a4a] shadow-[3px_3px_0_0_#2f3a4a] hover:brightness-95"
           >
             送信
           </button>
         </div>
-        <div className="rounded-md border border-slate-300 bg-white p-2">
-          <p className="mb-2 text-sm font-semibold text-slate-700">
+        <div className="rounded-md border-2 border-[#2f3a4a] bg-white p-2 shadow-[3px_3px_0_0_#2f3a4a]">
+          <p className="mb-2 text-sm font-semibold text-[#2f3a4a]">
             {chatTab === "private"
               ? `個別チャット${privateSession ? `（${privateSession.partnerNickname}さん）` : ""}`
               : "ルームチャット（近い人のみ表示）"}
           </p>
           <div className="max-h-[480px] space-y-1 overflow-y-auto text-sm">
             {(chatTab === "private" ? privateMessages.length === 0 : visibleMessages.length === 0) ? (
-              <p className="text-slate-500">
+              <p className="text-[#64748b]">
                 {chatTab === "private"
                   ? "個別メッセージはまだありません。"
                   : "近くのメッセージはまだありません。"}
@@ -1406,11 +1428,11 @@ export const MetaverseGame = () => {
                 return (
                   <div key={item.id} className={`flex ${isMine ? "justify-end" : "justify-start"}`}>
                     <div
-                      className={`w-[95%] rounded px-2 py-1 ${isMine ? "bg-indigo-100 text-indigo-900" : "bg-slate-100 text-slate-700"}`}
+                      className={`w-[95%] rounded border px-2 py-1 ${isMine ? "border-[#2f3a4a] bg-[#e8f5ff] text-[#2f3a4a]" : "border-[#2f3a4a] bg-[#fff1f4] text-[#2f3a4a]"}`}
                     >
                       <div className="flex items-start justify-between gap-2">
                         <span className="font-semibold">{item.nickname}</span>
-                        <span className="text-xs text-slate-500">{formatTime(item.createdAt)}</span>
+                        <span className="text-xs text-[#64748b]">{formatTime(item.createdAt)}</span>
                       </div>
                       <p>{item.message}</p>
                     </div>

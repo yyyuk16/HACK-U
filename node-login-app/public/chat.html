@@ -141,7 +141,7 @@
             if (!keyword) {
                 return;
             }
-            location.href = `/room.html?mode=chat&keyword=${encodeURIComponent(keyword)}`;
+            location.href = `/room.html?mode=talk&keyword=${encodeURIComponent(keyword)}`;
         });
 
         async function loadRooms() {
@@ -169,7 +169,7 @@
                         </span>
                     </div>
                     <small>作成: ${new Date(room.created_at).toLocaleString('ja-JP')}</small><br>
-                    <a href="/room.html?mode=chat&keyword=${encodeURIComponent(room.keyword)}">このルームへ入る</a>
+                    <a href="/room.html?mode=talk&keyword=${encodeURIComponent(room.keyword)}">このルームへ入る</a>
                 </article>
             `).join('');
         }

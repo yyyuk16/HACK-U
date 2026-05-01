@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atsumachi Metaverse HUD</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;family=Zen+Maru+Gothic:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-primary-fixed-variant": "#004d68",
+                "on-primary-container": "#015876",
+                "inverse-primary": "#90cff2",
+                "on-error": "#ffffff",
+                "tertiary-fixed-dim": "#cec5b9",
+                "on-secondary-fixed": "#380b0f",
+                "on-primary": "#ffffff",
+                "surface-container": "#e6eeff",
+                "on-secondary-fixed-variant": "#6e3637",
+                "primary-fixed": "#c2e8ff",
+                "tertiary-container": "#cdc4b8",
+                "error-container": "#ffdad6",
+                "on-tertiary-fixed-variant": "#4c463d",
+                "on-surface": "#111c2b",
+                "primary-container": "#8ecdf0",
+                "inverse-surface": "#263141",
+                "on-error-container": "#93000a",
+                "background": "#f8f9ff",
+                "on-secondary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-background": "#111c2b",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#ffb3b3",
+                "surface-tint": "#1d6584",
+                "on-primary-fixed": "#001e2c",
+                "on-tertiary-container": "#575147",
+                "tertiary": "#645d53",
+                "outline": "#70787e",
+                "inverse-on-surface": "#ebf1ff",
+                "outline-variant": "#c0c7ce",
+                "surface-container-highest": "#d8e3f8",
+                "secondary-container": "#feafaf",
+                "surface-bright": "#f8f9ff",
+                "surface-container-high": "#dde9fe",
+                "secondary-fixed": "#ffdad9",
+                "on-secondary-container": "#7a3f41",
+                "on-tertiary": "#ffffff",
+                "primary": "#1d6584",
+                "surface-container-low": "#eff4ff",
+                "surface-variant": "#d8e3f8",
+                "primary-fixed-dim": "#90cff2",
+                "surface": "#f8f9ff",
+                "surface-dim": "#cfdbef",
+                "on-surface-variant": "#40484d",
+                "on-tertiary-fixed": "#1f1b13",
+                "tertiary-fixed": "#ebe1d4",
+                "secondary": "#8a4d4e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "xl": "32px",
+                "md": "16px",
+                "unit": "4px",
+                "sm": "8px",
+                "xs": "4px",
+                "margin": "24px",
+                "lg": "24px",
+                "gutter": "16px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Zen Maru Gothic"
+                ],
+                "headline-md": [
+                        "DotGothic16"
+                ],
+                "body-lg": [
+                        "Zen Maru Gothic"
+                ],
+                "label-sm": [
+                        "DotGothic16"
+                ],
+                "display-lg": [
+                        "DotGothic16"
+                ],
+                "label-pixel": ["DotGothic16"],
+                "h2": ["DotGothic16"],
+                "h1": ["DotGothic16"]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-pixel": ["14px", { "lineHeight": "1.0", "fontWeight": "400" }],
+                "h2": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col md:flex-row antialiased">
+<!-- SideNavBar (Web) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-64 flex-col z-40 bg-[#F3E9DC] dark:bg-stone-950 border-r-4 border-[#2F3A4A] shadow-[4px_0_0_0_rgba(47,58,74,1)]">
+<div class="p-6 border-b-4 border-[#2F3A4A]">
+<h1 class="text-xl font-black text-[#2F3A4A] dark:text-stone-50 mb-8 font-h1 text-h1 tracking-tight">ATSUMACHI 集町</h1>
+<div class="flex items-center gap-4">
+<img alt="Pixel Art Character Avatar" class="w-12 h-12 border-2 border-[#2F3A4A] bg-surface-container-highest" data-alt="A meticulously crafted 16-bit pixel art style portrait of a Japanese character, resembling a classic JRPG avatar. The character has stylized features, perhaps wearing subtle modern streetwear or traditional yukata elements. The background is a solid, warm color. The image uses a limited palette reminiscent of SNES graphics, with crisp, distinct pixels and no anti-aliasing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ZktWmrIk5tKM2mFBJglWVS1tQ83Gp6IcOezKruPlFkNxiiuTGbFwHmP8IDTjaNrlqfFLxubZ0npq4e5u8WnOgX1oRjlzldIscHInSa5aTy6yv8f4dPasHyrtiE2mwdvWWFXO5qKvXfqFEiGGCRHHb-RqKsKkfUhOCrF0ljZNsU_MWPX0Vi8JHsz3X5xB1TDKwFjqc1pI6-oAGNoGZ0tETeRy9e3dgaxKVCyLMyuFg7cSx2fs27a8eTBReYk0e1psFcfhgia7N2UF"/>
+<div>
+<div class="font-bold text-sm uppercase tracking-widest font-label-pixel text-label-pixel text-[#2F3A4A]">Atsumachi</div>
+<div class="text-xs text-stone-600 font-label-pixel">Resident #1204</div>
+</div>
+</div>
+</div>
+<div class="flex-1 py-4 flex flex-col gap-2">
+<a class="text-[#2F3A4A] dark:text-stone-400 m-2 flex items-center gap-3 p-3 hover:bg-white/50 dark:hover:bg-stone-800 font-bold text-sm uppercase tracking-widest font-label-pixel hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+                Town Square
+            </a>
+<a class="bg-[#8ECDF0] text-[#2F3A4A] border-2 border-[#2F3A4A] shadow-[4px_4px_0_0_rgba(47,58,74,1)] m-2 flex items-center gap-3 p-3 font-bold text-sm uppercase tracking-widest font-label-pixel hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">forum</span>
+                Talk Rooms
+            </a>
+<a class="text-[#2F3A4A] dark:text-stone-400 m-2 flex items-center gap-3 p-3 hover:bg-white/50 dark:hover:bg-stone-800 font-bold text-sm uppercase tracking-widest font-label-pixel hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">map</span>
+                Travel Japan
+            </a>
+<a class="text-[#2F3A4A] dark:text-stone-400 m-2 flex items-center gap-3 p-3 hover:bg-white/50 dark:hover:bg-stone-800 font-bold text-sm uppercase tracking-widest font-label-pixel hover:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">cottage</span>
+                My Room
+            </a>
+</div>
+<div class="p-4 border-t-4 border-[#2F3A4A]">
+<button class="w-full bg-[#F4A6A6] text-[#2F3A4A] border-4 border-[#2F3A4A] shadow-[4px_4px_0_0_rgba(47,58,74,1)] p-3 font-label-pixel text-label-pixel uppercase tracking-wider active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">Enter Metaverse</button>
+</div>
+</nav>
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden flex justify-between items-center px-6 py-4 w-full bg-[#F3E9DC] dark:bg-stone-900 border-b-4 border-[#2F3A4A] shadow-[0_4px_0_0_rgba(47,58,74,1)] sticky top-0 z-50">
+<div class="text-2xl font-black text-[#2F3A4A] dark:text-green-200 border-b-4 border-[#2F3A4A] font-h2 text-h2 tracking-tight">ATSUMACHI 集町</div>
+<div class="flex gap-4">
+<button class="text-[#2F3A4A] hover:bg-white/50 dark:hover:bg-stone-800 transition-all p-2 rounded-none border-2 border-transparent active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="text-[#2F3A4A] hover:bg-white/50 dark:hover:bg-stone-800 transition-all p-2 rounded-none border-2 border-transparent active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col lg:flex-row h-[calc(100vh-76px)] md:h-screen overflow-hidden p-gutter lg:p-lg gap-gutter bg-surface-container-low">
+<!-- Metaverse Viewport -->
+<section class="flex-1 flex flex-col gap-sm h-full relative">
+<div class="bg-[#F3E9DC] text-[#2F3A4A] px-4 py-2 border-4 border-[#2F3A4A] border-b-0 font-label-pixel text-label-pixel uppercase tracking-widest flex justify-between items-center w-fit shadow-[4px_0_0_0_rgba(47,58,74,1)]">
+<span>Room: Izakaya 'Yoi'</span>
+<span class="material-symbols-outlined text-[16px] ml-2">signal_cellular_alt</span>
+</div>
+<!-- Canvas Area -->
+<div class="flex-1 border-4 border-[#2F3A4A] bg-surface-container-highest relative overflow-hidden shadow-[4px_4px_0_0_rgba(47,58,74,1)] group">
+<!-- Fallback/Reference Image Container (Simulating the 2D view) -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A highly detailed, 16-bit isometric pixel art scene depicting the interior of a cozy, traditional Japanese izakaya. The room features warm, inviting wood textures, paper lanterns emitting a soft amber glow, and small wooden tables arranged intimately. The perspective is top-down isometric, reminiscent of classic JRPGs. The color palette is rich in warm browns, deep reds, and soft yellows, creating a welcoming, nostalgic atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDkXblsJKCkWf8m33pNmuFdT5OLZsP-Y9_RT7g3-b7h9xNAf1nSuSiVfsuCFMlH5anVOKrjf1w2IwwcrmD51VAEPhPndjvJA70jq74Bp5ueWrT9rDEBkN-0rkYMX3Iz_9f76wAxpxbLFzGWEwCx7ZwdlyN8cCUY0hmlc8zppLtYGmRZIdyd93r3xziRe_k3CaoNiigzOGjuz7J36uxdu-gyhuiyG8STrY4U1eiAoCMpfwt6OZcl591pW5Q-wZxHLKy-GoCO1-GR4d1');">
+<!-- Overlay to make it feel more UI-like if needed, kept subtle -->
+<div class="absolute inset-0 bg-black/10"></div>
+</div>
+<!-- Avatars in space -->
+<div class="absolute top-[40%] left-[30%] flex flex-col items-center animate-[bounce_3s_infinite]">
+<div class="bg-[#F3E9DC] text-[#2F3A4A] font-label-pixel text-[12px] px-2 py-1 border-2 border-[#2F3A4A] mb-1 shadow-[2px_2px_0_0_rgba(47,58,74,1)]">Taro</div>
+<img alt="Avatar Taro" class="w-8 h-8 border-2 border-[#2F3A4A]" data-alt="A tiny 16-bit pixel art sprite of a male character in a green jacket. Crisp edges, retro game style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGYyf8ERFSNRpdolpu1XdWOcLqrZ0swqhB6-XfFxPBgTrU5WzCx3s-qPfBq_Ij7C7tulzacVgUnwgP5bLaQifhQHnCtWbWlXXNjxn70fCaGpSR8sn8hL_Wcc8Fly2GID48s394I7RaFrAEkRGgXr_iA3ihFDh7VHcyenrrtpU5h-QtiiPFVDLiSUdouI7g2tpTtG1IhgAdukK-NMbQiOFk-BS2VqIbvZVFpjVZvXtl7-87OBti9jGgyZX-C5TTwm5guNsOAYOGCpSa"/>
+</div>
+<div class="absolute top-[50%] left-[60%] flex flex-col items-center">
+<div class="bg-[#8ECDF0] text-[#2F3A4A] font-label-pixel text-[12px] px-2 py-1 border-2 border-[#2F3A4A] mb-1 shadow-[2px_2px_0_0_rgba(47,58,74,1)]">You</div>
+<img alt="Your Avatar" class="w-8 h-8 border-2 border-[#2F3A4A]" data-alt="A tiny 16-bit pixel art sprite of a character. Crisp edges, retro game style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmtO6BH_FuzCvHo7j60q165WLuwSsCWF7EoadxFREJjtZ9WLdG_yyzcqOq_qNK357hH_7xWAxLytgblXsVYPXlPBMbqvHFxHb3KSUOkstyedpPsCAVnr8OMb6bdw7-Oc6JXGklXlMJbWBGQBRDsKJbH2lHcQ4tjnca6JOi6EjI6kuzVvSzdqKn8i8a_Hzl_aKWaEzK3dc8pBZHXWzQMJAF4aQrFcIxl-0M5W-TyQSlKxmy7Q2fgqQxhRJzh4DUVl0tVtCoQ35H-WWC"/>
+</div>
+</div>
+<!-- Call Controls HUD -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4 bg-[#F3E9DC] border-4 border-[#2F3A4A] p-2 shadow-[4px_4px_0_0_rgba(47,58,74,1)] z-10">
+<button class="w-12 h-12 bg-white text-[#2F3A4A] border-2 border-[#2F3A4A] shadow-[2px_2px_0_0_rgba(47,58,74,1)] flex items-center justify-center hover:bg-stone-200 active:translate-y-1 active:shadow-none transition-all" title="Mute">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="w-12 h-12 bg-white text-[#2F3A4A] border-2 border-[#2F3A4A] shadow-[2px_2px_0_0_rgba(47,58,74,1)] flex items-center justify-center hover:bg-stone-200 active:translate-y-1 active:shadow-none transition-all" title="Camera">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="w-12 h-12 bg-[#F4A6A6] text-[#2F3A4A] border-2 border-[#2F3A4A] shadow-[2px_2px_0_0_rgba(47,58,74,1)] flex items-center justify-center hover:bg-red-300 active:translate-y-1 active:shadow-none transition-all" title="End Call">
+<span class="material-symbols-outlined">call_end</span>
+</button>
+</div>
+</section>
+<!-- Communication Panel -->
+<aside class="w-full lg:w-80 flex flex-col h-full bg-[#F3E9DC] border-4 border-[#2F3A4A] shadow-[4px_4px_0_0_rgba(47,58,74,1)]">
+<!-- Tabs -->
+<div class="flex border-b-4 border-[#2F3A4A] bg-[#F3E9DC]">
+<button class="flex-1 py-3 px-4 bg-white text-[#2F3A4A] border-b-4 border-[#8ECDF0] font-label-pixel text-label-pixel uppercase tracking-widest flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">group</span>
+                    Nearby
+                </button>
+<button class="flex-1 py-3 px-4 text-[#2F3A4A] hover:bg-white/50 border-b-4 border-transparent font-label-pixel text-label-pixel uppercase tracking-widest flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                    Chat
+                </button>
+</div>
+<!-- Nearby List Content -->
+<div class="flex-1 overflow-y-auto p-4 flex flex-col gap-4 bg-white">
+<div class="font-label-pixel text-[12px] text-[#2F3A4A] uppercase tracking-widest mb-2">In this room (4)</div>
+<!-- List Item -->
+<div class="flex items-center gap-3 p-2 border-2 border-transparent hover:border-[#2F3A4A] hover:bg-[#F3E9DC] transition-all cursor-pointer">
+<div class="relative">
+<img alt="Avatar" class="w-10 h-10 border-2 border-[#2F3A4A] bg-surface" data-alt="A tiny 16-bit pixel art sprite of a male character in a green jacket. Crisp edges, retro game style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsQ6-xBFfSd16I-o8T7LLIfCuhF53P_4wfSG2zlYPnOEprGDeAYsnDuSXAs7NdzXZhzrCCgRoXWcl0GXQIJw7EDIi1rA2NzWII52TkPzKRvw4atzChdfjCPzEquhaVaY_C0vjXN7fpI8rwpRo1Ef8XupUailcDQCell_adDfBvKEOqTv4fDx0nIJksSHdPQtE6xmuAwTpUgPnhx1R4Kst3S_8NqeeaieRp00q3qxVqIBAEuPV4i7MXHhzt2FcRjJaRwRCshJX96fIL"/>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-[#8ECDF0] border-2 border-[#2F3A4A]"></div>
+</div>
+<div class="flex-1">
+<div class="font-body-md font-medium text-[#2F3A4A]">Taro_Yamada</div>
+<div class="font-label-pixel text-[12px] text-[#2F3A4A]/70">Speaking...</div>
+</div>
+<button class="text-[#2F3A4A]/50 hover:text-[#2F3A4A]">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- List Item -->
+<div class="flex items-center gap-3 p-2 border-2 border-transparent hover:border-[#2F3A4A] hover:bg-[#F3E9DC] transition-all cursor-pointer">
+<div class="relative">
+<img alt="Avatar" class="w-10 h-10 border-2 border-[#2F3A4A] bg-surface" data-alt="A tiny 16-bit pixel art sprite of a female character with red hair. Crisp edges, retro game style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUpOz9X9O6UlcjEa65XLZPsY5NAPsSC2WucZQ2Xb2Tp6LyVMsDpZgk-B3aF0iTtbZ8G9eXROg25p-LWrpaQc15H4OQjY3yx6gSECn01jXQLU9RpeCcVsT5nF5umurhH8WR8Nfx51kwzWTy2lid9y31Dm3G-OOKjw1lC-8HDj2-yfSGmbU6ZFozI8QRYmpB1mZBPRNtWqiN_rV9wBno7o4YLzTcbyoN1CYZb7dLRloF3YqpgPRBW7kx5UmIEYbUN4kWPLurVtWcsskE"/>
+<div class="absolute -bottom-1 -right-1 w-3 h-3 bg-[#8ECDF0] border-2 border-[#2F3A4A]"></div>
+</div>
+<div class="flex-1">
+<div class="font-body-md font-medium text-[#2F3A4A]">Sakura99</div>
+<div class="font-label-pixel text-[12px] text-[#2F3A4A]/70">Listening</div>
+</div>
+<button class="text-[#2F3A4A]/50 hover:text-[#2F3A4A]">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Quick Actions Bottom -->
+<div class="p-4 border-t-4 border-[#2F3A4A] bg-[#F3E9DC]">
+<button class="w-full bg-[#8ECDF0] text-[#2F3A4A] border-2 border-[#2F3A4A] shadow-[2px_2px_0_0_rgba(47,58,74,1)] p-2 font-label-pixel text-[12px] uppercase tracking-wider active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+                    Invite to Room
+                </button>
+</div>
+</aside>
+</main>
+</body></html>

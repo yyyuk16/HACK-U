@@ -5,118 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>メイン画面</title>
     <style>
+        :root {
+            --bg: #f3e9dc;
+            --surface: #ffffff;
+            --line: #2f3a4a;
+            --blue: #8ecdf0;
+            --pink: #f4a6a6;
+            --green: #9ed8b5;
+            --text: #1f2937;
+        }
+        * {
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
             min-height: 100vh;
+            font-family: "Zen Maru Gothic", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             display: grid;
             place-items: center;
-            font-family: Arial, sans-serif;
-            background: #f5f7ff;
+            padding: 24px;
         }
         .container {
-            width: min(560px, 92vw);
-            background: #ffffff;
+            width: min(860px, 96vw);
+            background: var(--surface);
+            border: 4px solid var(--line);
             border-radius: 16px;
-            padding: 28px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+            box-shadow: 6px 6px 0 0 var(--line);
+        }
+        .logo {
+            display: block;
+            width: min(460px, 98%);
+            margin: 0 auto 2px;
+            image-rendering: pixelated;
         }
         .nickname {
-            margin: 0 0 24px;
-            font-size: 24px;
-            font-weight: 700;
-            color: #223;
+            margin: 0 0 16px;
+            font-size: 34px;
+            font-family: "DotGothic16", monospace;
+            color: var(--line);
+            text-align: center;
+            border-bottom: 4px solid var(--line);
+            padding-bottom: 10px;
         }
         .actions {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
         }
         .actions button {
-            min-width: 120px;
-            padding: 12px 18px;
-            border: none;
+            min-width: 0;
+            padding: 14px 12px;
+            border: 3px solid var(--line);
+            box-shadow: 4px 4px 0 0 var(--line);
             border-radius: 10px;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 700;
             cursor: pointer;
+            color: var(--line);
+            background: #fff;
+            transition: transform 0.08s ease, box-shadow 0.08s ease;
         }
-        .talk {
-            background: #4c6fff;
-            color: #fff;
+        .actions button:active {
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0 0 var(--line);
         }
-        .meet {
-            background: #20c997;
-            color: #fff;
-        }
-        .mypage {
-            background: #f59e0b;
-            color: #fff;
-        }
+        .talk { background: var(--blue); }
+        .meet { background: var(--green); }
+        .mypage { background: var(--pink); }
         .panels {
-            margin-top: 20px;
+            margin-top: 18px;
             display: grid;
             gap: 12px;
             text-align: left;
         }
         .panel {
-            border: 1px solid #dfe5f2;
-            border-radius: 10px;
-            padding: 12px;
-            background: #fafcff;
+            border: 3px solid var(--line);
+            border-radius: 12px;
+            background: #fffdf7;
+            box-shadow: 4px 4px 0 0 var(--line);
+            overflow: hidden;
         }
         .panel h2 {
-            margin: 0 0 8px;
+            margin: 0;
             font-size: 16px;
-            color: #223;
+            font-family: "DotGothic16", monospace;
+            color: var(--line);
+            padding: 10px 12px;
+            border-bottom: 3px solid var(--line);
+            background: #f9eef2;
+        }
+        .panel > div {
+            padding: 10px 12px;
         }
         .item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 8px;
-            padding: 6px 0;
-            border-top: 1px dashed #e7ecf7;
+            padding: 8px 0;
+            border-top: 1px dashed #a8b3c2;
         }
-        .item:first-of-type {
-            border-top: none;
-        }
-        .item-actions {
-            display: flex;
-            gap: 6px;
-        }
+        .item:first-of-type { border-top: none; }
+        .item-actions { display: flex; gap: 6px; }
         .item-actions button {
-            border: none;
+            border: 2px solid var(--line);
             border-radius: 8px;
             padding: 6px 8px;
             font-size: 12px;
             font-weight: 700;
             cursor: pointer;
+            color: var(--line);
+            background: #fff;
         }
-        .accept {
-            background: #20c997;
-            color: #fff;
-        }
-        .reject {
-            background: #f1f5f9;
-            color: #334;
-        }
-        .empty {
-            color: #667;
-            font-size: 13px;
-            margin: 0;
-        }
-        .status-online {
-            color: #059669;
-            font-weight: 700;
-        }
-        .status-offline {
-            color: #64748b;
-        }
+        .accept { background: #a8ecc4; }
+        .reject { background: #f8dde3; }
+        .empty { color: #667; font-size: 13px; margin: 0; }
+        .status-online { color: #0f766e; font-weight: 700; }
+        .status-offline { color: #64748b; }
     </style>
 </head>
 <body>
     <main class="container">
+        <img class="logo" src="/logo.png" alt="あつまち ロゴ">
         <h1 class="nickname" id="nickname">読み込み中...</h1>
         <div class="actions">
             <button class="talk" id="talkButton" type="button">話す</button>
@@ -254,7 +267,7 @@
             location.href = '/selecttalk.html';
         });
         document.getElementById('meetButton').addEventListener('click', () => {
-            location.href = '/room.html?mode=meet&keyword=meet-lobby';
+            location.href = '/selectmeet.html';
         });
         document.getElementById('mypageButton').addEventListener('click', () => {
             location.href = '/mypage.html';

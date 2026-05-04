@@ -498,7 +498,12 @@ export const MetaverseGame = () => {
           ? getMeetBackgroundPath(meetSlot)
           : "/item/background-chat.png";
 
-    socketRef.current = io("http://localhost:3001", {
+    // Socket接続: 統合サーバーのポート3000を使用
+    const socketUrl = typeof window !== 'undefined' 
+      ? `${window.location.protocol}//${window.location.hostname}:${window.location.port || (window.location.protocol === 'https:' ? 443 : 80)}`
+      : "http://localhost:3000";
+    
+    socketRef.current = io(socketUrl, {
       autoConnect: true,
       transports: ["websocket"],
       query: {

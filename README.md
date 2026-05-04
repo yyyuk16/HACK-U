@@ -98,52 +98,43 @@ HACK-U2026 で作成したメタバースアプリのリポジトリです。
 
 ## 起動手順
 
-> **2026年5月4日更新**: サーバーを1つに統合しました。旧方法（3プロセス）は不要になりました。  
-> 詳細は [MIGRATION_GUIDE.md](./MIGRATION_GUIDE.md) を参照してください。
+### 1) `node-login-app`（3000）
 
-### 統合サーバー（推奨） - ポート3000のみ
-
-```bash
-# hack-u ディレクトリで1つのコマンドを実行
-cd hack-u
-
-# 開発モード
-npm run start:unified
-
-# または本番モード
-npm run build
-npm run start:unified:prod
+```powershell
+cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\node-login-app"
+npm start
 ```
 
-ブラウザで `http://localhost:3000` にアクセス → ログインページが表示されます。
+#### ローカルDBで詰まったとき（一時的にDocker DBを使う）
 
-### セットアップ
-1. `.env` ファイルを作成（[.env.example](./hack-u/.env.example) を参考）
-2. PostgreSQL DB `hacku_prod` を作成
-3. `npm install` で依存パッケージをインストール
+```powershell
+cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\node-login-app"
+docker compose up -d db
+npm run start:dockerdb
+```
 
-### 旧方法（3プロセス）- 廃止予定
+- `start:dockerdb` は `.env` を変更せず、`hacku_db`（`localhost:5433`）へ一時接続
+- テーブル確認だけしたい場合は `npm run db:inspect:docker`
+- 停止は `docker compose down`
 
-統合前の方法は以下のコマンドで起動可能です（互換性のため保持）:
-```bash
-# ターミナル1: 認証API (ポート3000)
-cd node-login-app && npm start
+### 2) Socketサーバー（3001）
 
-# ターミナル2: Socket.IOサーバー (ポート3001)
-cd hack-u && npm run socket
+```powershell
+cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\hack-u"
+npm run socket
+```
 
-# ターミナル3: Next.jsメタバース (ポート3002)
-cd hack-u && npm run dev:web
+### 3) メタバース画面（3002）
+
+```powershell
+cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\hack-u"
+npm run dev:web
 ```
 
 ## 注意点
 
-- 統合サーバー使用時は、変更後の再起動は1回で済みます
-- `EADDRINUSE` エラーが出たら既存プロセスを停止：
-  ```bash
-  # macOS/Linux
-  lsof -i :3000 | grep node | awk '{print $2}' | xargs kill -9
-  ```
+- 変更反映時は `socket` の再起動が必要
+- `EADDRINUSE` が出たら既存プロセスを停止して再起動
 - アバター画像はスプライトシート形式（`32x32` フレーム、`3列x4行` 前提）で使用
 - `node-login-app/public/logo.png` を更新するとロゴ表示画面へ反映される
 

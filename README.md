@@ -14,6 +14,28 @@ HACK-U2026 で作成したメタバースアプリのリポジトリです。
 - `hack-u/socket-server.js`:
   - `mode + keyword` を room key としてルーム管理
 
+## 技術スタック
+
+全体は **認証・API（Express） + 2Dメタバース（Next.js / React / Phaser） + リアルタイム同期（Socket.IO） + PostgreSQL** の構成です。
+
+| 項目 | 採用技術 | 補足 |
+|------|----------|------|
+| フロントエンド（描画） | `TypeScript 5` + `Phaser 4` | 2Dメタバース描画 |
+| UI（メニュー等） | `React 19` + `Next.js 16` + `Tailwind CSS 4` | `hack-u`（App Router） |
+| バックエンド（認証・API） | `Node.js` + `Express 4` | `express-session` / `bcrypt` / `dotenv` |
+| バックエンド（同期） | `Node.js` + `Socket.IO 4` | `hack-u/socket-server.js` で座標・会話同期 |
+| リアルタイム通信 | `socket.io-client 4` / `Socket.IO 4` / `WebRTC` | チャット・個別会話・通話（offer/answer/ice） |
+| データベース | `PostgreSQL 16`（`pg`） | `docker-compose` で `postgres:16-alpine` も利用可 |
+| 開発ツール | `ESLint 9`（`eslint-config-next`） | ルート `package.json` は `hack-u` のスクリプト集約 |
+
+### 起動時のポート分担（開発）
+
+| 役割 | ポート | コマンド例 |
+|------|--------|------------|
+| API・静的画面 | 3000 | `node-login-app`: `npm start` |
+| Socket サーバー | 3001 | `hack-u`: `npm run socket` |
+| メタバース（Next） | 3002 | `hack-u`: `npm run dev:web` |
+
 ## 実装済み機能
 
 ### 認証・登録

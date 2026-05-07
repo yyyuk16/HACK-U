@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixel Art Activity Board</title>
+    <style>
+        body {
+            background-color: #6a4c42; /* ご指定の茶色 */
+            margin: 0;
+            padding: 30px;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            color: #f1e4d0;
+        }
+
+        .controls {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            border-radius: 6px;
+            border: 2px solid #be9a78;
+            background: #f1e4d0;
+            width: 250px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #be9a78;
+            border: none;
+            border-radius: 6px;
+            color: #3e2b26;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #d8c3b1;
+        }
+
+        #gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .attribute-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background-color: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto; /* 横に増えたらスクロール */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .attribute-label {
+            min-width: 140px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffca85;
+            padding-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .room-list {
+            display: flex;
+            gap: 20px;
+        }
+
+        .room-item {
+            width: 320px;
+            height: auto;
+            border: 5px solid #000;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.2);
+            image-rendering: pixelated; /* ドット絵をくっきりさせる */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <input type="text" id="attr-input" placeholder="属性名（例：食事）を入力">
+        <button id="add-btn">同じ属性の部屋を追加</button>
+    </div>
+
+    <div id="gallery-container">
+        <!-- JavaScriptによってデフォルト画像がここに生成されます -->
+    </div>
+
+    <script>
+        // デフォルト画像の定義（属性名とファイル名の対応）
+        const defaultSettings = [
+            { id: 'フリー', src: 'public/free.png' },
+            { id: '食事', src: 'public/meal.png' },
+            { id: '飲み', src: 'public/meal.png' },
+            { id: '勉強', src: 'public/study.png' },
+            { id: 'ゲーム', src: 'public/game.png' },
+            { id: '応援', src: 'public/cheer.png' },
+            { id: 'ディスカッション', src: 'public/discuss.png' }
+        ];
+
+        const container = document.getElementById('gallery-container');
+        const input = document.getElementById('attr-input');
+        const btn = document.getElementById('add-btn');
+
+        // 各属性の行要素を保持するオブジェクト
+        const rows = {};
+
+        // 1. 初期表示（7枚を縦に並べる）
+        function initialize() {
+            defaultSettings.forEach(item => {
+                createRow(item.id);
+                addRoomImage(item.id, item.src);
+            });
+        }
+
+        // 行を作成する関数
+        function createRow(id) {
+            const rowDiv = document.createElement('div');
+            rowDiv.className = 'attribute-row';
+            
+            const label = document.createElement('div');
+            label.className = 'attribute-label';
+            label.textContent = id;
+
+            const roomList = document.createElement('div');
+            roomList.className = 'room-list';
+
+            rowDiv.appendChild(label);
+            rowDiv.appendChild(roomList);
+            container.appendChild(rowDiv);
+
+            rows[id] = rowDiv;
+        }
+
+        // 画像を追加する関数
+        function addRoomImage(id, src) {
+            const roomList = rows[id].querySelector('.room-list');
+            const img = document.createElement('img');
+            img.src = src;
+            img.className = 'room-item';
+            roomList.appendChild(img);
+        }
+
+        // ボタンクリック時の挙動（既存の属性なら横に追加）
+        btn.addEventListener('click', () => {
+            const val = input.value.trim();
+            if (!val) return;
+
+            if (rows[val]) {
+                // 既存の属性が見つかった場合、その属性のデフォルト画像（src）を取得して追加
+                const setting = defaultSettings.find(s => s.id === val);
+                const imagePath = setting ? setting.src : defaultSettings[0].src;
+                addRoomImage(val, imagePath);
+                input.value = "";
+            } else {
+                alert("指定された属性（" + val + "）の行が見つかりません。");
+            }
+        });
+
+        // 実行
+        initialize();
+    </script>
+</body>
+</html>

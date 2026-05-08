@@ -964,6 +964,14 @@ export const MetaverseGame = () => {
     }
   };
 
+  const showMeetGoingMessage = () => {
+    const toastId = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    setToasts((prev) => [...prev, { id: toastId, text: "それでは会いに行きましょう！" }]);
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((toast) => toast.id !== toastId));
+    }, 3800);
+  };
+
   async function startVoiceCall(isRetry = false, sessionIdOverride?: string) {
     const sessionId = sessionIdOverride || privateSessionRef.current?.sessionId;
     if (!socketRef.current?.connected || !sessionId || !callModeRef.current) {
@@ -1214,7 +1222,7 @@ export const MetaverseGame = () => {
         </button>
         <div className="rounded-md border-2 border-[#2f3a4a] bg-white p-2 shadow-[3px_3px_0_0_#2f3a4a]">
           <div className="mb-2 flex items-center justify-between gap-2">
-            <p className="text-sm font-semibold text-[#2f3a4a]">近くの人（{PRIVATE_TALK_RANGE}px以内）</p>
+            <p className="text-sm font-semibold text-[#2f3a4a]">近くの人</p>
             <button
               type="button"
               onClick={() => setPrioritizeNearby((prev) => !prev)}
@@ -1259,7 +1267,9 @@ export const MetaverseGame = () => {
                         ? "ブロック中"
                         : outgoingRequestId
                           ? "申請中..."
-                          : `${player.nickname}さんと話す`}
+                          : roomInfo.mode === "meet"
+                            ? `${player.nickname}さんと会う`
+                            : `${player.nickname}さんと話す`}
                     </button>
                     <button
                       type="button"
@@ -1306,15 +1316,29 @@ export const MetaverseGame = () => {
           </p>
         </div>
         {privateSession ? (
-          <div className="flex items-center justify-between rounded-md border-2 border-[#2f3a4a] bg-[#e9fff0] px-3 py-2 text-sm text-[#2f3a4a] shadow-[3px_3px_0_0_#2f3a4a]">
-            <span>{privateSession.partnerNickname}さんと個別会話中</span>
-            <button
-              type="button"
-              onClick={endPrivateSession}
-              className="rounded border-2 border-[#2f3a4a] bg-[#f4a6a6] px-2 py-1 text-xs font-semibold text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95"
-            >
-              終了
-            </button>
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-md border-2 border-[#2f3a4a] bg-[#e9fff0] px-3 py-2 text-sm text-[#2f3a4a] shadow-[3px_3px_0_0_#2f3a4a]">
+            <span>
+              {privateSession.partnerNickname}さんと
+              {roomInfo.mode === "meet" ? "会う約束の個別会話中" : "個別会話中"}
+            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              {roomInfo.mode === "meet" ? (
+                <button
+                  type="button"
+                  onClick={showMeetGoingMessage}
+                  className="rounded border-2 border-[#2f3a4a] bg-[#9ed8b5] px-2 py-1 text-xs font-semibold text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95"
+                >
+                  会う
+                </button>
+              ) : null}
+              <button
+                type="button"
+                onClick={endPrivateSession}
+                className="rounded border-2 border-[#2f3a4a] bg-[#f4a6a6] px-2 py-1 text-xs font-semibold text-[#2f3a4a] shadow-[2px_2px_0_0_#2f3a4a] hover:brightness-95"
+              >
+                終了
+              </button>
+            </div>
           </div>
         ) : null}
         {(roomInfo.mode === "call" || roomInfo.mode === "talk" || roomInfo.mode === "chat") && privateSession ? (
@@ -1413,7 +1437,7 @@ export const MetaverseGame = () => {
           <p className="mb-2 text-sm font-semibold text-[#2f3a4a]">
             {chatTab === "private"
               ? `個別チャット${privateSession ? `（${privateSession.partnerNickname}さん）` : ""}`
-              : "ルームチャット（近い人のみ表示）"}
+              : "ルームチャット"}
           </p>
           <div className="max-h-[480px] space-y-1 overflow-y-auto text-sm">
             {(chatTab === "private" ? privateMessages.length === 0 : visibleMessages.length === 0) ? (

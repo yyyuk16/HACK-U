@@ -109,6 +109,254 @@
             border-top: 1px dashed #a8b3c2;
         }
         .item:first-of-type { border-top: none; }
+        .friend-left { min-width: 0; flex: 1; }
+        .friend-right-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .friend-right-col small { display: block; max-width: 200px; }
+        .friend-name-btn {
+            border: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+            font: inherit;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--line);
+            cursor: pointer;
+            text-align: left;
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-underline-offset: 3px;
+        }
+        .friend-name-btn:hover { color: #1d4ed8; }
+        .friend-actions-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: flex-end;
+        }
+        .btn-fb {
+            border: 2px solid var(--line);
+            border-radius: 8px;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            color: var(--line);
+            background: var(--blue);
+            box-shadow: 2px 2px 0 0 var(--line);
+        }
+        .btn-fb:active {
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0 0 var(--line);
+        }
+        .btn-chat {
+            border: 2px solid var(--line);
+            border-radius: 8px;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+            color: var(--line);
+            background: var(--pink);
+            box-shadow: 2px 2px 0 0 var(--line);
+        }
+        .btn-chat:active {
+            transform: translate(1px, 1px);
+            box-shadow: 1px 1px 0 0 var(--line);
+        }
+        .profile-dl { margin: 0; font-size: 14px; }
+        .profile-dl > div {
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #a8b3c2;
+        }
+        .profile-dl > div:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .profile-dl dt {
+            margin: 0 0 4px;
+            font-size: 11px;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .profile-dl dd { margin: 0; color: var(--line); line-height: 1.55; }
+        .profile-fb-caption {
+            margin: 0 0 10px;
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.45;
+        }
+        .profile-fb-criterion {
+            display: grid;
+            grid-template-columns: 24px 1fr;
+            gap: 6px 8px;
+            align-items: center;
+            padding: 8px 0;
+            border-top: 1px dashed #cbd5e1;
+        }
+        .profile-fb-criterion:first-of-type { border-top: none; padding-top: 0; }
+        .profile-fb-criterion .pf-icon { font-size: 18px; text-align: center; }
+        .profile-fb-criterion .pf-label { font-size: 13px; font-weight: 700; color: var(--line); }
+        .profile-fb-stars {
+            grid-column: 2 / -1;
+            display: flex;
+            gap: 1px;
+            flex-wrap: wrap;
+        }
+        .profile-fb-stars .star {
+            font-size: 18px;
+            line-height: 1;
+            color: #d4d4d8;
+        }
+        .profile-fb-stars .star.is-on { color: #f59e0b; }
+        .tag-pill {
+            display: inline-block;
+            margin: 3px 6px 0 0;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 2px solid var(--line);
+            background: #e8f4fc;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .chat-thread {
+            min-height: 160px;
+            max-height: 240px;
+            overflow-y: auto;
+            margin: 12px 0;
+            padding: 10px;
+            border: 2px dashed #a8b3c2;
+            border-radius: 10px;
+            background: #fff;
+            font-size: 13px;
+        }
+        .chat-bubble {
+            margin-bottom: 8px;
+            padding: 8px 10px;
+            border-radius: 10px;
+            max-width: 92%;
+        }
+        .chat-bubble.me {
+            margin-left: auto;
+            background: var(--blue);
+            border: 2px solid var(--line);
+        }
+        .chat-bubble.them {
+            background: #fce7f3;
+            border: 2px solid var(--line);
+        }
+        .chat-bubble .who { font-size: 10px; font-weight: 800; color: #64748b; margin-bottom: 4px; }
+        .chat-input-row { display: flex; gap: 8px; margin-top: 8px; }
+        .chat-input-row input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid var(--line);
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .fb-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .fb-modal[hidden] { display: none !important; }
+        .fb-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(47, 58, 74, 0.45);
+        }
+        .fb-modal-box {
+            position: relative;
+            width: min(400px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: #fffdf7;
+            border: 4px solid var(--line);
+            border-radius: 14px;
+            padding: 18px 16px;
+            box-shadow: 8px 8px 0 0 var(--line);
+        }
+        .fb-modal-box h3 {
+            margin: 0 0 6px;
+            font-family: "DotGothic16", monospace;
+            font-size: 18px;
+            color: var(--line);
+        }
+        .fb-modal-lead {
+            margin: 0 0 14px;
+            font-size: 12px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        .fb-criterion {
+            display: grid;
+            grid-template-columns: 28px 1fr;
+            gap: 8px 10px;
+            align-items: center;
+            padding: 10px 0;
+            border-top: 1px dashed #a8b3c2;
+        }
+        .fb-criterion:first-of-type { border-top: none; padding-top: 0; }
+        .fb-criterion-icon {
+            font-size: 20px;
+            line-height: 1;
+            text-align: center;
+        }
+        .fb-criterion-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--line);
+        }
+        .fb-stars {
+            grid-column: 2;
+            display: flex;
+            gap: 2px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .fb-stars .star {
+            font-size: 22px;
+            line-height: 1;
+            color: #d4d4d8;
+        }
+        .fb-stars .star.is-on { color: #f59e0b; }
+        .fb-stars button.star {
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0 2px;
+        }
+        .fb-stars button.star:focus { outline: 2px solid var(--blue); outline-offset: 2px; }
+        .fb-modal-actions {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+        .fb-modal-actions button {
+            border: 2px solid var(--line);
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--line);
+        }
+        .fb-btn-close { background: #fff; }
+        .fb-btn-save { background: var(--green); box-shadow: 2px 2px 0 0 var(--line); }
         .item-actions { display: flex; gap: 6px; }
         .item-actions button {
             border: 2px solid var(--line);
@@ -123,6 +371,13 @@
         .accept { background: #a8ecc4; }
         .reject { background: #f8dde3; }
         .empty { color: #667; font-size: 13px; margin: 0; }
+        .demo-badge {
+            margin-left: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            vertical-align: middle;
+        }
         .status-online { color: #0f766e; font-weight: 700; }
         .status-offline { color: #64748b; }
     </style>
@@ -151,8 +406,490 @@
             </article>
         </section>
     </main>
+
+    <div id="fbModal" class="fb-modal" hidden aria-hidden="true">
+        <div class="fb-modal-backdrop" id="fbModalBackdrop" aria-hidden="true"></div>
+        <div class="fb-modal-box" role="dialog" aria-labelledby="fbModalTitle" aria-modal="true">
+            <h3 id="fbModalTitle">ユーザーFB</h3>
+            <p class="fb-modal-lead">
+                ユーザーからのフィードバックのイメージです。星をタップして5段階で評価し、「評価を保存」でこの端末に記録できます（デモ）。
+            </p>
+            <div id="fbCriteria"></div>
+            <div class="fb-modal-actions">
+                <button type="button" class="fb-btn-close" id="fbModalClose">閉じる</button>
+                <button type="button" class="fb-btn-save" id="fbModalSave">評価を保存</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="profileModal" class="fb-modal" hidden aria-hidden="true">
+        <div class="fb-modal-backdrop" id="profileModalBackdrop" aria-hidden="true"></div>
+        <div class="fb-modal-box" role="dialog" aria-labelledby="profileModalTitle" aria-modal="true">
+            <h3 id="profileModalTitle">プロフィール</h3>
+            <p class="fb-modal-lead" id="profileModalLead">フレンドのプロフィール（デモデータを含みます）</p>
+            <div id="profileModalBody"></div>
+            <div class="fb-modal-actions">
+                <button type="button" class="fb-btn-close" id="profileModalClose">閉じる</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="chatModal" class="fb-modal" hidden aria-hidden="true">
+        <div class="fb-modal-backdrop" id="chatModalBackdrop" aria-hidden="true"></div>
+        <div class="fb-modal-box" role="dialog" aria-labelledby="chatModalTitle" aria-modal="true">
+            <h3 id="chatModalTitle">チャット</h3>
+            <p class="fb-modal-lead">このタブを開いている間だけ履歴を保持します（ページを再読み込みすると消えます）。</p>
+            <div id="chatThread" class="chat-thread" aria-live="polite"></div>
+            <div class="chat-input-row">
+                <input type="text" id="chatInput" maxlength="500" placeholder="メッセージを入力..." autocomplete="off" />
+                <button type="button" class="fb-btn-save" id="chatSend">送信</button>
+            </div>
+            <div class="fb-modal-actions" style="margin-top: 10px;">
+                <button type="button" class="fb-btn-close" id="chatModalClose">閉じる</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         const ONLINE_WINDOW_SECONDS = 300;
+
+        const FB_STORAGE_KEY = 'atsumachi_user_fb_ratings_v1';
+
+        const FB_CRITERIA = [
+            { key: 'kind', label: 'やさしい', icon: '❤️' },
+            { key: 'easy', label: '話しやすい', icon: '💬' },
+            { key: 'supportive', label: '親身になってくれる', icon: '👤' },
+            { key: 'fast', label: '返信が早い', icon: '🕐' },
+        ];
+
+        const DEFAULT_FB = { kind: 3, easy: 3, supportive: 3, fast: 3 };
+
+        const DEFAULT_PROFILE_EXTRA = {
+            bio: '自己紹介はまだありません。',
+            favoriteTags: [],
+        };
+
+        function clampStar(n) {
+            const x = Number(n);
+            if (!Number.isFinite(x)) return 3;
+            return Math.min(5, Math.max(1, Math.round(x)));
+        }
+
+        /** デモ用（本番APIに同じニックネームがいない限り一覧に追加表示） */
+        const DEMO_FRIENDS = (() => {
+            const now = Date.now();
+            return [
+                {
+                    nickname: 'さくら',
+                    last_seen_at: new Date(now - 45 * 1000).toISOString(),
+                    occupation: 'デザイナー',
+                    prefecture: '東京都',
+                    bio: '都内でUIデザインをしています。カフェでスケッチするのが好きです。',
+                    favoriteTags: ['カフェ', 'イラスト', '散歩', '映画'],
+                    feedbackSamples: [
+                        { kind: 5, easy: 4, supportive: 5, fast: 4 },
+                        { kind: 5, easy: 5, supportive: 4, fast: 5 },
+                        { kind: 4, easy: 4, supportive: 5, fast: 3 },
+                        { kind: 5, easy: 3, supportive: 5, fast: 4 },
+                    ],
+                },
+                {
+                    nickname: 'たろう',
+                    last_seen_at: new Date(now - 12 * 60 * 1000).toISOString(),
+                    occupation: 'エンジニア',
+                    prefecture: '神奈川県',
+                    bio: 'バックエンド寄りの開発者です。新しい技術を試すのが趣味です。',
+                    favoriteTags: ['プログラミング', '読書', 'ランニング', 'コーヒー'],
+                    feedbackSamples: [
+                        { kind: 4, easy: 5, supportive: 4, fast: 5 },
+                        { kind: 5, easy: 5, supportive: 5, fast: 4 },
+                        { kind: 3, easy: 5, supportive: 3, fast: 5 },
+                    ],
+                },
+                {
+                    nickname: 'みお',
+                    last_seen_at: new Date(now - 3 * 60 * 60 * 1000).toISOString(),
+                    occupation: '学生',
+                    prefecture: '大阪府',
+                    bio: '関西の大学に通っています。ハッカソンに参加するのが好き！',
+                    favoriteTags: ['ハッカソン', 'ゲーム', '音楽フェス', 'たこ焼き'],
+                    feedbackSamples: [
+                        { kind: 5, easy: 4, supportive: 5, fast: 3 },
+                        { kind: 5, easy: 5, supportive: 4, fast: 4 },
+                        { kind: 4, easy: 3, supportive: 5, fast: 2 },
+                        { kind: 5, easy: 4, supportive: 5, fast: 4 },
+                        { kind: 4, easy: 4, supportive: 5, fast: 3 },
+                    ],
+                },
+                {
+                    nickname: 'けん',
+                    last_seen_at: new Date(now - 36 * 60 * 60 * 1000).toISOString(),
+                    occupation: '会社員',
+                    prefecture: '福岡県',
+                    bio: '平日は仕事、週末は家族とドライブ。落ち着いた雑談が好きです。',
+                    favoriteTags: ['ドライブ', '温泉', '野球観戦', 'ラーメン'],
+                    feedbackSamples: [
+                        { kind: 3, easy: 4, supportive: 4, fast: 3 },
+                        { kind: 4, easy: 3, supportive: 5, fast: 3 },
+                        { kind: 3, easy: 5, supportive: 3, fast: 4 },
+                    ],
+                },
+                {
+                    nickname: 'はなこ',
+                    last_seen_at: new Date(now - 90 * 1000).toISOString(),
+                    occupation: 'ライター',
+                    prefecture: '北海道',
+                    bio: '地方の文化や食を記事にしています。写真撮影も楽しんでます。',
+                    favoriteTags: ['旅行', '写真', 'スイーツ', '雪景色'],
+                    feedbackSamples: [
+                        { kind: 5, easy: 5, supportive: 4, fast: 5 },
+                        { kind: 5, easy: 4, supportive: 5, fast: 5 },
+                        { kind: 4, easy: 5, supportive: 4, fast: 4 },
+                        { kind: 5, easy: 5, supportive: 3, fast: 5 },
+                    ],
+                },
+            ];
+        })();
+
+        function averageFeedbackFromSamples(samples) {
+            if (!Array.isArray(samples) || samples.length === 0) {
+                return { ...DEFAULT_FB };
+            }
+            const out = {};
+            FB_CRITERIA.forEach(({ key }) => {
+                const vals = samples.map((s) => clampStar(s[key])).filter((v) => Number.isFinite(v));
+                if (vals.length === 0) {
+                    out[key] = 3;
+                    return;
+                }
+                out[key] = vals.reduce((a, b) => a + b, 0) / vals.length;
+            });
+            return out;
+        }
+
+        function roundFeedbackScores(avgDecimals) {
+            const out = {};
+            FB_CRITERIA.forEach(({ key }) => {
+                const v = avgDecimals[key];
+                out[key] = clampStar(Number.isFinite(v) ? Math.round(v) : 3);
+            });
+            return out;
+        }
+
+        const DEMO_FEEDBACK_BY_NICKNAME = Object.fromEntries(
+            DEMO_FRIENDS.map((f) => [
+                f.nickname,
+                roundFeedbackScores(averageFeedbackFromSamples(f.feedbackSamples || [])),
+            ])
+        );
+
+        const DEMO_INCOMING_FR_DISMISSED_KEY = 'atsumachi_demo_incoming_fr_dismissed_v1';
+
+        /** フレンド申請パネル用デモ（APIの申請とニックネームが重複する場合は出さない） */
+        const DEMO_INCOMING_REQUESTS = [
+            { id: 'demo_fr_yuki', requester_nickname: 'ゆうき' },
+            { id: 'demo_fr_rena', requester_nickname: 'れな' },
+            { id: 'demo_fr_daiki', requester_nickname: 'だいき' },
+        ];
+
+        function loadDismissedDemoIncomingIds() {
+            try {
+                const raw = localStorage.getItem(DEMO_INCOMING_FR_DISMISSED_KEY);
+                if (!raw) return new Set();
+                const arr = JSON.parse(raw);
+                return Array.isArray(arr) ? new Set(arr.map(String)) : new Set();
+            } catch {
+                return new Set();
+            }
+        }
+
+        function dismissDemoIncomingRequest(demoId) {
+            const s = loadDismissedDemoIncomingIds();
+            s.add(String(demoId));
+            localStorage.setItem(DEMO_INCOMING_FR_DISMISSED_KEY, JSON.stringify([...s]));
+        }
+
+        function mergeIncomingFriendRequests(apiRequests) {
+            const list = Array.isArray(apiRequests) ? apiRequests : [];
+            const apiNicks = new Set(list.map((r) => r.requester_nickname).filter(Boolean));
+            const dismissed = loadDismissedDemoIncomingIds();
+            const extras = DEMO_INCOMING_REQUESTS.filter(
+                (r) => !dismissed.has(String(r.id)) && !apiNicks.has(r.requester_nickname)
+            ).map((r) => ({ ...r, isDemo: true }));
+            return [...list.map((r) => ({ ...r, isDemo: false })), ...extras];
+        }
+
+        let fbModalNickname = null;
+        let fbDraft = { ...DEFAULT_FB };
+
+        function mergeFeedback(demo, saved) {
+            const out = { ...DEFAULT_FB, ...demo };
+            if (!saved) return out;
+            FB_CRITERIA.forEach(({ key }) => {
+                if (saved[key] != null) out[key] = clampStar(saved[key]);
+            });
+            return out;
+        }
+
+        function loadAllSavedFb() {
+            try {
+                const raw = localStorage.getItem(FB_STORAGE_KEY);
+                if (!raw) return {};
+                const parsed = JSON.parse(raw);
+                return typeof parsed === 'object' && parsed !== null ? parsed : {};
+            } catch {
+                return {};
+            }
+        }
+
+        function saveFbForNickname(nickname, ratings) {
+            const all = loadAllSavedFb();
+            all[nickname] = { ...ratings };
+            localStorage.setItem(FB_STORAGE_KEY, JSON.stringify(all));
+        }
+
+        function attachFeedback(friend) {
+            const demo = DEMO_FEEDBACK_BY_NICKNAME[friend.nickname] || DEFAULT_FB;
+            const saved = loadAllSavedFb()[friend.nickname];
+            return { ...friend, feedback: mergeFeedback(demo, saved) };
+        }
+
+        function attachFriendProfile(friend) {
+            const withFb = attachFeedback(friend);
+            const demo = DEMO_FRIENDS.find((d) => d.nickname === withFb.nickname);
+            const bio = demo?.bio || withFb.bio || DEFAULT_PROFILE_EXTRA.bio;
+            const favoriteTags =
+                demo?.favoriteTags?.length > 0
+                    ? demo.favoriteTags
+                    : Array.isArray(withFb.favoriteTags) && withFb.favoriteTags.length > 0
+                      ? withFb.favoriteTags
+                      : DEFAULT_PROFILE_EXTRA.favoriteTags;
+            const feedbackSamples = Array.isArray(demo?.feedbackSamples) ? demo.feedbackSamples : [];
+            return {
+                ...withFb,
+                bio,
+                favoriteTags,
+                feedbackSamples,
+            };
+        }
+
+        function renderProfileFbStars(rounded) {
+            const r = clampStar(rounded);
+            return [1, 2, 3, 4, 5]
+                .map((i) => `<span class="star${i <= r ? ' is-on' : ''}" aria-hidden="true">★</span>`)
+                .join('');
+        }
+
+        function renderProfileFbSection(friend) {
+            const samples = friend.feedbackSamples || [];
+            let avgDecimals;
+
+            if (samples.length > 0) {
+                avgDecimals = averageFeedbackFromSamples(samples);
+            } else {
+                avgDecimals = {};
+                FB_CRITERIA.forEach(({ key }) => {
+                    avgDecimals[key] = clampStar((friend.feedback && friend.feedback[key]) ?? DEFAULT_FB[key]);
+                });
+            }
+
+            const rows = FB_CRITERIA.map((c) => {
+                const raw = avgDecimals[c.key];
+                const dec = Number.isFinite(raw) ? Math.round(raw * 10) / 10 : 3;
+                const rounded = clampStar(Math.round(dec));
+                return `
+                    <div class="profile-fb-criterion">
+                        <span class="pf-icon" aria-hidden="true">${c.icon}</span>
+                        <span class="pf-label">${escapeHtml(c.label)}</span>
+                        <div class="profile-fb-stars">${renderProfileFbStars(rounded)}</div>
+                    </div>
+                `;
+            }).join('');
+
+            return `
+                ${rows}
+            `;
+        }
+
+        let chatModalNickname = null;
+        const chatBuffers = {};
+
+        function renderProfileModal(friend) {
+            const tags =
+                friend.favoriteTags && friend.favoriteTags.length > 0
+                    ? friend.favoriteTags.map((t) => `<span class="tag-pill">${escapeHtml(t)}</span>`).join('')
+                    : `<span class="tag-pill">未設定</span>`;
+            document.getElementById('profileModalTitle').textContent = `${friend.nickname}さんのプロフィール`;
+            document.getElementById('profileModalLead').textContent =
+                'プロフィールとユーザーFBを表示しています。';
+            document.getElementById('profileModalBody').innerHTML = `
+                <dl class="profile-dl">
+                    <div><dt>ニックネーム</dt><dd>${escapeHtml(friend.nickname || '—')}</dd></div>
+                    <div><dt>都道府県</dt><dd>${escapeHtml(friend.prefecture || '—')}</dd></div>
+                    <div><dt>職業</dt><dd>${escapeHtml(friend.occupation || '—')}</dd></div>
+                    <div><dt>自己紹介</dt><dd>${escapeHtml(friend.bio || DEFAULT_PROFILE_EXTRA.bio)}</dd></div>
+                    <div><dt>好きなモノ（タグ）</dt><dd>${tags}</dd></div>
+                    <div>
+                        <dt>ユーザーFB</dt>
+                        <dd>${renderProfileFbSection(friend)}</dd>
+                    </div>
+                </dl>
+            `;
+        }
+
+        function openProfileModal(friend) {
+            renderProfileModal(friend);
+            const modal = document.getElementById('profileModal');
+            modal.hidden = false;
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeProfileModal() {
+            const modal = document.getElementById('profileModal');
+            modal.hidden = true;
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        function renderChatThread(nickname) {
+            const box = document.getElementById('chatThread');
+            const lines = chatBuffers[nickname] || [];
+            box.innerHTML = lines
+                .map((line) => {
+                    const cls = line.who === 'me' ? 'me' : 'them';
+                    const label = line.who === 'me' ? 'あなた' : `${escapeHtml(nickname)}さん`;
+                    return `<div class="chat-bubble ${cls}"><div class="who">${label}</div><div>${escapeHtml(line.text)}</div></div>`;
+                })
+                .join('');
+            box.scrollTop = box.scrollHeight;
+        }
+
+        function openChatModal(nickname) {
+            chatModalNickname = nickname;
+            if (!chatBuffers[nickname]) {
+                chatBuffers[nickname] = [
+                    { who: 'them', text: 'こんにちは！よろしくお願いします。（デモの自動メッセージ）' },
+                ];
+            }
+            document.getElementById('chatModalTitle').textContent = `${nickname}さんとのチャット`;
+            document.getElementById('chatInput').value = '';
+            renderChatThread(nickname);
+            const modal = document.getElementById('chatModal');
+            modal.hidden = false;
+            modal.setAttribute('aria-hidden', 'false');
+            document.getElementById('chatInput').focus();
+        }
+
+        function closeChatModal() {
+            const modal = document.getElementById('chatModal');
+            modal.hidden = true;
+            modal.setAttribute('aria-hidden', 'true');
+            chatModalNickname = null;
+        }
+
+        function sendChatDemo() {
+            if (!chatModalNickname) return;
+            const input = document.getElementById('chatInput');
+            const text = (input.value || '').trim();
+            if (!text) return;
+            const buf = chatBuffers[chatModalNickname] || (chatBuffers[chatModalNickname] = []);
+            buf.push({ who: 'me', text });
+            input.value = '';
+            renderChatThread(chatModalNickname);
+        }
+
+        function wireProfileModal() {
+            document.getElementById('profileModalClose').addEventListener('click', closeProfileModal);
+            document.getElementById('profileModalBackdrop').addEventListener('click', closeProfileModal);
+        }
+
+        function wireChatModal() {
+            document.getElementById('chatModalClose').addEventListener('click', closeChatModal);
+            document.getElementById('chatModalBackdrop').addEventListener('click', closeChatModal);
+            document.getElementById('chatSend').addEventListener('click', sendChatDemo);
+            document.getElementById('chatInput').addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendChatDemo();
+                }
+            });
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text == null ? '' : String(text);
+            return div.innerHTML;
+        }
+
+        function renderFbCriteriaInto(root, ratings, interactive) {
+            root.innerHTML = FB_CRITERIA.map((c) => {
+                const v = clampStar(ratings[c.key]);
+                const starsHtml = [1, 2, 3, 4, 5]
+                    .map((i) => {
+                        const on = i <= v ? ' is-on' : '';
+                        if (interactive) {
+                            return `<button type="button" class="star${on}" data-fb-key="${c.key}" data-star="${i}" aria-label="${c.label} ${i}">★</button>`;
+                        }
+                        return `<span class="star${on}" aria-hidden="true">★</span>`;
+                    })
+                    .join('');
+                return `
+                    <div class="fb-criterion">
+                        <span class="fb-criterion-icon" aria-hidden="true">${c.icon}</span>
+                        <div class="fb-criterion-label">${escapeHtml(c.label)}</div>
+                        <div class="fb-stars" data-fb-row="${c.key}">${starsHtml}</div>
+                    </div>
+                `;
+            }).join('');
+
+            if (!interactive) return;
+
+            root.querySelectorAll('.fb-stars button.star').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const key = btn.getAttribute('data-fb-key');
+                    const star = clampStar(btn.getAttribute('data-star'));
+                    if (!key) return;
+                    fbDraft[key] = star;
+                    renderFbCriteriaInto(root, fbDraft, true);
+                });
+            });
+        }
+
+        function openFbModal(nickname) {
+            fbModalNickname = nickname;
+            const demo = DEMO_FEEDBACK_BY_NICKNAME[nickname] || DEFAULT_FB;
+            const saved = loadAllSavedFb()[nickname];
+            fbDraft = mergeFeedback(demo, saved);
+
+            document.getElementById('fbModalTitle').textContent = `ユーザーFB — ${nickname}さん`;
+            const criteriaRoot = document.getElementById('fbCriteria');
+            renderFbCriteriaInto(criteriaRoot, fbDraft, true);
+
+            const modal = document.getElementById('fbModal');
+            modal.hidden = false;
+            modal.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeFbModal() {
+            const modal = document.getElementById('fbModal');
+            modal.hidden = true;
+            modal.setAttribute('aria-hidden', 'true');
+            fbModalNickname = null;
+        }
+
+        function wireFbModal() {
+            document.getElementById('fbModalClose').addEventListener('click', closeFbModal);
+            document.getElementById('fbModalBackdrop').addEventListener('click', closeFbModal);
+            document.getElementById('fbModalSave').addEventListener('click', () => {
+                if (!fbModalNickname) return;
+                const next = {};
+                FB_CRITERIA.forEach(({ key }) => {
+                    next[key] = clampStar(fbDraft[key]);
+                });
+                saveFbForNickname(fbModalNickname, next);
+                closeFbModal();
+                void loadFriends();
+            });
+        }
 
         function formatLastSeen(lastSeenAt) {
             if (!lastSeenAt) {
@@ -187,28 +924,42 @@
                     return;
                 }
                 const data = await response.json();
-                const requests = data.requests || [];
+                const requests = mergeIncomingFriendRequests(data.requests || []);
                 if (requests.length === 0) {
                     root.innerHTML = '<p class="empty">新しい申請はありません。</p>';
                     return;
                 }
-                root.innerHTML = requests.map((request) => `
+                root.innerHTML = requests
+                    .map((request) => {
+                        const nick = escapeHtml(request.requester_nickname || 'ゲスト');
+                        const demoMark = request.isDemo ? '<span class="demo-badge">（デモ）</span>' : '';
+                        const idAttr = escapeHtml(String(request.id));
+                        const isDemoAttr = request.isDemo ? 'true' : 'false';
+                        return `
                     <div class="item">
-                        <span>${request.requester_nickname} さん</span>
+                        <span>${nick} さん${demoMark}</span>
                         <div class="item-actions">
-                            <button class="accept" data-request-id="${request.id}" data-accept="true">承認</button>
-                            <button class="reject" data-request-id="${request.id}" data-accept="false">拒否</button>
+                            <button type="button" class="accept" data-request-id="${idAttr}" data-is-demo="${isDemoAttr}" data-accept="true">承認</button>
+                            <button type="button" class="reject" data-request-id="${idAttr}" data-is-demo="${isDemoAttr}" data-accept="false">拒否</button>
                         </div>
                     </div>
-                `).join('');
+                `;
+                    })
+                    .join('');
                 root.querySelectorAll('button[data-request-id]').forEach((button) => {
                     button.addEventListener('click', async () => {
                         const requestId = button.getAttribute('data-request-id');
+                        const isDemo = button.getAttribute('data-is-demo') === 'true';
                         const accept = button.getAttribute('data-accept') === 'true';
+                        if (isDemo) {
+                            dismissDemoIncomingRequest(requestId);
+                            await Promise.all([loadIncomingRequests(), loadFriends()]);
+                            return;
+                        }
                         await fetch(`/friend-requests/${requestId}/respond`, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ accept })
+                            body: JSON.stringify({ accept }),
                         });
                         await Promise.all([loadIncomingRequests(), loadFriends()]);
                     });
@@ -227,24 +978,59 @@
                     return;
                 }
                 const data = await response.json();
-                const friends = data.friends || [];
+                const apiFriends = data.friends || [];
+                const apiNicknames = new Set(apiFriends.map((f) => f.nickname));
+                const friends = [
+                    ...apiFriends,
+                    ...DEMO_FRIENDS.filter((d) => !apiNicknames.has(d.nickname)),
+                ].map(attachFriendProfile);
                 if (friends.length === 0) {
                     root.innerHTML = '<p class="empty">フレンドはまだいません。</p>';
                     return;
                 }
                 root.innerHTML = friends.map((friend) => {
                     const status = formatLastSeen(friend.last_seen_at);
-                    const profile = `${friend.occupation || ''}${friend.prefecture ? ' / ' + friend.prefecture : ''}`;
+                    const nickEsc = escapeHtml(friend.nickname);
+                    const nickEnc = encodeURIComponent(friend.nickname);
                     return `
-                        <div class="item">
-                            <div>
-                                <div>${friend.nickname}</div>
-                                <small class="${status.online ? 'status-online' : 'status-offline'}">${status.label}</small>
+                        <div class="item" data-friend-row="${nickEnc}">
+                            <div class="friend-left">
+                                <button type="button" class="friend-name-btn" data-profile-for="${nickEnc}" title="プロフィールを表示">${nickEsc}</button>
+                                <small class="${status.online ? 'status-online' : 'status-offline'}">${escapeHtml(status.label)}</small>
                             </div>
-                            <small>${profile}</small>
+                            <div class="friend-right-col">
+                                <div class="friend-actions-row">
+                                    <button type="button" class="btn-fb" data-fb-for="${nickEnc}">FB</button>
+                                    <button type="button" class="btn-chat" data-chat-for="${nickEnc}">チャット</button>
+                                </div>
+                            </div>
                         </div>
                     `;
                 }).join('');
+                root.querySelectorAll('button[data-fb-for]').forEach((btn) => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const raw = btn.getAttribute('data-fb-for');
+                        if (raw) openFbModal(decodeURIComponent(raw));
+                    });
+                });
+                root.querySelectorAll('button[data-chat-for]').forEach((btn) => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const raw = btn.getAttribute('data-chat-for');
+                        if (raw) openChatModal(decodeURIComponent(raw));
+                    });
+                });
+                root.querySelectorAll('button[data-profile-for]').forEach((btn) => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const raw = btn.getAttribute('data-profile-for');
+                        if (!raw) return;
+                        const name = decodeURIComponent(raw);
+                        const friend = friends.find((f) => f.nickname === name);
+                        if (friend) openProfileModal(friend);
+                    });
+                });
             } catch (error) {
                 root.innerHTML = '<p class="empty">フレンド一覧を取得できませんでした。</p>';
             }
@@ -273,6 +1059,9 @@
             location.href = '/mypage.html';
         });
         async function boot() {
+            wireFbModal();
+            wireProfileModal();
+            wireChatModal();
             await loadUser();
             await Promise.all([loadIncomingRequests(), loadFriends()]);
             setInterval(() => {

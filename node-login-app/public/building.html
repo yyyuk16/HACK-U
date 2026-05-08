@@ -3,372 +3,395 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Pixel Art Activity Board</title>
+    <title>Pixel Apartment Complex</title>
     <style>
+        /* --- 全体のマンション設定 --- */
         body {
-            background-color: #6a4c42;
-            /* ご指定の茶色 */
+            /* マンションの周りの地面（暗めの緑） */
+            background-color: #3e2b26; 
             margin: 0;
             padding: 30px;
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-            color: #f1e4d0;
-        }
-
-        .controls {
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            position: sticky;
-            top: 10px;
-            z-index: 100;
-        }
-
-        input[type="text"] {
-            padding: 12px;
-            border-radius: 6px;
-            border: 2px solid #be9a78;
-            background: #f1e4d0;
-            width: 250px;
-            font-size: 16px;
-        }
-
-        button {
-            padding: 12px 24px;
-            background-color: #be9a78;
-            border: none;
-            border-radius: 6px;
-            color: #3e2b26;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #d8c3b1;
-        }
-
-        #gallery-container {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .attribute-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            background-color: rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            border-radius: 10px;
-            overflow-x: auto;
-            /* 横に増えたらスクロール */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .attribute-label {
-            min-width: 140px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #ffca85;
-            padding-top: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* --- 既存のスタイルを修正 --- */
-
-        .room-list {
-            display: flex;
-            gap: 20px;
-            align-items: flex-end;
-            /* 画像の高さを下揃えに */
-        }
-
-        /* 画像とラベルをセットにする枠 */
-        .room-wrapper {
-            display: flex;
-            flex-direction: column;
-            /* 縦に並べる */
-            align-items: center;
-            /* 中央寄せ */
-            gap: 8px;
-            /* 画像と上部情報の間の隙間 */
-        }
-
-        /* 左側の大きなラベルは不要なので非表示にする */
-        .attribute-label {
-            display: none;
-            /* ← ここを追加（または削除） */
-        }
-
-        /* --- 新しく追加するスタイル --- */
-
-        /* 画像自体のスタイル（以前と同じ） */
-        .room-item {
-            width: 320px;
-            height: auto;
-            border: 5px solid #000;
-            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
+            /* ドット絵風のフォント設定 */
+            font-family: 'Press Start 2P', 'Hiragino Kaku Gothic ProN', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            background-image: 
+                /* 地面の砂地模様をドットで表現 */
+                linear-gradient(45deg, #4e3b36 25%, transparent 25%), 
+                linear-gradient(-45deg, #4e3b36 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #4e3b36 75%),
+                linear-gradient(-45deg, transparent 75%, #4e3b36 75%);
+            background-size: 10px 10px;
             image-rendering: pixelated;
         }
 
-        /* 画像の上の情報枠（アイコン+文字） */
+        /* --- エントランス（操作パネル） --- */
+        .controls {
+            /* ドット絵レンガの外壁 */
+            background-color: #6a4c42; 
+            background-image: url('./buildingimgs/ext_wall.png'); /* マンションの外壁画像を敷き詰める */
+            background-repeat: repeat;
+            border: 10px solid #000; /* 太い黒縁（レトロゲー風） */
+            border-radius: 4px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column; /* 縦並びにして看板風に */
+            gap: 20px;
+            align-items: center;
+            box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 看板タイトル */
+        .mansion-title {
+            font-size: 2rem;
+            color: #ffca85;
+            text-shadow: 4px 4px 0px #000;
+            margin-bottom: 10px;
+        }
+
+        /* 入力フォーム周辺の装飾（ドア風） */
+        .form-area {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 4px solid #be9a78;
+        }
+
+        input[type="text"] {
+            padding: 15px;
+            border: 4px solid #be9a78;
+            background: #f1e4d0;
+            width: 300px;
+            font-size: 1rem;
+            color: #3e2b26;
+            font-family: inherit; /* フォント継承 */
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #ffca85;
+            border: 4px solid #000;
+            color: #3e2b26;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* --- ギャラリー全体（マンション外壁） --- */
+        #gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            justify-items: center;
+            padding: 40px;
+            /* レンガ模様をCSSグラデーションで表現（外壁画像がない場合の保険） */
+            background-color: #6a4c42;
+            background-image: 
+                /* レンガの縦線 */
+                linear-gradient(to right, rgba(0, 0, 0, 0.2) 2px, transparent 2px),
+                /* レンガの横線 */
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 2px, transparent 2px);
+            background-size: 32px 32px; /* 32pxごとのレンガ模様 */
+            border: 15px solid #000;
+            border-radius: 4px;
+            box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.4);
+            image-rendering: pixelated;
+        }
+
+        /* --- 各部屋のカード（窓・ベランダ） --- */
+        .room-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0; /* 画像と上部情報をくっつける */
+            cursor: pointer;
+            width: 320px; 
+            /* 窓枠をドット絵の太縁で */
+            border: 8px solid #000;
+            border-radius: 4px;
+            background-color: #000; /* 画像がない場合の窓の中 */
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+            /* ドット絵画像の画像レンダリング設定 */
+            image-rendering: pixelated;
+        }
+
+        /* ベランダ（上部情報） */
         .room-top-info {
             display: flex;
-            align-items: center;
-            /* 縦方向中央寄せ */
-            gap: 6px;
-            /* アイコンと文字の間の隙間 */
+            align-items: baseline;
+            gap: 10px;
+            width: 100%;
+            justify-content: flex-start;
+            padding: 8px 10px;
+            background-color: rgba(255, 255, 255, 0.05); /* うっすらとしたガラス風 */
+            border-bottom: 8px solid #000; /* 画像との境界（ベランダの手すり） */
+            z-index: 10; /* 画像の上に重ねる */
         }
 
-        /* アイコン（ピクトグラム）のスタイル */
-        .room-icon {
-            font-size: 1.4rem;
-            /* 少し大きく */
-        }
-
-        /* 画像の上の文字スタイル */
+        .room-icon { font-size: 1.4rem; margin-right: 4px; }
+        
         .room-label-top {
-            font-size: 1.1rem;
+            font-size: 0.8rem; /* 少し小さく */
             font-weight: bold;
-            color: #f1e4d0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            text-shadow: 2px 2px 0px #000;
         }
 
-        /* モーダル背景 */
+        .room-time {
+            font-size: 0.6rem;
+            color: #ffca85;
+            text-shadow: 1px 1px 0px #000;
+            margin-left: auto; /* 右寄せ */
+            padding-right: 5px;
+        }
+
+        /* 画像本体（窓の中） */
+        .room-item {
+            width: 100%;
+            height: auto;
+            border: none;
+            box-shadow: none;
+        }
+
+        /* ホバー時のオーバーレイ */
+        .room-overlay {
+            position: absolute;
+            top: 48px; /* ベランダの高さを考慮 */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7); /* 少し暗く */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 5;
+        }
+
+        .room-wrapper:hover .room-overlay {
+            opacity: 1;
+        }
+
+        .room-wrapper:hover {
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.4);
+            z-index: 15;
+        }
+
+        .overlay-text {
+            font-size: 0.6rem;
+            font-weight: bold;
+            border: 4px solid #fff;
+            padding: 6px 15px;
+            background: rgba(255,255,255,0.1);
+            font-family: inherit;
+        }
+
+        /* --- モーダル --- */
         #modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9); /* さらに暗く */
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
 
-        /* モーダル本体 */
         #room-modal {
-            background: #f1e4d0;
+            background-color: #f1e4d0;
             color: #3e2b26;
-            padding: 30px;
-            border-radius: 12px;
-            border: 6px solid #be9a78;
+            padding: 50px;
+            border: 15px solid #be9a78;
+            border-radius: 4px;
             position: relative;
             text-align: center;
-            min-width: 300px;
+            min-width: 400px;
+            box-shadow: 15px 15px 0px rgba(0,0,0,0.4);
         }
 
-        /* ×ボタン */
         #modal-close-btn {
             position: absolute;
-            top: 5px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: #3e2b26;
+            top: 15px; right: 20px;
+            background: none; border: none;
+            font-size: 40px; color: #3e2b26;
             cursor: pointer;
+            line-height: 1;
         }
 
-        /* 入室ボタン */
         #join-btn {
-            margin-top: 15px;
+            margin-top: 30px;
             width: 100%;
-            background-color: #6a4c42;
-            color: white;
+            background-color: #be9a78;
+            color: #3e2b26;
+            padding: 20px;
+            font-size: 1.2rem;
+            border: 8px solid #000;
+            font-family: inherit;
         }
 
-        /* 画像にマウスを乗せた時の設定 */
-        .room-item {
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .room-item:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
-
-        /* ホバー時にツールチップ（簡易補足）を出すための設定 */
-        .room-wrapper {
-            position: relative;
-        }
-
-        .room-wrapper:hover::after {
-            content: "ジャンル：" attr(data-genre) "\A 内容：ここに補足を表示";
-            white-space: pre;
-            position: absolute;
-            bottom: 110%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            z-index: 10;
-            pointer-events: none;
+        #join-btn:hover {
+            background-color: #ffca85;
+            color: #000;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="controls">
-        <input type="text" id="attr-input" placeholder="属性名（例：食事）を入力">
-        <button id="add-btn">同じ属性の部屋を追加</button>
+    <div class="controls mansion-entrance">
+        <h1 class="mansion-title">PIXEL APARTMENT</h1>
+        <div class="form-area">
+            <input type="text" id="attr-input" placeholder="ジャンルを入力 (例:食事)">
+            <button id="add-btn">部屋を追加</button>
+        </div>
     </div>
 
-    <div id="gallery-container">
-        <!-- JavaScriptによってデフォルト画像がここに生成されます -->
-    </div>
+    <div id="gallery-container"></div>
 
     <div id="modal-overlay" style="display: none;">
         <div id="room-modal">
             <button id="modal-close-btn">×</button>
-            <h2 id="modal-title">ジャンル：食事</h2>
-            <p id="modal-desc">内容：「ここに補足を表示」</p>
-            <button id="join-btn">入室ボタン</button>
+            <h2 id="modal-title">マンション入居確認</h2>
+            <p id="modal-desc">メッセージを表示</p>
+            <button id="join-btn">この部屋に入る</button>
         </div>
     </div>
 
     <script>
-        // デフォルト画像の定義（属性名とファイル名の対応）
-        // 1. デフォルト画像の定義（アイコンを追加）
         const defaultSettings = [
-            { id: 'フリー', src: './buildingimgs/free.png', icon: '🆓' }, // 例：フリー
-            { id: '食事', src: './buildingimgs/meal.png', icon: '🍽️' },   // 例：食事
-            { id: '飲み', src: './buildingimgs/sake.png', icon: '🍶' },   // 例：飲み
-            { id: '勉強', src: './buildingimgs/study.png', icon: '📚' },   // 例：勉強
-            { id: 'ゲーム', src: './buildingimgs/game.png', icon: '🎮' },   // 例：ゲーム
-            { id: '応援', src: './buildingimgs/cheer.png', icon: '📣' },   // 例：応援
-            { id: 'ディスカッション', src: './buildingimgs/discuss.png', icon: '🗣️' } // 例：議論
+            { 
+                id: 'フリー', src: './buildingimgs/free.png', icon: '🆓', 
+                messages: ['誰でも大歓迎！のんびりしよう', '雑談メインの部屋です', '作業のお供にどうぞ'] 
+            },
+            { 
+                id: '食事', src: './buildingimgs/meal.png', icon: '🍽️', 
+                messages: ['一緒に飯食べながらだべろ～', '今日のご飯何にした？', 'モグモグタイム開始！'] 
+            },
+            { 
+                id: '飲み', src: './buildingimgs/sake.png', icon: '🍶', 
+                messages: ['軽く一杯いかが？', 'オンライン飲み会中', 'おつまみ持って集合！'] 
+            },
+            { 
+                id: '勉強', src: './buildingimgs/study.png', icon: '📚', 
+                messages: ['集中して作業する部屋', 'テスト前なので追い込みます', '教え合いっこ歓迎！'] 
+            },
+            { 
+                id: 'ゲーム', src: './buildingimgs/game.png', icon: '🎮', 
+                messages: ['ガチ勢お断り、エンジョイ勢です', '対戦相手募集中！', '新作の攻略情報教えて'] 
+            },
+            { 
+                id: '応援', src: './buildingimgs/cheer.png', icon: '📣', 
+                messages: ['推しを愛でる会', 'ライブの同時視聴中！', '尊い…応援が止まらない'] 
+            },
+            { 
+                id: 'ディスカッション', src: './buildingimgs/discuss.png', icon: '🗣️', 
+                messages: ['深い話をしよう', 'アイデア出し中', '議論を深めたい人求む'] 
+            }
         ];
 
         const container = document.getElementById('gallery-container');
         const input = document.getElementById('attr-input');
         const btn = document.getElementById('add-btn');
-
-        // 各属性の行要素を保持するオブジェクト
-        const rows = {};
-
-        // 1. 初期表示（7枚を縦に並べる）
-        function initialize() {
-            defaultSettings.forEach(item => {
-                createRow(item.id);
-                addRoomImage(item.id, item.src);
-            });
-        }
-
-        // 行を作成する関数
-        function createRow(id) {
-            const rowDiv = document.createElement('div');
-            rowDiv.className = 'attribute-row';
-
-            const label = document.createElement('div');
-            label.className = 'attribute-label';
-            label.textContent = id;
-
-            const roomList = document.createElement('div');
-            roomList.className = 'room-list';
-
-            rowDiv.appendChild(label);
-            rowDiv.appendChild(roomList);
-            container.appendChild(rowDiv);
-
-            rows[id] = rowDiv;
-        }
-
-        // 2. 画像を追加する関数を修正
-        function addRoomImage(id, src) {
-            const roomList = rows[id].querySelector('.room-list');
-
-            // 画像と上部情報をセットにする枠
-            const wrapper = document.createElement('div');
-            wrapper.className = 'room-wrapper';
-
-            // 上部情報（アイコン + 文字）
-            const topInfo = document.createElement('div');
-            topInfo.className = 'room-top-info';
-
-            // アイコン（ピクトグラム）
-            const setting = defaultSettings.find(s => s.id === id); // 設定を取得
-            const iconSpan = document.createElement('span');
-            iconSpan.className = 'room-icon';
-            iconSpan.textContent = setting ? setting.icon : '❓'; // 見つからない時は「？」
-
-            // 属性名
-            const labelSpan = document.createElement('span');
-            labelSpan.className = 'room-label-top';
-            labelSpan.textContent = id;
-
-            // 画像
-            const img = document.createElement('img');
-            img.src = src;
-            img.className = 'room-item';
-
-            // 組み立て
-            topInfo.appendChild(iconSpan); // アイコン
-            topInfo.appendChild(labelSpan); // 文字
-
-            wrapper.appendChild(topInfo); // 上部
-            wrapper.appendChild(img);     // 下部
-
-            roomList.appendChild(wrapper);
-        }
-
         const modal = document.getElementById('modal-overlay');
         const closeBtn = document.getElementById('modal-close-btn');
 
-        // モーダルを閉じる処理
         closeBtn.onclick = () => modal.style.display = 'none';
         window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
 
+        function getRandomTime() {
+            const minutes = Math.floor(Math.random() * 59) + 1;
+            return `${minutes}分前`;
+        }
+
+        function getRandomMessage(setting) {
+            if (!setting || !setting.messages) return "詳細情報はありません。";
+            const randomIndex = Math.floor(Math.random() * setting.messages.length);
+            return setting.messages[randomIndex];
+        }
+
+        function initialize() {
+            const allInitialRooms = [];
+            defaultSettings.forEach(item => {
+                for (let i = 0; i < 3; i++) {
+                    allInitialRooms.push({ id: item.id, src: item.src });
+                }
+            });
+
+            for (let i = allInitialRooms.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [allInitialRooms[i], allInitialRooms[j]] = [allInitialRooms[j], allInitialRooms[i]];
+            }
+
+            allInitialRooms.forEach(room => {
+                addRoomImage(room.id, room.src);
+            });
+        }
+
         function addRoomImage(id, src) {
-            const roomList = rows[id].querySelector('.room-list');
+            const setting = defaultSettings.find(s => s.id === id);
+            const postTime = getRandomTime();
+            const roomMessage = getRandomMessage(setting);
 
             const wrapper = document.createElement('div');
             wrapper.className = 'room-wrapper';
-            wrapper.setAttribute('data-genre', id); // ホバー時のテキスト用
+
+            const topInfo = document.createElement('div');
+            topInfo.className = 'room-top-info';
+            topInfo.innerHTML = `
+                <span class="room-icon">${setting ? setting.icon : '❓'}</span>
+                <span class="room-label-top">${id}</span>
+                <span class="room-time">${postTime}</span>
+            `;
 
             const img = document.createElement('img');
             img.src = src;
             img.className = 'room-item';
 
-            // --- ここからクリック処理の追加 ---
-            img.onclick = () => {
-                document.getElementById('modal-title').textContent = `ジャンル：${id}`;
-                document.getElementById('modal-desc').textContent = `内容：「ここに補足を表示」`;
+            const overlay = document.createElement('div');
+            overlay.className = 'room-overlay';
+            overlay.innerHTML = `<span class="overlay-text">部屋の詳細</span>`;
+
+            wrapper.onclick = () => {
+                document.getElementById('modal-title').textContent = `ピクセルアパート・${id}`;
+                document.getElementById('modal-desc').innerHTML = `<strong>${postTime}に投稿</strong><br><br>「${roomMessage}」`;
                 modal.style.display = 'flex';
             };
-            // --- ここまで ---
 
+            wrapper.appendChild(topInfo);
             wrapper.appendChild(img);
-            roomList.appendChild(wrapper);
+            wrapper.appendChild(overlay);
+            
+            container.appendChild(wrapper);
         }
-        // ボタンクリック時の挙動（既存の属性なら横に追加）
+
         btn.addEventListener('click', () => {
             const val = input.value.trim();
             if (!val) return;
-
-            if (rows[val]) {
-                // 既存の属性が見つかった場合、その属性のデフォルト画像（src）を取得して追加
-                const setting = defaultSettings.find(s => s.id === val);
-                const imagePath = setting ? setting.src : defaultSettings[0].src;
-                addRoomImage(val, imagePath);
+            const setting = defaultSettings.find(s => s.id === val);
+            if (setting) {
+                addRoomImage(val, setting.src);
                 input.value = "";
             } else {
-                alert("指定された属性（" + val + "）の行が見つかりません。");
+                alert("指定された属性の設定が見つかりません。");
             }
         });
 
-        // 実行
         initialize();
     </script>
 </body>

@@ -123,14 +123,12 @@ HACK-U2026 で作成したメタバースアプリのリポジトリです。
 ### 1) `node-login-app`（3000）
 
 ```powershell
-cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\node-login-app"
 npm start
 ```
 
 #### ローカルDBで詰まったとき（一時的にDocker DBを使う）
 
 ```powershell
-cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\node-login-app"
 docker compose up -d db
 npm run start:dockerdb
 ```
@@ -142,14 +140,12 @@ npm run start:dockerdb
 ### 2) Socketサーバー（3001）
 
 ```powershell
-cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\hack-u"
 npm run socket
 ```
 
 ### 3) メタバース画面（3002）
 
 ```powershell
-cd "C:\Users\yukin\Desktop\ハッカソン\HACK-U\hack-u"
 npm run dev:web
 ```
 
@@ -161,7 +157,7 @@ npm run dev:web
 - `node-login-app/public/logo.png` を更新するとロゴ表示画面へ反映される
 
 ## 今後の候補
-
+- mobileアプリ化
 - 会うモードのBGM切り替え
 - ルーム説明・タグ・検索改善
 - チャットの通報/ミュート/NGワード
